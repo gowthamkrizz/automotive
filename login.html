@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In – Stackly Luxury Automotive</title>
+  <meta name="description" content="Sign in to your Stackly account to access luxury vehicle orders, VIP test drives, and exclusive member privileges.">
+  <link rel="icon" type="image/webp" href="assets/images/cropped-logo-1-32x32.webp">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="auth-body">
+
+  <!-- Standalone Auth Split-Card Section -->
+  <main class="auth-page-section">
+
+    <!-- Background Ambient & Radar Layer -->
+    <div class="auth-bg-ambient-layer">
+      <div class="auth-radar-ring auth-radar-ring-1"></div>
+      <div class="auth-radar-ring auth-radar-ring-2"></div>
+    </div>
+
+    <!-- Background 3D Moving Supercar Track -->
+    <div class="auth-bg-car-track">
+      <!-- Neon Cyber Road Surface -->
+      <div class="auth-cyber-road"></div>
+
+      <!-- Moving Speed Sparks -->
+      <div class="moving-speed-sparks">
+        <span class="spark s1"></span>
+        <span class="spark s2"></span>
+        <span class="spark s3"></span>
+      </div>
+
+      <!-- 3D Animated Supercar with Headlight, Taillight & Neon -->
+      <div class="auth-moving-supercar" title="Stackly 3D Supercar Matrix">
+        <div class="car-headlight-beam"></div>
+        <div class="car-taillight-trail"></div>
+        <div class="car-underglow"></div>
+
+        <svg class="supercar-svg" viewBox="0 0 320 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="carBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3a3d46"/>
+              <stop offset="35%" stop-color="#1c1e24"/>
+              <stop offset="70%" stop-color="#101216"/>
+              <stop offset="100%" stop-color="#DD0005"/>
+            </linearGradient>
+            <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.45)"/>
+              <stop offset="100%" stop-color="rgba(12,18,28,0.9)"/>
+            </linearGradient>
+            <linearGradient id="redAccentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff2e2e"/>
+              <stop offset="100%" stop-color="#DD0005"/>
+            </linearGradient>
+          </defs>
+          
+          <!-- Aerodynamic Body Shell -->
+          <path d="M 20,68 Q 25,48 55,46 L 105,42 Q 135,22 175,20 L 230,22 Q 258,25 285,48 L 305,58 Q 315,64 312,72 L 295,74 Q 288,74 282,68 C 275,56 250,56 242,68 L 120,68 C 112,56 88,56 80,68 L 35,74 Q 20,74 20,68 Z" fill="url(#carBodyGrad)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          
+          <!-- Windshield & Side Windows -->
+          <path d="M 120,42 L 165,26 Q 195,24 225,26 L 245,44 Q 200,43 140,43 Z" fill="url(#glassGrad)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          
+          <!-- Roof Pillar / Trim -->
+          <path d="M 180,25 L 188,43" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          
+          <!-- Red Racing Aerodynamic Side Strakes -->
+          <path d="M 50,54 L 140,50 Q 230,48 290,56" stroke="url(#redAccentGrad)" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M 110,60 L 240,58" stroke="rgba(221,0,5,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+
+          <!-- Front LED Matrix Headlight -->
+          <polygon points="300,56 312,62 306,66 295,60" fill="#00e5ff" filter="drop-shadow(0 0 6px #00e5ff)"/>
+          <polygon points="302,57 310,61 306,64 298,60" fill="#ffffff"/>
+
+          <!-- Rear LED Tail-light Bar -->
+          <path d="M 22,60 L 32,58" stroke="#ff0019" stroke-width="3.5" stroke-linecap="round" filter="drop-shadow(0 0 6px #ff0019)"/>
+
+          <!-- Rear Spoiler Wing -->
+          <path d="M 18,50 L 38,48 L 42,54 L 16,55 Z" fill="#111" stroke="#DD0005" stroke-width="1"/>
+          
+          <!-- Rear Wheel Assembly -->
+          <g class="wheel-group rear-wheel" transform="translate(100, 68)">
+            <circle cx="0" cy="0" r="16" fill="#0d0e12" stroke="#2c2d35" stroke-width="3"/>
+            <circle cx="0" cy="0" r="12" fill="#15171e"/>
+            <path d="M -8,-6 A 10 10 0 0 1 -2,-10" stroke="#DD0005" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="-12" x2="0" y2="12" stroke="#e0e0e0" stroke-width="1.8"/>
+            <line x1="-12" y1="0" x2="12" y2="0" stroke="#e0e0e0" stroke-width="1.8"/>
+            <line x1="-8.5" y1="-8.5" x2="8.5" y2="8.5" stroke="#999" stroke-width="1.5"/>
+            <line x1="-8.5" y1="8.5" x2="8.5" y2="-8.5" stroke="#999" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="3.5" fill="#DD0005"/>
+          </g>
+
+          <!-- Front Wheel Assembly -->
+          <g class="wheel-group front-wheel" transform="translate(262, 68)">
+            <circle cx="0" cy="0" r="16" fill="#0d0e12" stroke="#2c2d35" stroke-width="3"/>
+            <circle cx="0" cy="0" r="12" fill="#15171e"/>
+            <path d="M -8,-6 A 10 10 0 0 1 -2,-10" stroke="#DD0005" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="0" y1="-12" x2="0" y2="12" stroke="#e0e0e0" stroke-width="1.8"/>
+            <line x1="-12" y1="0" x2="12" y2="0" stroke="#e0e0e0" stroke-width="1.8"/>
+            <line x1="-8.5" y1="-8.5" x2="8.5" y2="8.5" stroke="#999" stroke-width="1.5"/>
+            <line x1="-8.5" y1="8.5" x2="8.5" y2="-8.5" stroke="#999" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="3.5" fill="#DD0005"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Main Auth Card -->
+    <div class="auth-split-card">
+      
+      <!-- Left Visual Card with Brand + Luxury Vehicle Image -->
+      <div class="auth-left-banner">
+        <div class="auth-banner-top">
+          <a href="index.html" class="auth-banner-logo" title="Back to Home">
+            <img src="assets/images/stackly-logo.webp" alt="Stackly Luxury Automotive">
+          </a>
+
+          <div class="auth-badge-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>WELCOME BACK</span>
+          </div>
+
+          <h2 class="auth-banner-headline">Unlock your <span class="accent-text">driving</span> clarity</h2>
+
+          <p class="auth-banner-desc">
+            Access your Stackly account to manage your luxury vehicle orders, track real-time delivery status, explore exclusive vehicle allocations, and enjoy VIP owner perks.
+          </p>
+        </div>
+
+        <!-- Luxury Vehicle Image Showcase -->
+        <div class="auth-banner-img-wrap">
+          <img src="assets/images/peugeot-208-5-door-front-0-707913-1-1.webp" alt="Stackly Luxury Vehicle" class="auth-banner-burger-img">
+        </div>
+
+        <!-- 3 Feature Badges -->
+        <div class="auth-banner-features">
+          <div class="auth-feature-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Secure Access</span>
+          </div>
+          <div class="auth-feature-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span>VIP Concierge</span>
+          </div>
+          <div class="auth-feature-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Certified Specials</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Section -->
+      <div class="auth-right-content">
+        <div class="auth-top-bar">
+          <a href="index.html" class="auth-back-link">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Back to Home</span>
+          </a>
+          <span class="auth-top-tag">— WELCOME BACK</span>
+        </div>
+
+        <div class="auth-heading-group">
+          <h1 class="auth-main-title">Sign <span class="accent-text">in</span></h1>
+          <p class="auth-subtitle">
+            Enter your credentials below to access your Stackly luxury automotive account.
+          </p>
+        </div>
+
+        <form class="auth-form" id="loginForm" novalidate>
+          <!-- Username -->
+          <div class="auth-field-group">
+            <label class="auth-label" for="loginUsername">USERNAME <span class="required-star">*</span></label>
+            <div class="auth-input-wrap">
+              <span class="auth-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </span>
+              <input type="text" id="loginUsername" class="auth-input" placeholder="Enter your username" autocomplete="username">
+            </div>
+            <div class="auth-error-msg" id="loginUsernameError">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Username must be at least 3 characters.</span>
+            </div>
+          </div>
+
+          <!-- Select Portal -->
+          <div class="auth-field-group">
+            <label class="auth-label" for="loginPortal">SELECT PORTAL <span class="required-star">*</span></label>
+            <div class="auth-input-wrap">
+              <span class="auth-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
+              </span>
+              <select id="loginPortal" class="auth-input auth-select">
+                <option value="" disabled selected>Select your portal...</option>
+                <option value="customer">Buyer / Customer Dashboard</option>
+                <option value="admin">Admin Dashboard</option>
+              </select>
+              <span class="auth-select-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+            <div class="auth-error-msg" id="loginPortalError">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Please select your account portal.</span>
+            </div>
+          </div>
+
+          <!-- Email Address -->
+          <div class="auth-field-group">
+            <label class="auth-label" for="loginEmail">EMAIL ADDRESS <span class="required-star">*</span></label>
+            <div class="auth-input-wrap">
+              <span class="auth-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </span>
+              <input type="email" id="loginEmail" class="auth-input" placeholder="you@company.com" autocomplete="email">
+            </div>
+            <div class="auth-error-msg" id="loginEmailError">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Please enter a valid email address (e.g. name@domain.com).</span>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="auth-field-group">
+            <label class="auth-label" for="loginPassword">PASSWORD <span class="required-star">*</span></label>
+            <div class="auth-input-wrap">
+              <span class="auth-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </span>
+              <input type="password" id="loginPassword" class="auth-input" placeholder="Min. 8 characters" autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" id="loginPassToggle" aria-label="Toggle password visibility">
+                <svg class="eye-show-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <svg class="eye-hide-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+              </button>
+            </div>
+            <div class="auth-error-msg" id="loginPasswordError">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Password must satisfy all 4 criteria below.</span>
+            </div>
+
+            <!-- Password Checklist with inline SVG check icons -->
+            <div class="password-checklist">
+              <div class="checklist-item" id="loginRuleLen">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11.5 14.5 16 10"></polyline></svg>
+                <span>At least 8 characters</span>
+              </div>
+              <div class="checklist-item" id="loginRuleUpper">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11.5 14.5 16 10"></polyline></svg>
+                <span>At least one uppercase (A-Z)</span>
+              </div>
+              <div class="checklist-item" id="loginRuleLower">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11.5 14.5 16 10"></polyline></svg>
+                <span>At least one lowercase (a-z)</span>
+              </div>
+              <div class="checklist-item" id="loginRuleNum">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11.5 14.5 16 10"></polyline></svg>
+                <span>At least one number (0-9)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Options -->
+          <div class="auth-options-row">
+            <label class="auth-checkbox-label">
+              <input type="checkbox" id="loginRemember" checked>
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="auth-forgot-link" id="forgotPassLink">Forgot password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">
+            <span>SIGN IN</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+          </button>
+        </form>
+
+        <div class="auth-footer-prompt">
+          Don't have an account? <a href="signup.html">Create one free</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="auth-modal-backdrop" id="forgotPassModal">
+    <div class="auth-modal-card">
+      <div class="auth-modal-header">
+        <div class="auth-modal-title">Reset Your Password</div>
+        <button class="auth-modal-close-btn" id="forgotPassClose" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="forgotPassForm">
+        <div class="auth-modal-body">
+          <p style="margin-bottom: 1.25rem;">
+            Enter your registered Stackly email address below. We will send you a secure link to reset your credentials.
+          </p>
+          <div class="auth-field-group">
+            <label class="auth-label" for="forgotEmail">ACCOUNT EMAIL <span class="required-star">*</span></label>
+            <div class="auth-input-wrap">
+              <span class="auth-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </span>
+              <input type="email" id="forgotEmail" class="auth-input" placeholder="you@company.com" required>
+            </div>
+          </div>
+        </div>
+        <div class="auth-modal-footer">
+          <button type="submit" class="auth-submit-btn" style="width: auto; padding: 0.75rem 1.5rem; margin: 0;">
+            <span>Send Reset Link</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

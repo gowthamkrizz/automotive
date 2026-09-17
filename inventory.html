@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Listings &#8211; Stackly Luxury Dealer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/cropped-logo-1-32x32.webp" sizes="32x32" type="image/webp">
+    <link rel="apple-touch-icon" href="assets/images/cropped-logo-1-180x180.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;500;600;700;800&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Base CSS Styles & Specialized Inventory CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/inventory.css">
+</head>
+<body class="inventory-page">
+
+    <!-- Page Preloader -->
+    <div class="page-loader-wrapper" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-text-content">
+                <div class="text-loader-content-wrap">
+                    <div class="loader-text">STACKLY</div>
+                    <div class="loader-text-progress">STACKLY</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section (Floating Navbar with Active Indicator) -->
+    <header class="header fl-header-transparent" id="siteHeader">
+        <div class="header__inner">
+            <div class="header-content container-fluid">
+                <!-- Logo -->
+                <div class="header-content__logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/images/stackly-logo.webp" alt="Stackly Logo" class="site-logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="header-content__menu" id="desktopNav">
+                    <ul class="nav-menu">
+                        <li class="menu-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="inventory.html" class="nav-link">VEHICLE LISTINGS</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="about.html" class="nav-link">ABOUT US</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="contact.html" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-content__right">
+                    <a href="login.html" class="btn btn-header-login" id="loginBtn">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer__header">
+                <img src="assets/images/stackly-logo.webp" alt="Stackly" class="mobile-logo">
+                <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mobile-drawer__body">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="index.html" class="mobile-nav-link">HOME</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="inventory.html" class="mobile-nav-link active">VEHICLE LISTINGS</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="about.html" class="mobile-nav-link">ABOUT US</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link">BLOG</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+                    </li>
+                </ul>
+
+                <div class="mobile-drawer__footer">
+                    <a href="login.html" class="btn btn-primary btn-block">
+                        <i class="fa-regular fa-user"></i> Login / Register
+                    </a>
+                    <div class="mobile-contact-card">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <span>Talk to an Expert</span>
+                            <strong>+1 (234) 567 8900</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         SECTION 1 — SMART VEHICLE SEARCH & FILTER BAR (DISCOVERY HERO)
+         ========================================================================= -->
+    <section class="inventory-hero-section">
+        <div class="hero-backdrop-overlay"></div>
+        <div class="container inventory-hero-container">
+            <div class="inventory-hero-header" data-aos="fade-down" data-aos-duration="800">
+                <span class="section-tag">
+                    <i class="fa-solid fa-bolt"></i> REAL-TIME INVENTORY DISCOVERY
+                </span>
+                <h1 class="inventory-hero-title">Find Your <span>Perfect Drive</span></h1>
+                <p class="inventory-hero-desc">Explore hand-selected luxury, sports, and hybrid vehicles with tailored financing and nationwide delivery.</p>
+            </div>
+
+            <!-- Floating Dark Charcoal Filter Panel with Glassmorphism -->
+            <div class="smart-search-panel" id="smartSearchPanel" data-aos="zoom-in" data-aos-duration="850" data-aos-delay="150">
+                <!-- Primary Search Controls -->
+                <div class="search-primary-row">
+                    <!-- Keyword Search -->
+                    <div class="filter-input-group">
+                        <label class="filter-label" for="searchKeyword">
+                            <i class="fa-solid fa-magnifying-glass"></i> Keyword / Make / Model
+                        </label>
+                        <div class="filter-input-wrapper">
+                            <i class="fa-solid fa-magnifying-glass filter-icon-left filter-icon-pulse"></i>
+                            <input type="text" id="searchKeyword" class="form-control-dark" placeholder="e.g. Audi RS, Porsche 911, V8...">
+                        </div>
+                    </div>
+
+                    <!-- Make Dropdown -->
+                    <div class="filter-input-group">
+                        <label class="filter-label" for="filterMake">
+                            <i class="fa-solid fa-car"></i> Vehicle Make
+                        </label>
+                        <div class="filter-input-wrapper">
+                            <i class="fa-solid fa-shield-halved filter-icon-left"></i>
+                            <select id="filterMake" class="form-select-dark">
+                                <option value="all">All Makes</option>
+                                <option value="audi">Audi</option>
+                                <option value="porsche">Porsche</option>
+                                <option value="bmw">BMW</option>
+                                <option value="mercedes-benz">Mercedes-Benz</option>
+                                <option value="alfa romeo">Alfa Romeo</option>
+                                <option value="gmc">GMC</option>
+                                <option value="peugeot">Peugeot</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Model Dropdown -->
+                    <div class="filter-input-group">
+                        <label class="filter-label" for="filterModel">
+                            <i class="fa-solid fa-layer-group"></i> Model
+                        </label>
+                        <div class="filter-input-wrapper">
+                            <i class="fa-solid fa-sliders filter-icon-left"></i>
+                            <select id="filterModel" class="form-select-dark">
+                                <option value="all">All Models</option>
+                                <option value="rs e-tron gt">RS e-tron GT</option>
+                                <option value="911">911 Carrera 4S</option>
+                                <option value="m4">M4 Competition</option>
+                                <option value="gle 53">GLE 53 AMG</option>
+                                <option value="giulia">Giulia Quadrifoglio</option>
+                                <option value="q8">Q8 TFSI Quattro</option>
+                                <option value="acadia">Acadia AT4</option>
+                                <option value="208">208 GT Hybrid</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-input-group">
+                        <label class="filter-label" for="filterPrice">
+                            <i class="fa-solid fa-dollar-sign"></i> Price Range
+                        </label>
+                        <div class="filter-input-wrapper">
+                            <i class="fa-solid fa-money-bill-wave filter-icon-left"></i>
+                            <select id="filterPrice" class="form-select-dark">
+                                <option value="all">Any Budget</option>
+                                <option value="under-50">Under $50,000</option>
+                                <option value="50-80">$50,000 - $80,000</option>
+                                <option value="80-120">$80,000 - $120,000</option>
+                                <option value="above-120">$120,000 &amp; Above</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Search Button -->
+                    <button type="button" class="btn-search-hero" id="btnSearchHero" onclick="window.executeSearch ? window.executeSearch() : (window.location.href='404.html')">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+
+                <!-- Action Toolbar: Advanced Filters & Reset -->
+                <div class="filter-action-toolbar">
+                    <button class="btn-toggle-advanced" id="btnToggleAdvanced" type="button">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Advanced Filters</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                    <button class="btn-reset-filters" id="btnResetFilters" type="button">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>Reset Filters</span>
+                    </button>
+                </div>
+
+                <!-- Expandable Advanced Filter Drawer -->
+                <div class="advanced-filters-drawer" id="advancedFilterDrawer">
+                    <div class="advanced-filter-grid">
+                        <!-- Body Type -->
+                        <div class="filter-input-group">
+                            <label class="filter-label" for="filterBody">
+                                <i class="fa-solid fa-car-side"></i> Body Type
+                            </label>
+                            <select id="filterBody" class="form-select-dark">
+                                <option value="all">All Body Types</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="coupe">Coupe</option>
+                                <option value="hatchback">Hatchback</option>
+                            </select>
+                        </div>
+
+                        <!-- Fuel Type -->
+                        <div class="filter-input-group">
+                            <label class="filter-label" for="filterFuel">
+                                <i class="fa-solid fa-gas-pump"></i> Fuel / Powertrain
+                            </label>
+                            <select id="filterFuel" class="form-select-dark">
+                                <option value="all">All Fuel Types</option>
+                                <option value="electric">100% Electric</option>
+                                <option value="hybrid">Plug-in / Mild Hybrid</option>
+                                <option value="gasoline">Gasoline Turbo</option>
+                            </select>
+                        </div>
+
+                        <!-- Transmission -->
+                        <div class="filter-input-group">
+                            <label class="filter-label" for="filterTransmission">
+                                <i class="fa-solid fa-gears"></i> Transmission
+                            </label>
+                            <select id="filterTransmission" class="form-select-dark">
+                                <option value="all">All Transmissions</option>
+                                <option value="auto">Automatic / Steptronic</option>
+                                <option value="dual-clutch">Dual-Clutch / PDK</option>
+                            </select>
+                        </div>
+
+                        <!-- Year -->
+                        <div class="filter-input-group">
+                            <label class="filter-label" for="filterYear">
+                                <i class="fa-solid fa-calendar-days"></i> Model Year
+                            </label>
+                            <select id="filterYear" class="form-select-dark">
+                                <option value="all">All Years</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Filter Chips Bar -->
+                <div class="active-filter-chips-wrap" id="activeFilterChips" style="display: none;">
+                    <!-- Chips inserted dynamically via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2 — VEHICLE CATEGORY SELECTOR (SHOWROOM SELECTOR)
+         ========================================================================= -->
+    <section class="category-selector-section" id="categorySelectorSec">
+        <div class="category-ambient-glow" aria-hidden="true"></div>
+        <div class="container">
+            <!-- Section Mini Header Bar with Navigation Controls -->
+            <div class="category-section-header" data-aos="fade-up">
+                <div class="cat-header-title-group">
+                    <span class="category-sec-tag">
+                        <span class="cat-tag-dot"></span> FLEET CATEGORIES
+                    </span>
+                    <h2 class="category-sec-title">BROWSE BY <span class="text-red">BODY & STYLE</span></h2>
+                </div>
+                
+                <div class="category-header-actions">
+                    <div class="category-active-indicator" id="catActiveIndicator">
+                        <span class="indicator-dot"></span>
+                        <span class="indicator-text">Active Filter: <strong id="catCurrentLabel">All Vehicles</strong></span>
+                    </div>
+                    <div class="category-nav-arrows">
+                        <button class="cat-arrow-btn cat-prev" id="catNavPrev" aria-label="Previous Category" title="Scroll Left">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="cat-arrow-btn cat-next" id="catNavNext" aria-label="Next Category" title="Scroll Right">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Cards Track -->
+            <div class="category-scroll-wrapper">
+                <div class="category-scroll-container" id="categoryScrollContainer" data-aos="fade-up" data-aos-delay="100">
+                    
+                    <!-- 1. All Vehicles (Stackly Flagship Brand Card) -->
+                    <div class="category-card active" data-category="all" data-name="All Vehicles">
+                        <div class="category-badge-chip badge-all">
+                            <i class="fa-solid fa-gem"></i> ALL
+                        </div>
+                        <div class="category-thumb-wrap logo-card-thumb">
+                            <div class="stackly-logo-badge-container">
+                                <img src="assets/images/stackly-logo.webp" alt="Stackly Dealership" class="category-stackly-logo">
+                            </div>
+                        </div>
+                        <div class="category-meta-info">
+                            <h3 class="category-name">ALL VEHICLES</h3>
+                            <div class="category-count-pill">
+                                <span class="live-pulse-dot"></span>
+                                <span>48 Available</span>
+                            </div>
+                        </div>
+                        <div class="category-card-glow-bar"></div>
+                    </div>
+
+                    <!-- 2. Sedan -->
+                    <div class="category-card" data-category="sedan" data-name="Sedan">
+                        <div class="category-badge-chip badge-popular">
+                            <i class="fa-solid fa-fire"></i> POPULAR
+                        </div>
+                        <div class="category-thumb-wrap">
+                            <img src="assets/images/0-1282548-2.webp" alt="Sedan" class="category-thumb-img" loading="eager">
+                        </div>
+                        <div class="category-meta-info">
+                            <h3 class="category-name">SEDAN</h3>
+                            <div class="category-count-pill">
+                                <i class="fa-solid fa-car-side"></i>
+                                <span>14 Models</span>
+                            </div>
+                        </div>
+                        <div class="category-card-glow-bar"></div>
+                    </div>
+
+                    <!-- 3. SUV -->
+                    <div class="category-card" data-category="suv" data-name="SUV">
+                        <div class="category-badge-chip badge-family">
+                            <i class="fa-solid fa-shield-halved"></i> TOP PICK
+                        </div>
+                        <div class="category-thumb-wrap">
+                            <img src="assets/images/0-1538402-1.webp" alt="SUV" class="category-thumb-img" loading="eager">
+                        </div>
+                        <div class="category-meta-info">
+                            <h3 class="category-name">SUV</h3>
+                            <div class="category-count-pill">
+                                <i class="fa-solid fa-truck-monster"></i>
+                                <span>18 Models</span>
+                            </div>
+                        </div>
+                        <div class="category-card-glow-bar"></div>
+                    </div>
+
+                    <!-- 4. Sports -->
+                    <div class="category-card" data-category="sports" data-name="Sports">
+                        <div class="category-badge-chip badge-hot">
+                            <i class="fa-solid fa-bolt"></i> TURBO
+                        </div>
+                        <div class="category-thumb-wrap">
+                            <img src="assets/images/0-1635455.webp" alt="Sports" class="category-thumb-img" loading="eager">
+                        </div>
+                        <div class="category-meta-info">
+                            <h3 class="category-name">SPORTS</h3>
+                            <div class="category-count-pill">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                <span>9 Models</span>
+                            </div>
+                        </div>
+                        <div class="category-card-glow-bar"></div>
+                    </div>
+
+                    <!-- 5. Hybrid -->
+                    <div class="category-card" data-category="hybrid" data-name="Hybrid">
+                        <div class="category-badge-chip badge-eco">
+                            <i class="fa-solid fa-leaf"></i> HYBRID
+                        </div>
+                        <div class="category-thumb-wrap">
+                            <img src="assets/images/peugeot-208-5-door-front-0-707913-1-1.webp" alt="Hybrid" class="category-thumb-img" loading="eager">
+                        </div>
+                        <div class="category-meta-info">
+                            <h3 class="category-name">HYBRID</h3>
+                            <div class="category-count-pill">
+                                <i class="fa-solid fa-bolt-lightning"></i>
+                                <span>6 Models</span>
+                            </div>
+                        </div>
+                        <div class="category-card-glow-bar"></div>
+                    </div>
+
+                    <!-- 6. Electric -->
+                    <div class="category-card" data-category="electric" data-name="Electric">
+                        <div class="category-badge-chip badge-ev">
+                            <i class="fa-solid fa-plug-circle-bolt"></i> 100% EV
+                        </div>
+                        <div class="category-thumb-wrap">
+                            <img src="assets/images/slider1-1.webp" alt="Electric" class="category-thumb-img" loading="eager">
+                        </div>
+                        <div class="category-meta-info">
+                            <h3 class="category-name">ELECTRIC</h3>
+                            <div class="category-count-pill">
+                                <i class="fa-solid fa-charging-station"></i>
+                                <span>8 Models</span>
+                            </div>
+                        </div>
+                        <div class="category-card-glow-bar"></div>
+                    </div>
+
+                    <!-- 7. Luxury -->
+                    <div class="category-card" data-category="luxury" data-name="Luxury">
+                        <div class="category-badge-chip badge-vip">
+                            <i class="fa-solid fa-crown"></i> VIP
+                        </div>
+                        <div class="category-thumb-wrap">
+                            <img src="assets/images/0-1347358-scaled.webp" alt="Luxury" class="category-thumb-img" loading="eager">
+                        </div>
+                        <div class="category-meta-info">
+                            <h3 class="category-name">LUXURY</h3>
+                            <div class="category-count-pill">
+                                <i class="fa-solid fa-award"></i>
+                                <span>12 Models</span>
+                            </div>
+                        </div>
+                        <div class="category-card-glow-bar"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3 — SMART INVENTORY GRID (MAIN LIVE CATALOG)
+         ========================================================================= -->
+    <section class="inventory-grid-section" id="inventoryCatalogSection">
+        <div class="container">
+            <div class="inventory-controls-bar" data-aos="fade-up">
+                <div>
+                    <span class="section-tag" style="margin-bottom: 6px;">
+                        <i class="fa-solid fa-car-rear"></i> ACTIVE SHOWROOM
+                    </span>
+                    <h2 class="section-title-large" style="margin-bottom: 4px; font-size: 32px;">Explore Our Inventory</h2>
+                    <div class="results-counter" id="resultsCounter">Showing <strong>8</strong> of <strong>48</strong> Vehicles</div>
+                </div>
+
+                <div class="inventory-sort-wrap">
+                    <label class="inventory-sort-label" for="inventorySort">
+                        <i class="fa-solid fa-arrow-down-short-wide text-red"></i> Sort By:
+                    </label>
+                    <select id="inventorySort" class="select-sort-custom">
+                        <option value="newest">Newest Arrivals</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="mileage">Lowest Mileage</option>
+                        <option value="horsepower">Highest Horsepower</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Vehicles Catalog Grid (Rendered Dynamically via JS) -->
+            <div class="vehicles-catalog-grid" id="inventoryGrid">
+                <!-- Vehicle Cards injected by inventory.js -->
+            </div>
+
+            <!-- Load More CTA -->
+            <div class="inventory-load-more-wrap" data-aos="fade-up">
+                <button class="btn-load-more-cars" id="btnLoadMore">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Load More Vehicles</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4 — FEATURED VEHICLE SHOWCASE (EDITORIAL SPOTLIGHT)
+         ========================================================================= -->
+    <section class="featured-showcase-section" id="featuredShowcase">
+        <div class="featured-ambient-glow" aria-hidden="true"></div>
+        <div class="container">
+            <div class="featured-section-header" data-aos="fade-up">
+                <div class="featured-header-left">
+                    <div class="badge-pill-accent">
+                        <span class="badge-ping-dot"></span>
+                        <span class="badge-text">Handpicked Performance</span>
+                    </div>
+                    <h2 class="featured-main-title">
+                        FEATURED <span class="heading-accent">VEHICLES</span>
+                    </h2>
+                    <div class="heading-accent-line" aria-hidden="true">
+                        <span class="line-bar line-left"></span>
+                        <span class="line-dot"></span>
+                        <span class="line-bar line-right"></span>
+                    </div>
+                    <p class="featured-sub-text">Exceptional certified automobiles hand-selected for unmatched performance, luxury, and driving thrills.</p>
+                </div>
+                
+                <div class="featured-header-right">
+                    <div class="featured-stat-chip">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div>
+                            <strong>150-Point</strong>
+                            <span>Certified Audit</span>
+                        </div>
+                    </div>
+                    <div class="featured-stat-chip">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <strong>1-Year VIP</strong>
+                            <span>Warranty Included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-asymmetric-grid">
+                <!-- Large Featured Hero Card (Left Column) -->
+                <div class="featured-card-hero" data-aos="fade-right" data-aos-duration="850">
+                    <div class="card-hero-media-wrap">
+                        <img src="assets/images/slider1-1.webp" alt="Audi RS e-tron GT" class="card-hero-img" loading="eager">
+                        <div class="card-hero-overlay"></div>
+                        <div class="card-hero-badges">
+                            <span class="badge-featured-gold"><i class="fa-solid fa-crown"></i> EDITOR'S CHOICE</span>
+                            <span class="badge-featured-red"><i class="fa-solid fa-fire"></i> 637 HP DUAL-MOTOR</span>
+                            <span class="badge-featured-glass"><i class="fa-solid fa-bolt"></i> 0-60 IN 3.1s</span>
+                        </div>
+                        <div class="card-quick-actions">
+                            <a href="404.html" class="btn-card-action btn-favorite" data-id="car-1" title="Add to Favorites" aria-label="Add to Favorites">
+                                <i class="fa-regular fa-heart"></i>
+                            </a>
+                            <a href="404.html" class="btn-card-action btn-add-compare" data-id="car-1" title="Share / Compare Vehicle" aria-label="Share or Compare Vehicle">
+                                <i class="fa-solid fa-code-compare"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hero-content">
+                        <div class="hero-brand-row">
+                            <span class="hero-brand-pill"><span class="brand-live-dot"></span> AUDI SPORT QUATTRO</span>
+                            <span class="hero-year-badge">2024 Model Year</span>
+                        </div>
+                        <h3 class="card-vehicle-title">Audi RS e-tron GT Quattro Dynamic</h3>
+                        
+                        <!-- 4 Spec Micro Tiles Matrix -->
+                        <div class="hero-spec-matrix">
+                            <div class="spec-matrix-tile">
+                                <div class="spec-tile-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                                <div class="spec-tile-data">
+                                    <span class="spec-tile-label">Mileage</span>
+                                    <strong>3,200 mi</strong>
+                                </div>
+                            </div>
+                            <div class="spec-matrix-tile">
+                                <div class="spec-tile-icon"><i class="fa-solid fa-bolt"></i></div>
+                                <div class="spec-tile-data">
+                                    <span class="spec-tile-label">Horsepower</span>
+                                    <strong>637 HP</strong>
+                                </div>
+                            </div>
+                            <div class="spec-matrix-tile">
+                                <div class="spec-tile-icon"><i class="fa-solid fa-gears"></i></div>
+                                <div class="spec-tile-data">
+                                    <span class="spec-tile-label">Transmission</span>
+                                    <strong>2-Speed Auto</strong>
+                                </div>
+                            </div>
+                            <div class="spec-matrix-tile">
+                                <div class="spec-tile-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                                <div class="spec-tile-data">
+                                    <span class="spec-tile-label">Acceleration</span>
+                                    <strong>3.1s (0-60)</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-hero-footer">
+                            <div class="price-box-wrap">
+                                <span class="price-label">Starting Showroom Price</span>
+                                <div class="price-main">$142,400</div>
+                                <span class="price-monthly"><i class="fa-solid fa-tag"></i> or $1,290/mo financing</span>
+                            </div>
+                            <a href="404.html" class="btn-editorial-cta" title="View Full Specs">
+                                <span>View Full Specs</span>
+                                <span class="btn-cta-arrow"><i class="fa-solid fa-car-side"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stacked Supporting Cards (Right Column) -->
+                <div class="featured-stack-col">
+                    <!-- Supporting Card 1: Porsche 911 Carrera 4S -->
+                    <div class="featured-card-stack" data-aos="fade-left" data-aos-duration="850" data-aos-delay="150">
+                        <div class="card-stack-media">
+                            <img src="assets/images/0-1635455.webp" alt="Porsche 911 Carrera 4S" class="card-stack-img" loading="eager">
+                            <div class="card-stack-badges">
+                                <span class="badge-featured-red"><i class="fa-solid fa-fire"></i> HOT</span>
+                                <span class="badge-featured-glass">443 HP</span>
+                            </div>
+                            <a href="404.html" class="btn-stack-fav btn-favorite" data-id="car-2" title="Add to Favorites" aria-label="Add to Favorites">
+                                <i class="fa-regular fa-heart"></i>
+                            </a>
+                        </div>
+                        <div class="card-stack-content">
+                            <div>
+                                <div class="stack-brand-row">
+                                    <span class="card-brand-tag">PORSCHE</span>
+                                    <span class="stack-year-pill">2023</span>
+                                </div>
+                                <h4 class="card-stack-title">Porsche 911 Carrera 4S Coupe</h4>
+                                <div class="card-stack-specs">
+                                    <span class="stack-spec-item"><i class="fa-solid fa-gauge-high"></i> 4,100 mi</span>
+                                    <span class="stack-spec-item"><i class="fa-solid fa-bolt"></i> 443 HP</span>
+                                    <span class="stack-spec-item"><i class="fa-solid fa-gas-pump"></i> Gas Flat-6</span>
+                                </div>
+                            </div>
+                            <div class="card-stack-footer">
+                                <div class="stack-price-box">
+                                    <div class="stack-price-main">$138,500</div>
+                                    <div class="stack-price-sub">$1,150/mo est.</div>
+                                </div>
+                                <div class="stack-actions-group">
+                                    <a href="404.html" class="btn-card-action btn-add-compare" data-id="car-2" title="Share / Compare Vehicle" aria-label="Share or Compare Vehicle">
+                                        <i class="fa-solid fa-code-compare"></i>
+                                    </a>
+                                    <a href="404.html" class="btn-stack-view" title="View Details">
+                                        <span>Details</span>
+                                        <i class="fa-solid fa-car-side"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supporting Card 2: BMW M4 Competition -->
+                    <div class="featured-card-stack" data-aos="fade-left" data-aos-duration="850" data-aos-delay="250">
+                        <div class="card-stack-media">
+                            <img src="assets/images/0-1282548-2.webp" alt="BMW M4 Competition" class="card-stack-img" loading="eager">
+                            <div class="card-stack-badges">
+                                <span class="badge-featured-gold"><i class="fa-solid fa-award"></i> M POWER</span>
+                                <span class="badge-featured-glass">503 HP</span>
+                            </div>
+                            <a href="404.html" class="btn-stack-fav btn-favorite" data-id="car-3" title="Add to Favorites" aria-label="Add to Favorites">
+                                <i class="fa-regular fa-heart"></i>
+                            </a>
+                        </div>
+                        <div class="card-stack-content">
+                            <div>
+                                <div class="stack-brand-row">
+                                    <span class="card-brand-tag">BMW M MOTORSPORT</span>
+                                    <span class="stack-year-pill">2024</span>
+                                </div>
+                                <h4 class="card-stack-title">BMW M4 Competition Coupe xDrive</h4>
+                                <div class="card-stack-specs">
+                                    <span class="stack-spec-item"><i class="fa-solid fa-gauge-high"></i> 1,800 mi</span>
+                                    <span class="stack-spec-item"><i class="fa-solid fa-bolt"></i> 503 HP</span>
+                                    <span class="stack-spec-item"><i class="fa-solid fa-gears"></i> 8-Spd M</span>
+                                </div>
+                            </div>
+                            <div class="card-stack-footer">
+                                <div class="stack-price-box">
+                                    <div class="stack-price-main">$88,900</div>
+                                    <div class="stack-price-sub">$840/mo est.</div>
+                                </div>
+                                <div class="stack-actions-group">
+                                    <a href="404.html" class="btn-card-action btn-add-compare" data-id="car-3" title="Share / Compare Vehicle" aria-label="Share or Compare Vehicle">
+                                        <i class="fa-solid fa-code-compare"></i>
+                                    </a>
+                                    <a href="404.html" class="btn-stack-view" title="View Details">
+                                        <span>Details</span>
+                                        <i class="fa-solid fa-car-side"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supporting Card 3: Mercedes-Benz GLE 53 AMG -->
+                    <div class="featured-card-stack" data-aos="fade-left" data-aos-duration="850" data-aos-delay="350">
+                        <div class="card-stack-media">
+                            <img src="assets/images/0-1538402-1.webp" alt="Mercedes-Benz GLE 53 AMG" class="card-stack-img" loading="eager">
+                            <div class="card-stack-badges">
+                                <span class="badge-featured-gold"><i class="fa-solid fa-star"></i> AMG VIP</span>
+                                <span class="badge-featured-glass">429 HP</span>
+                            </div>
+                            <a href="404.html" class="btn-stack-fav btn-favorite" data-id="car-4" title="Add to Favorites" aria-label="Add to Favorites">
+                                <i class="fa-regular fa-heart"></i>
+                            </a>
+                        </div>
+                        <div class="card-stack-content">
+                            <div>
+                                <div class="stack-brand-row">
+                                    <span class="card-brand-tag">MERCEDES-AMG</span>
+                                    <span class="stack-year-pill">2023</span>
+                                </div>
+                                <h4 class="card-stack-title">Mercedes-Benz GLE 53 AMG 4MATIC+ Coupe</h4>
+                                <div class="card-stack-specs">
+                                    <span class="stack-spec-item"><i class="fa-solid fa-gauge-high"></i> 8,500 mi</span>
+                                    <span class="stack-spec-item"><i class="fa-solid fa-bolt"></i> 429 HP</span>
+                                    <span class="stack-spec-item"><i class="fa-solid fa-leaf"></i> Hybrid EQ</span>
+                                </div>
+                            </div>
+                            <div class="card-stack-footer">
+                                <div class="stack-price-box">
+                                    <div class="stack-price-main">$82,300</div>
+                                    <div class="stack-price-sub">$790/mo est.</div>
+                                </div>
+                                <div class="stack-actions-group">
+                                    <a href="404.html" class="btn-card-action btn-add-compare" data-id="car-4" title="Share / Compare Vehicle" aria-label="Share or Compare Vehicle">
+                                        <i class="fa-solid fa-code-compare"></i>
+                                    </a>
+                                    <a href="404.html" class="btn-stack-view" title="View Details">
+                                        <span>Details</span>
+                                        <i class="fa-solid fa-car-side"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5 — VEHICLE COMPARISON / QUICK MATCH (INTERACTIVE MATRIX)
+         ========================================================================= -->
+    <section class="vehicle-comparison-section" id="compareSection">
+        <div class="comparison-ambient-glow"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="badge-pill-accent">
+                    <i class="fa-solid fa-scale-balanced"></i> PERFORMANCE &amp; SPEC BENCHMARK
+                </span>
+                <h2 class="titling__heading">Side-by-Side <span class="heading-accent">Comparison Matrix</span></h2>
+                <div class="heading-accent-line" style="margin: 14px auto 18px;"></div>
+                <p class="section-subtitle-text">Evaluate horsepower, acceleration, transmission, and real-time market value for up to 3 models simultaneously.</p>
+            </div>
+
+            <div class="comparison-dashboard" id="comparisonDashboard" data-aos="zoom-in" data-aos-duration="850">
+                <div class="comparison-dashboard-top-bar"></div>
+
+                <!-- Top 3 Vehicle Slots -->
+                <div class="comparison-header-slots" id="comparisonSlotsHeader">
+                    <!-- Populated via JS -->
+                </div>
+
+                <!-- Detailed Specifications Rows -->
+                <div class="comparison-table-body" id="comparisonTableBody">
+                    <!-- Populated via JS -->
+                </div>
+
+                <!-- Dashboard Footer -->
+                <div class="comparison-footer-actions">
+                    <div class="comparison-hint-box">
+                        <span class="hint-icon-badge"><i class="fa-solid fa-code-compare"></i></span>
+                        <span>Click the <strong>Compare</strong> icon on any catalog card to swap vehicles in real-time.</span>
+                    </div>
+                    <div class="comparison-action-buttons">
+                        <a href="404.html" class="btn-compare-action secondary" title="Export Specs">
+                            <i class="fa-solid fa-file-arrow-down"></i> <span>Export Specs</span>
+                        </a>
+                        <a href="404.html" class="btn-compare-action primary" title="Schedule Test Drive">
+                            <i class="fa-solid fa-calendar-check"></i> <span>Schedule Test Drive</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6 — INVENTORY CTA / DEALER ASSISTANCE (CONCIERGE & SOURCING)
+         ========================================================================= -->
+    <section class="inventory-cta-section">
+        <div class="cta-technical-lines"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="dealer-assistance-card" data-aos="zoom-in" data-aos-duration="850">
+                <div class="section-header-wrap" style="margin-bottom: 20px;" data-aos="fade-up">
+                    <span class="section-tag">
+                        <i class="fa-solid fa-headset"></i> LUXURY CONCIERGE &amp; SOURCING
+                    </span>
+                    <h2 class="section-title-large">Still Searching for the Right Vehicle?</h2>
+                    <p class="section-subtitle-text">Tell us what you’re looking for and our automotive specialists will help you find the right match from our private nationwide network.</p>
+                </div>
+
+                <!-- 4 Quick-Action Services -->
+                <div class="assistance-services-grid">
+                    <div class="service-assist-box" onclick="location.href='404.html'" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon-wrap">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h4 class="service-title">Request a Vehicle</h4>
+                        <p class="service-desc">Specify exact trim, color, and options. We source bespoke builds nationwide.</p>
+                    </div>
+
+                    <div class="service-assist-box" onclick="location.href='404.html'" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon-wrap">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h4 class="service-title">Talk to a Specialist</h4>
+                        <p class="service-desc">Get dedicated 1-on-1 advice on maintenance, performance, and vehicle history.</p>
+                    </div>
+
+                    <div class="service-assist-box" onclick="location.href='404.html'" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon-wrap">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h4 class="service-title">Financing Assistance</h4>
+                        <p class="service-desc">Flexible lease terms, competitive APRs, and instant credit pre-approval.</p>
+                    </div>
+
+                    <div class="service-assist-box" onclick="location.href='404.html'" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon-wrap">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <h4 class="service-title">Sell / Trade Your Car</h4>
+                        <p class="service-desc">Receive a certified instantaneous valuation and top-dollar trade equity.</p>
+                    </div>
+                </div>
+
+                <!-- Action CTA Buttons -->
+                <div class="dealer-cta-actions-row" data-aos="fade-up" data-aos-delay="450">
+                    <a href="contact.html" class="btn btn-primary" style="padding: 14px 34px; font-size: 14px; font-weight: 800;">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <span>Contact Dealer Concierge</span>
+                    </a>
+                    <a href="404.html" class="btn btn-secondary" style="padding: 14px 28px; font-size: 14px; font-weight: 700; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #ffffff;">
+                        <i class="fa-solid fa-phone-volume text-red"></i>
+                        <span>Call +1 (234) 567 8900</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    
+                    <div class="footer-col footer-col--about">
+                        <div class="footer-logo">
+                            <img src="assets/images/stackly-logo.webp" alt="Stackly White Logo">
+                        </div>
+                        <p class="footer-about-text">
+                            Stackly is the premier automotive dealer platform providing certified vehicles, transparent vehicle financing, and premium customer service across North America.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--links">
+                        <h4 class="footer-col__title">Useful Links</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> HOME</a></li>
+                            <li><a href="inventory.html"><i class="fa-solid fa-chevron-right"></i> VEHICLE LISTINGS</a></li>
+                            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> ABOUT US</a></li>
+                            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> BLOG</a></li>
+                            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> CONTACT US</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col--posts">
+                        <h4 class="footer-col__title">Latest News</h4>
+                        <div class="footer-mini-posts">
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tips For Better & Safe Driving"><img src="assets/images/news-4-70x70.webp" alt="Mini Post 1" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tips For Better &amp; Safe Driving With Luxury Car</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 15, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tellus Dis Turpis Feugiat Egestas"><img src="assets/images/news5-70x70.webp" alt="Mini Post 2" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tellus Dis Turpis Feugiat Egestas</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 12, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Viverra Sed Diam Leo Nibh Amet"><img src="assets/images/news6-70x70.webp" alt="Mini Post 3" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Viverra Sed Diam Leo Nibh Amet</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 10, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--contact">
+                        <h4 class="footer-col__title">Showroom Timings</h4>
+                        
+                        <div class="timings-box">
+                            <div class="timing-row">
+                                <span>Monday &#8211; Saturday:</span>
+                                <strong>9:00 AM &#8211; 8:00 PM</strong>
+                            </div>
+                            <div class="timing-row">
+                                <span>Sunday:</span>
+                                <strong>10:00 AM &#8211; 6:00 PM</strong>
+                            </div>
+                        </div>
+
+                        <div class="footer-contact-details">
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>MMR Complex, Chinna Thirupathi, Near by Chinna Moniyappan Kovil, Salem 636008.</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="404.html">+91 90909 09090</a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="404.html">info@stackly.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom__inner">
+                <p class="copyright-text">
+                    &copy; 2026 <strong>Stackly</strong> &#8211; All Rights Reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Site Map</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS (Animate On Scroll) JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- GSAP & ScrollTrigger Animations CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Main JS & Specialized Inventory JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/inventory.js"></script>
+</body>
+</html>

@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly &#8211; Luxury Automotive Dealership</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/cropped-logo-1-32x32.webp" sizes="32x32" type="image/webp">
+    <link rel="apple-touch-icon" href="assets/images/cropped-logo-1-180x180.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;500;600;700;800&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Page Preloader -->
+    <div class="page-loader-wrapper" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-text-content">
+                <div class="text-loader-content-wrap">
+                    <div class="loader-text">LOADING...</div>
+                    <div class="loader-text-progress">LOADING...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transparent Floating Header Section -->
+    <header class="header fl-header-transparent" id="siteHeader">
+        <div class="header__inner">
+            <div class="header-content container-fluid">
+                <!-- Logo -->
+                <div class="header-content__logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/images/stackly-logo.webp" alt="Stackly Logo" class="site-logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu (No Dropdowns) -->
+                <nav class="header-content__menu" id="desktopNav">
+                    <ul class="nav-menu">
+                        <li class="menu-item active">
+                            <a href="#home" class="nav-link">HOME</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="inventory.html" class="nav-link">VEHICLE LISTINGS</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="about.html" class="nav-link">ABOUT US</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="contact.html" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions: Login Button & Mobile Toggle -->
+                <div class="header-content__right">
+                    <a href="login.html" class="btn btn-header-login" id="loginBtn">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer__header">
+                <img src="assets/images/stackly-logo.webp" alt="Stackly" class="mobile-logo">
+                <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mobile-drawer__body">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="#home" class="mobile-nav-link active">HOME</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="inventory.html" class="mobile-nav-link">VEHICLE LISTINGS</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="about.html" class="mobile-nav-link">ABOUT US</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link">BLOG</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+                    </li>
+                </ul>
+
+                <div class="mobile-drawer__footer">
+                    <a href="login.html" class="btn btn-primary btn-block">
+                        <i class="fa-regular fa-user"></i> Login / Register
+                    </a>
+                    <div class="mobile-contact-card">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <span>Talk to an Expert</span>
+                            <strong>+1 (234) 567 8900</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main class="site-main" id="home">
+
+        <!-- SECTION 1: HERO CAR SHOWCASE SLIDER (EXACT SAME AS IMAGE 2) -->
+        <section class="hero-car-slider-section">
+            <div class="hero-slider-container">
+                
+                <!-- Slide 1: Cadillac Celestiq 2024 -->
+                <div class="hero-slide active" data-slide="0">
+                    <div class="hero-slide__bg" style="background-image: url('assets/images/slider3.webp');"></div>
+                    <div class="hero-slide__gradient-overlay"></div>
+                    <div class="container-fluid hero-slide__container">
+                        <div class="hero-slide__content-box">
+                            <h1 class="hero-main-title">
+                                <span class="title-brand">Cadillac</span>
+                                <span class="title-model">Celestiq 2024</span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                Extraordinary Performance In The Automotive Matrix
+                            </p>
+
+                            <!-- Glassmorphism Specs Box -->
+                            <div class="fx-info-tech-glass">
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Fuel Type</span>
+                                    <strong class="tech-spec-value">Petrol</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Car Mileage</span>
+                                    <strong class="tech-spec-value">150Mi</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Control</span>
+                                    <strong class="tech-spec-value">Manual</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Year</span>
+                                    <strong class="tech-spec-value">2023</strong>
+                                </div>
+                                <div class="tech-spec-action">
+                                    <a href="404.html" class="btn-tech-arrow" aria-label="View Cadillac Details">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7 7H17V17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Audi RS 6 Avant GT 2024 -->
+                <div class="hero-slide" data-slide="1">
+                    <div class="hero-slide__bg" style="background-image: url('assets/images/slider1-1.webp');"></div>
+                    <div class="hero-slide__gradient-overlay"></div>
+                    <div class="container-fluid hero-slide__container">
+                        <div class="hero-slide__content-box">
+                            <h1 class="hero-main-title">
+                                <span class="title-brand">Audi RS 6</span>
+                                <span class="title-model">Avant GT 2024</span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                Extraordinary Performance In The Automotive Matrix
+                            </p>
+
+                            <div class="fx-info-tech-glass">
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Fuel Type</span>
+                                    <strong class="tech-spec-value">Petrol</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Car Mileage</span>
+                                    <strong class="tech-spec-value">150Mi</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Control</span>
+                                    <strong class="tech-spec-value">Manual</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Year</span>
+                                    <strong class="tech-spec-value">2023</strong>
+                                </div>
+                                <div class="tech-spec-action">
+                                    <a href="404.html" class="btn-tech-arrow" aria-label="View Audi Details">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7 7H17V17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Xiaomi SU7 2024 -->
+                <div class="hero-slide" data-slide="2">
+                    <div class="hero-slide__bg" style="background-image: url('assets/images/slider2.webp');"></div>
+                    <div class="hero-slide__gradient-overlay"></div>
+                    <div class="container-fluid hero-slide__container">
+                        <div class="hero-slide__content-box">
+                            <h1 class="hero-main-title">
+                                <span class="title-brand">Xiaomi</span>
+                                <span class="title-model">SU7 2024</span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                Extraordinary Performance In The Automotive Matrix
+                            </p>
+
+                            <div class="fx-info-tech-glass">
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Fuel Type</span>
+                                    <strong class="tech-spec-value">Hybrid</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Car Mileage</span>
+                                    <strong class="tech-spec-value">20Mi</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Control</span>
+                                    <strong class="tech-spec-value">Automat</strong>
+                                </div>
+                                <div class="tech-spec-col">
+                                    <span class="tech-spec-label">Year</span>
+                                    <strong class="tech-spec-value">2024</strong>
+                                </div>
+                                <div class="tech-spec-action">
+                                    <a href="404.html" class="btn-tech-arrow" aria-label="View Xiaomi Details">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7 7H17V17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation Controls -->
+                <div class="hero-slider-pagination-bar">
+                    <button class="hero-dot active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="hero-dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="hero-dot" data-index="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: VIDEO & QUALITY GUARANTEE BANNER -->
+        <section class="section-presentation" id="about">
+            <div class="presentation-bg-accent" aria-hidden="true"></div>
+            <div class="container">
+                <div class="presentation-grid">
+                    <!-- Left: Video Showcase with Floating Luxury Badges & Pulse Play -->
+                    <div class="presentation-media-wrapper reveal-fade-right">
+                        <div class="presentation-glow-effect" aria-hidden="true"></div>
+                        
+                        <div class="presentation-video-box">
+                            <a href="404.html" class="video-thumbnail-wrap" aria-label="Play Showroom Video Tour">
+                                <img src="assets/images/video1.webp" alt="Stackly Showroom Experience" class="video-cover-img" loading="eager">
+                                <div class="video-overlay-gradient"></div>
+                                <div class="video-badge-tag">
+                                    <span class="live-dot"></span> 4K VIRTUAL TOUR
+                                </div>
+                                <div class="video-play-btn" aria-label="Play Presentation Video">
+                                    <span class="play-pulse-ring ring-1"></span>
+                                    <span class="play-pulse-ring ring-2"></span>
+                                    <span class="play-pulse-ring ring-3"></span>
+                                    <span class="play-btn-inner">
+                                        <i class="fa-solid fa-play"></i>
+                                    </span>
+                                </div>
+                                <div class="video-caption-chip">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>Click to watch showroom tour</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Floating Badge 1: 150-Point Certified Master Inspection -->
+                        <div class="floating-stat-card badge-top-right">
+                            <div class="floating-badge-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="floating-badge-info">
+                                <span class="badge-title">150-Point Certified</span>
+                                <span class="badge-subtitle"><i class="fa-solid fa-circle-check"></i> Master Inspected</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2: Customer Rating & Overlapping Avatars -->
+                        <div class="floating-stat-card badge-bottom-left">
+                            <div class="badge-avatar-group">
+                                <img src="assets/images/ava1.webp" alt="Customer" class="badge-avatar">
+                                <img src="assets/images/ava2.webp" alt="Customer" class="badge-avatar">
+                                <img src="assets/images/users-img-3.webp" alt="Customer" class="badge-avatar">
+                            </div>
+                            <div class="floating-badge-info">
+                                <div class="badge-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <strong>4.9/5</strong>
+                                </div>
+                                <span class="badge-subtitle">10,000+ Verified Buyers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Modern Editorial Content & Interactive Value Cards -->
+                    <div class="presentation-content reveal-fade-left">
+                        <div class="presentation-header">
+                            <div class="badge-pill-accent">
+                                <span class="badge-ping-dot"></span>
+                                <span class="badge-text">Good Quality & Affordable Price</span>
+                            </div>
+                            <h2 class="presentation-heading">
+                                STACKLY <span class="heading-accent">VEHICLES</span>
+                            </h2>
+                        </div>
+
+                        <p class="presentation-desc">
+                            We provide an elite collection of certified, low-mileage pre-owned and luxury vehicles. Each automobile undergoes an exhaustive 150-point technical inspection by certified master mechanics to guarantee superior performance, safety, and longevity.
+                        </p>
+                        <p class="presentation-subdesc">
+                            Experience transparent financing, flexible warranty protection, and clear pricing with zero hidden fees from day one.
+                        </p>
+
+                        <!-- Modern Interactive Feature Cards -->
+                        <div class="presentation-feature-cards">
+                            <div class="p-feature-card">
+                                <div class="p-feature-icon-box">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                </div>
+                                <div class="p-feature-text">
+                                    <h4>Multi-Point Master Inspection</h4>
+                                    <p>Comprehensive mechanical & diagnostic audit with complete CarFax history title.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-feature-card">
+                                <div class="p-feature-icon-box">
+                                    <i class="fa-solid fa-bolt-lightning"></i>
+                                </div>
+                                <div class="p-feature-text">
+                                    <h4>Instant Pre-Approval Financing</h4>
+                                    <p>Competitive low APR rates, tailored flexible plans, and fast digital approvals.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-feature-card">
+                                <div class="p-feature-icon-box">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                </div>
+                                <div class="p-feature-text">
+                                    <h4>7-Day Money-Back & Delivery</h4>
+                                    <p>100% satisfaction guarantee with nationwide doorstep vehicle delivery.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Stats Counter Row -->
+                        <div class="presentation-stats-row">
+                            <div class="p-stat-item">
+                                <span class="p-stat-num" data-count="150">150+</span>
+                                <span class="p-stat-lbl">Point Inspection</span>
+                            </div>
+                            <div class="p-stat-divider"></div>
+                            <div class="p-stat-item">
+                                <span class="p-stat-num" data-count="99">99%</span>
+                                <span class="p-stat-lbl">Approval Rate</span>
+                            </div>
+                            <div class="p-stat-divider"></div>
+                            <div class="p-stat-item">
+                                <span class="p-stat-num" data-count="7">7-Day</span>
+                                <span class="p-stat-lbl">Return Policy</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="presentation-actions">
+                            <a href="#inventory" class="btn btn-primary btn-shine">
+                                <span>Explore Inventory <i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                            <a href="404.html" class="btn btn-ghost-play" id="openVideoModalSecondaryBtn">
+                                <span class="btn-play-icon"><i class="fa-solid fa-play"></i></span>
+                                <span>Watch Video Tour</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: FEATURED VEHICLES / CATALOG GRID -->
+        <section class="section-inventory" id="inventory">
+            <div class="container">
+                <!-- Section Header with Category Tabs -->
+                <div class="inventory-top-row">
+                    <div class="section-titling">
+                        <span class="titling__suptext">Good Quality And Affordable Price</span>
+                        <h2 class="titling__heading">STACKLY VEHICLES</h2>
+                    </div>
+
+                    <div class="catalog-filter-tabs">
+                        <button class="filter-tab-btn active" data-filter="all">All</button>
+                        <button class="filter-tab-btn" data-filter="sedan">Sedan</button>
+                        <button class="filter-tab-btn" data-filter="suv">SUV</button>
+                        <button class="filter-tab-btn" data-filter="sports">Sports</button>
+                        <button class="filter-tab-btn" data-filter="hybrid">Hybrid</button>
+                    </div>
+                </div>
+
+                <!-- Vehicles Grid (9 Cars) -->
+                <div class="vehicles-grid" id="vehiclesGrid">
+                    
+                    <!-- Car 1: Peugeot E-308 -->
+                    <div class="vehicle-card" data-category="sedan hybrid" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-new"><i class="fa-solid fa-sparkles"></i> New</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/peugeot-208-5-door-front-0-707913-1-1.webp" alt="Peugeot E-308" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2024</span>
+                                <span class="card-type">Hatchback / Sedan</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Peugeot E-308</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-bolt text-red"></i> Electric</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 15 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$34,500</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="Explore Electric Vehicle">
+                                    <span>Explore EV</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 2: Saab 9-5 Sedan -->
+                    <div class="vehicle-card" data-category="sedan" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-featured"><i class="fa-solid fa-star"></i> Featured</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/Rectangle-78.webp" alt="Saab 9-5 Sedan" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2023</span>
+                                <span class="card-type">Sedan</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Saab 9-5 Sedan</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-gas-pump text-red"></i> Petrol</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 45,000 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Manual</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$28,900</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="View Executive Sedan">
+                                    <span>View Sedan</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-car-side"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 3: Mercedes-Benz AMG -->
+                    <div class="vehicle-card" data-category="sports sedan" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-hot"><i class="fa-solid fa-fire"></i> Hot</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/0-1538402-1.webp" alt="Mercedes-Benz AMG" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2024</span>
+                                <span class="card-type">Sports Coupe</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Mercedes-Benz AMG</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-gauge-high text-red"></i> V8 Turbo</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 1,200 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$142,000</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="View AMG Race Telemetry">
+                                    <span>Race Specs</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 4: Cupra Ateca 2.0 -->
+                    <div class="vehicle-card" data-category="suv" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-sale"><i class="fa-solid fa-tag"></i> Sale</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/0-1282548-2.webp" alt="Cupra Ateca 2.0" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2023</span>
+                                <span class="card-type">Compact SUV</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Cupra Ateca 2.0</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-gas-pump text-red"></i> Petrol</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 12,000 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$46,800</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="Explore Performance SUV">
+                                    <span>Explore SUV</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-mountain"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 5: Land Rover Defender -->
+                    <div class="vehicle-card" data-category="suv" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-featured"><i class="fa-solid fa-star"></i> Featured</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/0-1516192-scaled.webp" alt="Land Rover Defender" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2024</span>
+                                <span class="card-type">Luxury SUV</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Land Rover Defender</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-compass text-red"></i> 4WD</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 5,400 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$89,000</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="View Terrain Capabilities">
+                                    <span>Terrain Specs</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-compass"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 6: Lexus ES 300h -->
+                    <div class="vehicle-card" data-category="sedan hybrid" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-sale"><i class="fa-solid fa-leaf"></i> Hybrid</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/0-1635455.webp" alt="Lexus ES 300h" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2023</span>
+                                <span class="card-type">Hybrid Sedan</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Lexus ES 300h</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-leaf text-red"></i> Eco Hybrid</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 8,900 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$52,000</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="View Hybrid Efficiency">
+                                    <span>Hybrid Specs</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-leaf"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 7: Porsche Cayenne S -->
+                    <div class="vehicle-card" data-category="suv sports" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-hot"><i class="fa-solid fa-fire"></i> Popular</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/0-1347358-scaled.webp" alt="Porsche Cayenne S" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2024</span>
+                                <span class="card-type">Performance SUV</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Porsche Cayenne S</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-stopwatch text-red"></i> 4.7s 0-60</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 3,100 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$115,000</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="View Track SUV Specs">
+                                    <span>Track SUV</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 8: Ferrari Purosangue -->
+                    <div class="vehicle-card" data-category="sports suv" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-new" style="background: #b71c1c;"><i class="fa-solid fa-crown"></i> Exclusive</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/Rectangle-92.webp" alt="Ferrari Purosangue" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2024</span>
+                                <span class="card-type">Super SUV</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">Ferrari Purosangue</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-crown text-red"></i> 715 HP V12</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 500 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$420,000</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="View V12 Super SUV">
+                                    <span>V12 Exclusive</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-crown"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car 9: GMC Acadia 2024 -->
+                    <div class="vehicle-card" data-category="suv" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-top-accent"></div>
+                        <div class="vehicle-card__thumb">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="card-badge badge-new"><i class="fa-solid fa-shield-halved"></i> New</span>
+                            <a href="404.html" class="card-fav-btn" title="Save to Favorites" aria-label="Favorite"><i class="fa-regular fa-heart"></i></a>
+                            <a href="404.html" class="card-thumb-link">
+                                <img src="assets/images/gmc-acadia-front-side-0-707031-scaled.webp" alt="GMC Acadia 2024" class="card-car-img" loading="eager">
+                            </a>
+                        </div>
+                        <div class="vehicle-card__body">
+                            <div class="card-meta-top">
+                                <span class="card-year">2024</span>
+                                <span class="card-type">Full SUV</span>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="404.html">GMC Acadia 2024</a>
+                            </h3>
+                            <div class="card-specs">
+                                <div class="spec-item"><i class="fa-solid fa-shield-halved text-red"></i> 7-Seater</div>
+                                <div class="spec-item"><i class="fa-solid fa-road"></i> 2,000 Mi</div>
+                                <div class="spec-item"><i class="fa-solid fa-gear"></i> Auto</div>
+                            </div>
+                            <div class="card-bottom">
+                                <div class="card-price">
+                                    <span class="price-current">$54,900</span>
+                                </div>
+                                <a href="404.html" class="card-link-btn" title="View Family SUV">
+                                    <span>Family SUV</span>
+                                    <div class="card-action-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="inventory-bottom-cta" data-aos="fade-up">
+                    <a href="404.html" class="btn btn-primary btn-large btn-inventory-hub">
+                        <span>Explore All 250+ Vehicles</span>
+                        <div class="btn-arrow-icon"><i class="fa-solid fa-warehouse"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: VEHICLE BRANDS & CATEGORIES (HORIZONTAL INTERACTIVE SHOWCASE) -->
+        <section class="section-categories" id="categories">
+            <div class="categories-ambient-orb" aria-hidden="true"></div>
+            <div class="container">
+                <!-- Section Header with Title & Interactive Carousel Controls -->
+                <div class="categories-header-row">
+                    <div class="categories-header-text">
+                        <div class="badge-pill-accent">
+                            <span class="badge-ping-dot"></span>
+                            <span class="badge-text">Browse By Body & Brand</span>
+                        </div>
+                        <h2 class="categories-main-title">
+                            EXPLORE BY <span class="heading-accent">VEHICLE BRANDS</span>
+                        </h2>
+                        <p class="categories-subtitle">
+                            Discover certified pre-owned vehicles organized by body style, premium performance, and driving preference.
+                        </p>
+                    </div>
+
+                    <!-- Carousel Controls & Auto-Scroll Toggle -->
+                    <div class="categories-nav-controls">
+                        <button class="cat-nav-btn cat-prev-btn" id="catPrevBtn" aria-label="Previous Category" title="Scroll Left">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="cat-nav-btn cat-next-btn" id="catNextBtn" aria-label="Next Category" title="Scroll Right">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <button class="cat-nav-btn cat-play-toggle" id="catAutoplayBtn" aria-label="Toggle Auto Scroll" title="Pause / Resume Auto-Scroll">
+                            <i class="fa-solid fa-pause"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Filter Pills -->
+                <div class="categories-filter-pills" id="catFilterPills">
+                    <button class="cat-filter-pill active" data-cat-filter="all">All Styles</button>
+                    <button class="cat-filter-pill" data-cat-filter="suv-sedan">SUV & Sedans</button>
+                    <button class="cat-filter-pill" data-cat-filter="performance">Luxury & Sports</button>
+                    <button class="cat-filter-pill" data-cat-filter="electric">Electric & Hybrid</button>
+                    <button class="cat-filter-pill" data-cat-filter="offroad">Off-Road & 4x4</button>
+                </div>
+            </div>
+
+            <!-- Full-Bleed Horizontal Scroll Carousel Wrapper -->
+            <div class="categories-carousel-outer">
+                <div class="categories-carousel-wrapper" id="categoriesScrollWrapper">
+                    <div class="categories-track" id="categoriesTrack">
+                        
+                        <!-- 1. Sedan -->
+                        <div class="category-card" data-category-type="suv-sedan">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/g1.webp" alt="Sedan Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-popular">Popular</span>
+                                    <span class="cat-price-pill">From $28.5k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-car-side"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 24 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">Sedan</h4>
+                                    <p class="category-brands">BMW • Audi • Mercedes • Lexus</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Sedans <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. SUV & Crossover -->
+                        <div class="category-card" data-category-type="suv-sedan">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/g2.webp" alt="SUV & Crossover Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-top">Top Rated</span>
+                                    <span class="cat-price-pill">From $34.9k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-truck-monster"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 38 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">SUV & Crossover</h4>
+                                    <p class="category-brands">Porsche • GMC • Land Rover • Volvo</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore SUVs <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Coupe & Supercar -->
+                        <div class="category-card" data-category-type="performance">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/0-1538402-1.webp" alt="Coupe & Supercar Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-speed">Performance</span>
+                                    <span class="cat-price-pill">From $58.0k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-gauge-high"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 16 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">Coupe & Supercar</h4>
+                                    <p class="category-brands">AMG GT • Porsche 911 • Aston Martin</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Coupes <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Hybrid & Electric -->
+                        <div class="category-card" data-category-type="electric">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/g4.webp" alt="Hybrid & Electric Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-eco">Eco-Friendly</span>
+                                    <span class="cat-price-pill">From $36.2k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-leaf"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 19 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">Hybrid & EV</h4>
+                                    <p class="category-brands">Tesla • Peugeot E-308 • Taycan EV</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Hybrids <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Luxury & Executive -->
+                        <div class="category-card" data-category-type="performance">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/0-1635455.webp" alt="Luxury Executive Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-luxury">VIP Luxury</span>
+                                    <span class="cat-price-pill">From $62.0k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-gem"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 12 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">Luxury Executive</h4>
+                                    <p class="category-brands">Lexus ES • Mercedes S-Class • Bentley</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Luxury <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Off-Road & 4x4 Defender -->
+                        <div class="category-card" data-category-type="offroad">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/0-1516192-scaled.webp" alt="Off-Road & 4x4 Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-terrain">All-Terrain</span>
+                                    <span class="cat-price-pill">From $48.5k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-mountain"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 15 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">4x4 & Off-Road</h4>
+                                    <p class="category-brands">Defender • GMC Sierra • Jeep 4x4</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore 4x4 <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Performance Sport SUV -->
+                        <div class="category-card" data-category-type="suv-sedan">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/0-1347358-scaled.webp" alt="Performance Sports SUV" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-speed">Sport Edition</span>
+                                    <span class="cat-price-pill">From $54.0k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-fire-flame-curved"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 22 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">Performance SUV</h4>
+                                    <p class="category-brands">Porsche Cayenne • Macan GTS • Cupra</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Sport SUVs <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Track & Motorsport -->
+                        <div class="category-card" data-category-type="performance">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/g5.webp" alt="Track & Motorsport Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-exclusive">Motorsport</span>
+                                    <span class="cat-price-pill">From $89.0k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-flag-checkered"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 8 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">Track Edition</h4>
+                                    <p class="category-brands">Lexus F Racing • GT3 Cup • M Power</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Motorsport <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. Next-Gen EV & Tech -->
+                        <div class="category-card" data-category-type="electric">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/g3.webp" alt="Next-Gen EV Tech" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-eco">Zero Emission</span>
+                                    <span class="cat-price-pill">From $41.0k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-bolt"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 18 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">Smart EV Series</h4>
+                                    <p class="category-brands">Lucid Air • Tesla Plaid • Polestar</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Smart EVs <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. City Compact -->
+                        <div class="category-card" data-category-type="suv-sedan">
+                            <div class="category-card__thumb">
+                                <img src="assets/images/peugeot-208-5-door-front-0-707913-1-1.webp" alt="City Compact Vehicles" loading="eager">
+                                <div class="category-badge-top">
+                                    <span class="cat-tag-pill tag-popular">City Agile</span>
+                                    <span class="cat-price-pill">From $21.9k</span>
+                                </div>
+                                <div class="category-card__overlay">
+                                    <div class="category-type-row">
+                                        <span class="category-icon"><i class="fa-solid fa-car"></i></span>
+                                        <span class="category-count"><span class="count-dot"></span> 14 Listings</span>
+                                    </div>
+                                    <h4 class="category-name">City Compact</h4>
+                                    <p class="category-brands">Peugeot 208 • VW Golf • Mini Cooper</p>
+                                    <a href="404.html" class="category-explore-btn">
+                                        <span>Explore Compact <i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Carousel Footer Progress Track & Swipe Hint -->
+                <div class="container categories-bottom-bar">
+                    <div class="categories-progress-track">
+                        <div class="categories-progress-bar" id="catProgressBar"></div>
+                    </div>
+                    <div class="categories-drag-hint">
+                        <i class="fa-solid fa-arrows-left-right"></i>
+                        <span>Drag, swipe, or use arrows to navigate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horizontal Brand Logos Infinite Marquee Ticker -->
+            <div class="container">
+                <div class="brands-marquee-section">
+                    <div class="brands-marquee-title">
+                        <span>OFFICIAL DEALERSHIP BRANDS & PARTNERS</span>
+                    </div>
+                    <div class="brands-marquee-wrap">
+                        <div class="brands-marquee-track">
+                            <div class="brand-item"><i class="fa-brands fa-apple-pay" style="display:none"></i><span>MERCEDES-BENZ</span></div>
+                            <div class="brand-item"><span>BMW MOTORS</span></div>
+                            <div class="brand-item"><span>PORSCHE</span></div>
+                            <div class="brand-item"><span>AUDI SPORT</span></div>
+                            <div class="brand-item"><span>LEXUS LUXURY</span></div>
+                            <div class="brand-item"><span>LAND ROVER</span></div>
+                            <div class="brand-item"><span>TESLA</span></div>
+                            <div class="brand-item"><span>PEUGEOT</span></div>
+                            <div class="brand-item"><span>GMC TRUCKS</span></div>
+                            <div class="brand-item"><span>VOLVO CARS</span></div>
+                            <div class="brand-item"><span>FERRARI</span></div>
+                            <div class="brand-item"><span>BENTLEY</span></div>
+                            <!-- Duplicate items for seamless continuous loop -->
+                            <div class="brand-item"><span>MERCEDES-BENZ</span></div>
+                            <div class="brand-item"><span>BMW MOTORS</span></div>
+                            <div class="brand-item"><span>PORSCHE</span></div>
+                            <div class="brand-item"><span>AUDI SPORT</span></div>
+                            <div class="brand-item"><span>LEXUS LUXURY</span></div>
+                            <div class="brand-item"><span>LAND ROVER</span></div>
+                            <div class="brand-item"><span>TESLA</span></div>
+                            <div class="brand-item"><span>PEUGEOT</span></div>
+                            <div class="brand-item"><span>GMC TRUCKS</span></div>
+                            <div class="brand-item"><span>VOLVO CARS</span></div>
+                            <div class="brand-item"><span>FERRARI</span></div>
+                            <div class="brand-item"><span>BENTLEY</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: DUAL PROMO ACTION BANNERS (BUY & SELL) -->
+        <section class="section-promo-boxes" id="cta-boxes">
+            <div class="promo-ambient-glow" aria-hidden="true"></div>
+            <div class="container">
+                <div class="promo-boxes-grid">
+                    
+                    <!-- Box 1: Buy A Car (Ruby Luxury Edition) -->
+                    <div class="promo-box promo-box--buy reveal-fade-up">
+                        <div class="promo-box__bg-pattern" aria-hidden="true">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <div class="promo-badge-wrap">
+                            <span class="promo-badge-chip">
+                                <i class="fa-solid fa-shield-halved"></i> 100% Certified Inventory
+                            </span>
+                        </div>
+                        <div class="promo-box__header">
+                            <div class="promo-box__icon-circle">
+                                <span class="promo-icon-pulse"></span>
+                                <i class="fa-solid fa-car-side"></i>
+                            </div>
+                            <div class="promo-box__heading-wrap">
+                                <span class="promo-tag-sub">Dream Drive Awaits</span>
+                                <h3 class="promo-box__title">Are You Looking To Buy A Car?</h3>
+                            </div>
+                        </div>
+                        <p class="promo-box__desc">
+                            Browse thousands of certified pre-owned and new vehicles with transparent pricing, CARFAX history, and easy financing solutions.
+                        </p>
+                        
+                        <!-- Quick Benefits Checklist -->
+                        <div class="promo-benefits-list">
+                            <div class="promo-benefit-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Low APR & $0 Down Options</span>
+                            </div>
+                            <div class="promo-benefit-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>7-Day Return Guarantee</span>
+                            </div>
+                            <div class="promo-benefit-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Free Doorstep Delivery</span>
+                            </div>
+                        </div>
+
+                        <div class="promo-box__action">
+                            <a href="404.html" class="btn btn-promo-action btn-promo-buy">
+                                <span>Explore Inventory</span>
+                                <span class="btn-arrow-box"><i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Box 2: Sell A Car (Onyx Carbon Edition) -->
+                    <div class="promo-box promo-box--sell reveal-fade-up">
+                        <div class="promo-box__bg-pattern" aria-hidden="true">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div class="promo-badge-wrap">
+                            <span class="promo-badge-chip promo-badge-gold">
+                                <i class="fa-solid fa-bolt"></i> Instant 2-Min Valuation
+                            </span>
+                        </div>
+                        <div class="promo-box__header">
+                            <div class="promo-box__icon-circle icon-circle--sell">
+                                <span class="promo-icon-pulse"></span>
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div class="promo-box__heading-wrap">
+                                <span class="promo-tag-sub">Top Cash Payout</span>
+                                <h3 class="promo-box__title">Do You Want To Sell Or Trade In?</h3>
+                            </div>
+                        </div>
+                        <p class="promo-box__desc">
+                            Get an instant valuation and fair cash offer in under 2 minutes. Free inspection, hassle-free paperwork, and prompt payout.
+                        </p>
+
+                        <!-- Quick Benefits Checklist -->
+                        <div class="promo-benefits-list">
+                            <div class="promo-benefit-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Top Market Cash Offer</span>
+                            </div>
+                            <div class="promo-benefit-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Free At-Home Appraisal</span>
+                            </div>
+                            <div class="promo-benefit-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Same-Day Wire Payment</span>
+                            </div>
+                        </div>
+
+                        <div class="promo-box__action">
+                            <a href="404.html" class="btn btn-promo-action btn-promo-sell">
+                                <span>Get Instant Offer</span>
+                                <span class="btn-arrow-box"><i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: OUR TEAM (EXPERTS & SPECIALISTS) -->
+        <section class="section-team" id="team">
+            <div class="team-ambient-glow" aria-hidden="true"></div>
+            <div class="container">
+                <div class="section-titling center reveal-fade-up">
+                    <div class="badge-pill-accent">
+                        <span class="badge-ping-dot"></span>
+                        <span class="badge-text">Experts & Specialists</span>
+                    </div>
+                    <h2 class="titling__heading">MEET OUR <span class="heading-accent">EXPERT TEAM</span></h2>
+                    <div class="heading-accent-line" aria-hidden="true">
+                        <span class="line-bar line-left"></span>
+                        <span class="line-dot"></span>
+                        <span class="line-bar line-right"></span>
+                    </div>
+                    <p class="team-section-sub">
+                        Dedicated master diagnostic mechanics, licensed vehicle appraisers, and financing specialists committed to your peace of mind.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+                    
+                    <!-- Member 1: Pedro Myers -->
+                    <div class="team-card reveal-fade-up team-card--1">
+                        <div class="team-card__image-box">
+                            <img src="assets/images/km-drivers-img-1.webp" alt="Pedro Myers - Lead Auto Consultant" loading="eager">
+                            <div class="team-badge-tag">
+                                <i class="fa-solid fa-award"></i> 10+ Yrs Exp
+                            </div>
+                            <div class="team-card__socials-dock">
+                                <a href="404.html" aria-label="Email Pedro" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="404.html" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="404.html" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="404.html" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-card__info">
+                            <h3 class="team-card__name">Pedro Myers</h3>
+                            <span class="team-card__role">Lead Auto Consultant</span>
+                            <div class="team-card__metric">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>1,200+ Cars Advised</span>
+                            </div>
+                            <a href="404.html" class="team-card__cta">
+                                <span>Book Consultation <i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Member 2: Brennan Vargas -->
+                    <div class="team-card reveal-fade-up team-card--2">
+                        <div class="team-card__image-box">
+                            <img src="assets/images/km-drivers-img-3.webp" alt="Brennan Vargas - Sales Director" loading="eager">
+                            <div class="team-badge-tag">
+                                <i class="fa-solid fa-bolt"></i> Top Finance
+                            </div>
+                            <div class="team-card__socials-dock">
+                                <a href="404.html" aria-label="Email Brennan" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="404.html" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="404.html" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="404.html" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-card__info">
+                            <h3 class="team-card__name">Brennan Vargas</h3>
+                            <span class="team-card__role">Sales & Finance Director</span>
+                            <div class="team-card__metric">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>99.2% Loan Approval</span>
+                            </div>
+                            <a href="404.html" class="team-card__cta">
+                                <span>Book Consultation <i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Member 3: Alicia White -->
+                    <div class="team-card reveal-fade-up team-card--3">
+                        <div class="team-card__image-box">
+                            <img src="assets/images/km-drivers-img-4-1.webp" alt="Alicia White - Master Technical Inspector" loading="eager">
+                            <div class="team-badge-tag">
+                                <i class="fa-solid fa-shield-halved"></i> ASE Master
+                            </div>
+                            <div class="team-card__socials-dock">
+                                <a href="404.html" aria-label="Email Alicia" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="404.html" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="404.html" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="404.html" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-card__info">
+                            <h3 class="team-card__name">Alicia White</h3>
+                            <span class="team-card__role">Senior Master Inspector</span>
+                            <div class="team-card__metric">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>3,500+ Inspections</span>
+                            </div>
+                            <a href="404.html" class="team-card__cta">
+                                <span>Book Consultation <i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Member 4: Eleanor Vance -->
+                    <div class="team-card reveal-fade-up team-card--4">
+                        <div class="team-card__image-box">
+                            <img src="assets/images/km-drivers-img-4.webp" alt="Eleanor Vance - Customer Experience Lead" loading="eager">
+                            <div class="team-badge-tag">
+                                <i class="fa-solid fa-star"></i> 5-Star VIP
+                            </div>
+                            <div class="team-card__socials-dock">
+                                <a href="404.html" aria-label="Email Eleanor" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="404.html" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="404.html" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="404.html" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-card__info">
+                            <h3 class="team-card__name">Eleanor Vance</h3>
+                            <span class="team-card__role">Customer Experience Lead</span>
+                            <div class="team-card__metric">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>98.8% Client Rating</span>
+                            </div>
+                            <a href="404.html" class="team-card__cta">
+                                <span>Book Consultation <i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: TESTIMONIALS (AUTO-SCROLLING CAROUSEL ON CINEMATIC BG) -->
+        <section class="section-testimonials-full" id="testimonials">
+            <div class="testimonials-bg" style="background-image: url('assets/images/young-woman-driving.webp');"></div>
+            <div class="testimonials-overlay"></div>
+            
+            <div class="testimonials-marquee-wrapper">
+                <div class="testimonials-track" id="testimonialTrack">
+                    
+                    <!-- Card 1: Andrew Tyson -->
+                    <div class="testimonial-box">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/ava1.webp" alt="Andrew Tyson" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">Andrew Tyson</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Shane Wilson -->
+                    <div class="testimonial-box">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/ava2.webp" alt="Shane Wilson" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">Shane Wilson</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: John McKenzie -->
+                    <div class="testimonial-box">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/users-img-3.webp" alt="John McKenzie" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">John McKenzie</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                    <!-- Card 4: Shane Wilson (Copy 2) -->
+                    <div class="testimonial-box">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/ava2.webp" alt="Shane Wilson" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">Shane Wilson</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                    <!-- Duplicate set for infinite smooth seamless continuous auto-scrolling -->
+                    <!-- Card 1 Duplicate -->
+                    <div class="testimonial-box" aria-hidden="true">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/ava1.webp" alt="Andrew Tyson" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">Andrew Tyson</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 Duplicate -->
+                    <div class="testimonial-box" aria-hidden="true">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/ava2.webp" alt="Shane Wilson" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">Shane Wilson</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 Duplicate -->
+                    <div class="testimonial-box" aria-hidden="true">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/users-img-3.webp" alt="John McKenzie" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">John McKenzie</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 Duplicate -->
+                    <div class="testimonial-box" aria-hidden="true">
+                        <div class="testimonial-box__top">
+                            <img src="assets/images/ava2.webp" alt="Shane Wilson" class="t-box-avatar">
+                            <div class="t-box-info">
+                                <h4 class="t-box-name">Shane Wilson</h4>
+                                <span class="t-box-sub">Customer</span>
+                                <div class="t-box-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-box-divider"></div>
+                        <p class="t-box-text">
+                            Quis nostrud exercitation ullamco laboris nisit aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitse acillum dolore fugiat nulla pariatur.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: RECENT ARTICLES / BLOG SECTION -->
+        <section class="section-blog" id="news">
+            <div class="blog-ambient-glow" aria-hidden="true"></div>
+            <div class="container">
+                <div class="section-titling center reveal-fade-up">
+                    <div class="badge-pill-accent">
+                        <span class="badge-ping-dot"></span>
+                        <span class="badge-text">Automotive Insights</span>
+                    </div>
+                    <h2 class="titling__heading">LATEST NEWS & <span class="heading-accent">ARTICLES</span></h2>
+                    <div class="heading-accent-line" aria-hidden="true">
+                        <span class="line-bar line-left"></span>
+                        <span class="line-dot"></span>
+                        <span class="line-bar line-right"></span>
+                    </div>
+                    <p class="blog-section-sub">
+                        Stay informed with the latest automotive industry trends, expert vehicle reviews, and future electric mobility breakthroughs.
+                    </p>
+                </div>
+
+                <div class="articles-grid">
+                    
+                    <!-- Article 1 -->
+                    <article class="article-card reveal-fade-up article-card--1">
+                        <div class="article-card__thumb">
+                            <a href="blog.html" class="article-thumb-link">
+                                <img src="assets/images/news-1-1-520x390.webp" alt="The Coolest Car Toys We Forgot" loading="eager">
+                                <div class="article-thumb-overlay"></div>
+                            </a>
+                            <div class="article-badges-top">
+                                <span class="article-cat-badge tag-heritage">Classic & Heritage</span>
+                                <span class="article-read-time"><i class="fa-regular fa-clock"></i> 4 Min Read</span>
+                            </div>
+                            <span class="article-date"><i class="fa-regular fa-calendar"></i> May 18, 2024</span>
+                        </div>
+                        <div class="article-card__body">
+                            <div class="article-meta">
+                                <span><i class="fa-solid fa-user-pen"></i> Editorial Team</span>
+                                <span><i class="fa-regular fa-comments"></i> 3 Comments</span>
+                            </div>
+                            <h3 class="article-title">
+                                <a href="blog.html">The Coolest Car Toys We Forgot: Super Spin Vintage Classic</a>
+                            </h3>
+                            <p class="article-excerpt">
+                                A nostalgic exploration into vintage motoring memorabilia, legendary collectibles, and the classic mechanical gadgets that ignited our passion for cars.
+                            </p>
+                            <div class="article-card__footer">
+                                <a href="404.html" class="article-more-link">
+                                     <span>Read Full Story</span>
+                                     <span class="article-arrow-chip"><i class="fa-solid fa-arrow-right"></i></span>
+                                 </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card reveal-fade-up article-card--2">
+                        <div class="article-card__thumb">
+                            <a href="404.html" class="article-thumb-link">
+                                <img src="assets/images/news-2-1-520x390.webp" alt="The Rugged 2024 Honda Ridgeline Trailsport" loading="eager">
+                                <div class="article-thumb-overlay"></div>
+                            </a>
+                            <div class="article-badges-top">
+                                <span class="article-cat-badge tag-review">Road Test Review</span>
+                                <span class="article-read-time"><i class="fa-regular fa-clock"></i> 6 Min Read</span>
+                            </div>
+                            <span class="article-date"><i class="fa-regular fa-calendar"></i> May 20, 2024</span>
+                        </div>
+                        <div class="article-card__body">
+                            <div class="article-meta">
+                                <span><i class="fa-solid fa-user-pen"></i> Alex Rivera</span>
+                                <span><i class="fa-regular fa-comments"></i> 5 Comments</span>
+                            </div>
+                            <h3 class="article-title">
+                                <a href="404.html">The Rugged 2024 Honda Ridgeline Trailsport: All-Terrain Audit</a>
+                            </h3>
+                            <p class="article-excerpt">
+                                An exhaustive all-terrain test diving into revised suspension geometry, all-wheel torque vectoring, and rugged trail-readiness in modern performance pickups.
+                            </p>
+                            <div class="article-card__footer">
+                                <a href="404.html" class="article-more-link">
+                                     <span>Read Full Story</span>
+                                     <span class="article-arrow-chip"><i class="fa-solid fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="article-card reveal-fade-up article-card--3">
+                        <div class="article-card__thumb">
+                            <a href="404.html" class="article-thumb-link">
+                                <img src="assets/images/news-3-520x390.webp" alt="Next-Gen Ultra Fast EV Charging" loading="eager">
+                                <div class="article-thumb-overlay"></div>
+                            </a>
+                            <div class="article-badges-top">
+                                <span class="article-cat-badge tag-ev">EV & Tech</span>
+                                <span class="article-read-time"><i class="fa-regular fa-clock"></i> 5 Min Read</span>
+                            </div>
+                            <span class="article-date"><i class="fa-regular fa-calendar"></i> May 22, 2024</span>
+                        </div>
+                        <div class="article-card__body">
+                            <div class="article-meta">
+                                <span><i class="fa-solid fa-user-pen"></i> Sarah Chen</span>
+                                <span><i class="fa-regular fa-comments"></i> 8 Comments</span>
+                            </div>
+                            <h3 class="article-title">
+                                <a href="404.html">How 800V Ultra-Fast Charging Networks Are Eliminating Range Anxiety</a>
+                            </h3>
+                            <p class="article-excerpt">
+                                How upcoming 350kW ultra-fast charging corridors and standardized solid-state battery architectures aim to transform highway road trips forever.
+                            </p>
+                            <div class="article-card__footer">
+                                <a href="404.html" class="article-more-link">
+                                    <span>Read Full Story</span>
+                                    <span class="article-arrow-chip"><i class="fa-solid fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECTION 9: FOOTER -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    
+                    <div class="footer-col footer-col--about">
+                        <div class="footer-logo">
+                            <img src="assets/images/stackly-logo.webp" alt="Stackly White Logo">
+                        </div>
+                        <p class="footer-about-text">
+                            Stackly is the premier automotive dealer platform providing certified vehicles, transparent vehicle financing, and premium customer service across North America.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--links">
+                        <h4 class="footer-col__title">Useful Links</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> HOME</a></li>
+                            <li><a href="inventory.html"><i class="fa-solid fa-chevron-right"></i> VEHICLE LISTINGS</a></li>
+                            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> ABOUT US</a></li>
+                            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> BLOG</a></li>
+                            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> CONTACT US</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col--posts">
+                        <h4 class="footer-col__title">Latest News</h4>
+                        <div class="footer-mini-posts">
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tips For Better & Safe Driving"><img src="assets/images/news-4-70x70.webp" alt="Mini Post 1" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tips For Better &amp; Safe Driving With Luxury Car</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 15, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tellus Dis Turpis Feugiat Egestas"><img src="assets/images/news5-70x70.webp" alt="Mini Post 2" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tellus Dis Turpis Feugiat Egestas</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 12, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Viverra Sed Diam Leo Nibh Amet"><img src="assets/images/news6-70x70.webp" alt="Mini Post 3" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Viverra Sed Diam Leo Nibh Amet</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 10, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--contact">
+                        <h4 class="footer-col__title">Showroom Timings</h4>
+                        
+                        <div class="timings-box">
+                            <div class="timing-row">
+                                <span>Monday &#8211; Saturday:</span>
+                                <strong>9:00 AM &#8211; 8:00 PM</strong>
+                            </div>
+                            <div class="timing-row">
+                                <span>Sunday:</span>
+                                <strong>10:00 AM &#8211; 6:00 PM</strong>
+                            </div>
+                        </div>
+
+                        <div class="footer-contact-details">
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>MMR Complex, Chinna Thirupathi, Near by Chinna Moniyappan Kovil, Salem 636008.</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="404.html">+91 90909 09090</a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="404.html">info@stackly.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom__inner">
+                <p class="copyright-text">
+                    &copy; 2026 <strong>Stackly</strong> &#8211; All Rights Reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Site Map</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal Lightbox -->
+    <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog">
+        <div class="video-modal__backdrop" id="videoModalBackdrop"></div>
+        <div class="video-modal__container">
+            <button class="video-modal__close" id="videoModalClose" aria-label="Close Video">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="video-modal__wrapper">
+                <iframe id="videoIframe" src="" title="Stackly Video Presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript File -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

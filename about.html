@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us &#8211; Stackly Luxury Dealer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/cropped-logo-1-32x32.webp" sizes="32x32" type="image/webp">
+    <link rel="apple-touch-icon" href="assets/images/cropped-logo-1-180x180.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;500;600;700;800&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Base CSS Styles & Specialized About CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body class="inner-page about-page">
+
+    <!-- Page Preloader -->
+    <div class="page-loader-wrapper" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-text-content">
+                <div class="text-loader-content-wrap">
+                    <div class="loader-text">LOADING...</div>
+                    <div class="loader-text-progress">LOADING...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section (Floating Navbar with Active Indicator) -->
+    <header class="header fl-header-transparent" id="siteHeader">
+        <div class="header__inner">
+            <div class="header-content container-fluid">
+                <!-- Logo -->
+                <div class="header-content__logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/images/stackly-logo.webp" alt="Stackly Logo" class="site-logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="header-content__menu" id="desktopNav">
+                    <ul class="nav-menu">
+                        <li class="menu-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="inventory.html" class="nav-link">VEHICLE LISTINGS</a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="about.html" class="nav-link">ABOUT US</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="contact.html" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-content__right">
+                    <a href="login.html" class="btn btn-header-login" id="loginBtn">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer__header">
+                <img src="assets/images/stackly-logo.webp" alt="Stackly" class="mobile-logo">
+                <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mobile-drawer__body">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="index.html" class="mobile-nav-link">HOME</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="inventory.html" class="mobile-nav-link">VEHICLE LISTINGS</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="about.html" class="mobile-nav-link active">ABOUT US</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link">BLOG</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+                    </li>
+                </ul>
+
+                <div class="mobile-drawer__footer">
+                    <a href="login.html" class="btn btn-primary btn-block">
+                        <i class="fa-regular fa-user"></i> Login / Register
+                    </a>
+                    <div class="mobile-contact-card">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <span>Talk to an Expert</span>
+                            <strong>+1 (234) 567 8900</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner / Breadcrumb (Previous Hero Section) -->
+    <section class="page-hero-banner" style="background-image: url('assets/images/slider1-1.webp');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <h1 class="page-hero-title">ABOUT US</h1>
+            <div class="breadcrumb-trail">
+                <a href="index.html">Home</a>
+                <span class="divider">/</span>
+                <span class="current">About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 1 — THE STACKLY STORY ("Built Around the Drive.")
+         ========================================================================= -->
+    <section class="story-section" id="storySection">
+        <div class="container">
+            <div class="story-grid">
+                <!-- Layered Image Column -->
+                <div class="story-media-wrapper" data-aos="fade-right" data-aos-duration="800">
+                    <div class="badge-est-year">
+                        <i class="fa-solid fa-shield-halved"></i> EST. 2010
+                    </div>
+                    <div class="story-main-img-wrap">
+                        <img src="assets/images/slider1-1.webp" alt="Stackly Audi Flagship" class="story-main-img">
+                    </div>
+                    <div class="story-sub-img-wrap">
+                        <img src="assets/images/0-1635455.webp" alt="Stackly Showroom Heritage" class="story-sub-img">
+                    </div>
+                </div>
+
+                <!-- Story Editorial Content Column -->
+                <div class="story-content-col" data-aos="fade-left" data-aos-duration="800">
+                    <span class="story-eyebrow">
+                        <i class="fa-solid fa-bolt"></i> THE STACKLY STORY
+                    </span>
+                    <h2 class="story-heading">Built Around <span>The Drive.</span></h2>
+                    
+                    <p class="story-highlight-quote">
+                        “We founded Stackly on a singular obsession: elevating automotive acquisitions into an uncompromising luxury concierge experience.”
+                    </p>
+
+                    <p class="story-text-p">
+                        Since opening our boutique showroom doors in 2010, Stackly has redefined vehicle ownership. We bridge the world's most engineering-forward hypercars, performance grand tourers, and executive SUVs with discerning drivers nationwide.
+                    </p>
+
+                    <p class="story-text-p">
+                        Every vehicle within our collection is personally vetted, masterfully certified, and backed by a transparent purchase philosophy that values your time as much as your passion for the open road.
+                    </p>
+
+                    <div class="story-stats-row">
+                        <div class="story-stat-item" data-aos="fade-up" data-aos-delay="100">
+                            <strong class="story-counter" data-count="15" data-suffix="+">0+</strong>
+                            <span>Years Excellence</span>
+                        </div>
+                        <div class="story-stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <strong class="story-counter" data-count="12800" data-suffix="+">0+</strong>
+                            <span>Vehicles Delivered</span>
+                        </div>
+                        <div class="story-stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <strong class="story-counter" data-count="99.4" data-suffix="%" data-decimal="1">0.0%</strong>
+                            <span>Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2 — WHY STACKLY ("More Than Just a Dealership.")
+         ========================================================================= -->
+    <section class="why-carlink-section" id="whySection">
+        <div class="tech-grid-bg"></div>
+        <div class="advantage-ambient-glow"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="badge-pill-accent">
+                    <i class="fa-solid fa-cubes-stacked"></i> THE STACKLY ADVANTAGE
+                </span>
+                <h2 class="titling__heading">More Than Just <span class="heading-accent">A Dealership.</span></h2>
+                <div class="heading-accent-line" style="margin: 14px auto 18px;"></div>
+                <p class="section-subtitle-text">Engineered from the ground up with proprietary inspection telemetry, zero-markup direct financing, and white-glove nationwide concierge.</p>
+            </div>
+
+            <div class="why-features-grid">
+                <!-- Feature 1 -->
+                <div class="why-feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card-glow-bar"></div>
+                    <div class="why-feature-top">
+                        <div class="why-icon-box">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <span class="advantage-metric-tag">0.0µm TOLERANCE</span>
+                        <div class="why-index-num">01</div>
+                    </div>
+                    <h3 class="why-feature-title">150-Point Laser Inspection</h3>
+                    <p class="why-feature-desc">Comprehensive mechanical, electrical, and structural telemetry scanning covering every millimeter before certification.</p>
+                    <div class="advantage-benefit-chip">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>100% Pre-Delivery Scanned</span>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="why-feature-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-card-glow-bar"></div>
+                    <div class="why-feature-top">
+                        <div class="why-icon-box">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <span class="advantage-metric-tag">ZERO-MARKUP TIER-1</span>
+                        <div class="why-index-num">02</div>
+                    </div>
+                    <h3 class="why-feature-title">Instant Direct Financing</h3>
+                    <p class="why-feature-desc">Competitive institutional rates with same-day pre-approval and fully customizable amortization schedules.</p>
+                    <div class="advantage-benefit-chip">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Same-Day Pre-Approval</span>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="why-feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card-glow-bar"></div>
+                    <div class="why-feature-top">
+                        <div class="why-icon-box">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </div>
+                        <span class="advantage-metric-tag">50 STATES ENCLOSED</span>
+                        <div class="why-index-num">03</div>
+                    </div>
+                    <h3 class="why-feature-title">Doorstep White-Glove Delivery</h3>
+                    <p class="why-feature-desc">Enclosed transport across 50 states directly to your residence with an included 7-day test-ownership window.</p>
+                    <div class="advantage-benefit-chip">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>7-Day Trial Window</span>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="why-feature-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-card-glow-bar"></div>
+                    <div class="why-feature-top">
+                        <div class="why-icon-box">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <span class="advantage-metric-tag">TOP 5% DIAMOND</span>
+                        <div class="why-index-num">04</div>
+                    </div>
+                    <h3 class="why-feature-title">Certified Vehicles</h3>
+                    <p class="why-feature-desc">Only the top 5% of candidate inventory achieves Stackly Diamond Certification, backed by clean CARFAX history.</p>
+                    <div class="advantage-benefit-chip">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>CARFAX Accident-Free</span>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="why-feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card-glow-bar"></div>
+                    <div class="why-feature-top">
+                        <div class="why-icon-box">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <span class="advantage-metric-tag">100% INVOICE PARITY</span>
+                        <div class="why-index-num">05</div>
+                    </div>
+                    <h3 class="why-feature-title">Transparent Pricing</h3>
+                    <p class="why-feature-desc">No hidden dealer surcharges or processing fees. The exact price you see online is the exact price on your invoice.</p>
+                    <div class="advantage-benefit-chip">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Zero Hidden Fees</span>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="why-feature-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-card-glow-bar"></div>
+                    <div class="why-feature-top">
+                        <div class="why-icon-box">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="advantage-metric-tag">12MO / 12,000MI</span>
+                        <div class="why-index-num">06</div>
+                    </div>
+                    <h3 class="why-feature-title">Comprehensive Warranty</h3>
+                    <p class="why-feature-desc">Every vehicle includes an included comprehensive bumper-to-bumper protection plan with 24/7 roadside concierge.</p>
+                    <div class="advantage-benefit-chip">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Roadside Concierge Included</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3 — TRUST & QUALITY ("Every Vehicle. Every Detail. Every Time.")
+         ========================================================================= -->
+    <section class="trust-quality-section" id="qualitySection">
+        <div class="container">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="badge-pill-accent">
+                    <i class="fa-solid fa-award"></i> RIGOROUS BENCHMARKING
+                </span>
+                <h2 class="titling__heading">Every Vehicle. <span class="heading-accent">Every Detail.</span> Every Time.</h2>
+                <div class="heading-accent-line" style="margin: 14px auto 18px;"></div>
+                <p class="section-subtitle-text">Explore our interactive telemetry inspection checkpoints. Click any hotspot or module below to inspect real diagnostic telemetry and component imagery.</p>
+            </div>
+
+            <!-- Inspection Dashboard Interface -->
+            <div class="inspection-dashboard-wrap" data-aos="zoom-in" data-aos-duration="850">
+                <!-- Inspection Tab Switchers -->
+                <div class="inspection-tabs-bar">
+                    <button class="inspection-tab active" data-target="overview">
+                        <i class="fa-solid fa-layer-group"></i> <span>Chassis Scan</span>
+                    </button>
+                    <button class="inspection-tab" data-target="tires">
+                        <i class="fa-solid fa-ring"></i> <span>Tires &amp; Suspension</span>
+                    </button>
+                    <button class="inspection-tab" data-target="engine">
+                        <i class="fa-solid fa-gear"></i> <span>Engine &amp; Drivetrain</span>
+                    </button>
+                    <button class="inspection-tab" data-target="brakes">
+                        <i class="fa-solid fa-circle-stop"></i> <span>Carbon Brakes</span>
+                    </button>
+                    <button class="inspection-tab" data-target="interior">
+                        <i class="fa-solid fa-couch"></i> <span>Cockpit &amp; HUD</span>
+                    </button>
+                    <button class="inspection-tab" data-target="safety">
+                        <i class="fa-solid fa-shield-virus"></i> <span>LiDAR Radar</span>
+                    </button>
+                    <button class="inspection-tab" data-target="exterior">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Paint Depth</span>
+                    </button>
+                </div>
+
+                <!-- Telemetry Visual Viewport -->
+                <div class="inspection-visual-container">
+                    <!-- Top HUD Status -->
+                    <div class="inspection-hud-header">
+                        <div class="hud-status-chip">
+                            <span class="hud-pulse-dot"></span>
+                            <span id="inspectionHudBadge">FULL CHASSIS SCAN &bull; ACTIVE</span>
+                        </div>
+                        <h3 class="hud-title" id="inspectionHudTitle">150-Point Master Laser Telemetry Scan</h3>
+                        <div class="hud-readout" id="inspectionHudReadout">
+                            <i class="fa-solid fa-circle-check"></i> SYSTEMS 100% OK
+                        </div>
+                    </div>
+
+                    <!-- Main Dynamic Inspection Image Screen -->
+                    <div class="inspection-screen-wrap">
+                        <div class="laser-scan-line"></div>
+                        <img src="assets/images/inspection/chassis-overview.jpg" alt="Stackly 150-Point Master Inspection Telemetry" class="inspection-car-img" id="inspectionMainImg">
+                        
+                        <!-- Checkpoint Hotspots with Live Telemetry Badges -->
+                        <div class="inspection-hotspot hotspot-engine" data-target="engine" title="Engine Diagnostics">
+                            <div class="hotspot-pulse"></div>
+                            <span class="hotspot-tooltip">Engine &amp; Drivetrain</span>
+                        </div>
+                        <div class="inspection-hotspot hotspot-brakes" data-target="brakes" title="Braking Telemetry">
+                            <div class="hotspot-pulse"></div>
+                            <span class="hotspot-tooltip">Brakes &amp; Calipers</span>
+                        </div>
+                        <div class="inspection-hotspot hotspot-interior" data-target="interior" title="Cockpit & Electronics">
+                            <div class="hotspot-pulse"></div>
+                            <span class="hotspot-tooltip">Cockpit &amp; Infotainment</span>
+                        </div>
+                        <div class="inspection-hotspot hotspot-safety" data-target="safety" title="Safety Systems">
+                            <div class="hotspot-pulse"></div>
+                            <span class="hotspot-tooltip">Active Safety Radar</span>
+                        </div>
+                        <div class="inspection-hotspot hotspot-exterior" data-target="exterior" title="Chassis & Paint">
+                            <div class="hotspot-pulse"></div>
+                            <span class="hotspot-tooltip">Chassis &amp; Paint Depth</span>
+                        </div>
+                        <div class="inspection-hotspot hotspot-tires" data-target="tires" title="Tread & Alignment">
+                            <div class="hotspot-pulse"></div>
+                            <span class="hotspot-tooltip">Tires &amp; Suspension</span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom HUD Telemetry Readouts -->
+                    <div class="inspection-hud-footer">
+                        <div class="hud-metric-pill">
+                            <span class="metric-label">TELEMETRY BENCHMARK</span>
+                            <strong class="metric-val" id="inspectionMetric1">150 Checkpoints Scanned</strong>
+                        </div>
+                        <div class="hud-metric-pill">
+                            <span class="metric-label">DIAGNOSTIC TOLERANCE</span>
+                            <strong class="metric-val text-red" id="inspectionMetric2">0.0 Micron Variance</strong>
+                        </div>
+                        <div class="hud-metric-pill">
+                            <span class="metric-label">QUALITY CERTIFICATION</span>
+                            <strong class="metric-val text-emerald"><i class="fa-solid fa-certificate"></i> STACKLY DIAMOND GRADE</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkpoint Cards Grid with Content-Related Images -->
+                <div class="inspection-checkpoints-grid">
+                    <!-- 1. Tires & Suspension -->
+                    <div class="checkpoint-card" data-checkpoint="tires" data-aos="fade-up" data-aos-delay="100">
+                        <div class="checkpoint-thumb-wrap">
+                            <img src="assets/images/inspection/tires-inspection.jpg" alt="Tires & Suspension Inspection" class="checkpoint-thumb">
+                            <span class="checkpoint-badge">6.2mm Tread</span>
+                        </div>
+                        <div class="checkpoint-content">
+                            <div class="checkpoint-header-row">
+                                <i class="fa-solid fa-ring checkpoint-icon"></i>
+                                <h4 class="checkpoint-name">Tires &amp; Suspension</h4>
+                            </div>
+                            <p class="checkpoint-desc">Digital tread depth measurement, active damper fluid diagnostics, and high-speed road-force balancing.</p>
+                            <div class="checkpoint-action-cue"><i class="fa-solid fa-arrow-pointer"></i> <span>Inspect Telemetry</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Engine & Drivetrain -->
+                    <div class="checkpoint-card" data-checkpoint="engine" data-aos="fade-up" data-aos-delay="150">
+                        <div class="checkpoint-thumb-wrap">
+                            <img src="assets/images/inspection/engine-inspection.jpg" alt="Engine & Drivetrain Inspection" class="checkpoint-thumb">
+                            <span class="checkpoint-badge">175 PSI Dyno</span>
+                        </div>
+                        <div class="checkpoint-content">
+                            <div class="checkpoint-header-row">
+                                <i class="fa-solid fa-gear checkpoint-icon"></i>
+                                <h4 class="checkpoint-name">Engine &amp; Drivetrain</h4>
+                            </div>
+                            <p class="checkpoint-desc">Full cylinder compression, fluid purity spectrum analysis, and dynamic dyno torque benchmarking.</p>
+                            <div class="checkpoint-action-cue"><i class="fa-solid fa-arrow-pointer"></i> <span>Inspect Telemetry</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Brakes & Calipers -->
+                    <div class="checkpoint-card" data-checkpoint="brakes" data-aos="fade-up" data-aos-delay="200">
+                        <div class="checkpoint-thumb-wrap">
+                            <img src="assets/images/inspection/brakes-inspection.jpg" alt="Brakes & Calipers Inspection" class="checkpoint-thumb">
+                            <span class="checkpoint-badge">11.5mm Pad</span>
+                        </div>
+                        <div class="checkpoint-content">
+                            <div class="checkpoint-header-row">
+                                <i class="fa-solid fa-circle-stop checkpoint-icon"></i>
+                                <h4 class="checkpoint-name">Brakes &amp; Calipers</h4>
+                            </div>
+                            <p class="checkpoint-desc">Laser thickness inspection on rotors, carbon ceramic pad depth, and hydraulic pressure testing.</p>
+                            <div class="checkpoint-action-cue"><i class="fa-solid fa-arrow-pointer"></i> <span>Inspect Telemetry</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Cockpit & Infotainment -->
+                    <div class="checkpoint-card" data-checkpoint="interior" data-aos="fade-up" data-aos-delay="250">
+                        <div class="checkpoint-thumb-wrap">
+                            <img src="assets/images/inspection/cockpit-inspection.jpg" alt="Interior & Infotainment Inspection" class="checkpoint-thumb">
+                            <span class="checkpoint-badge">0 Fault Codes</span>
+                        </div>
+                        <div class="checkpoint-content">
+                            <div class="checkpoint-header-row">
+                                <i class="fa-solid fa-couch checkpoint-icon"></i>
+                                <h4 class="checkpoint-name">Cockpit &amp; Infotainment</h4>
+                            </div>
+                            <p class="checkpoint-desc">Full electrical scan of digital clusters, seat motor calibration, HUD, and acoustic sound profiling.</p>
+                            <div class="checkpoint-action-cue"><i class="fa-solid fa-arrow-pointer"></i> <span>Inspect Telemetry</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Active Safety Matrix -->
+                    <div class="checkpoint-card" data-checkpoint="safety" data-aos="fade-up" data-aos-delay="300">
+                        <div class="checkpoint-thumb-wrap">
+                            <img src="assets/images/inspection/safety-inspection.jpg" alt="Active Safety LiDAR Inspection" class="checkpoint-thumb">
+                            <span class="checkpoint-badge">84k Pts/Sec</span>
+                        </div>
+                        <div class="checkpoint-content">
+                            <div class="checkpoint-header-row">
+                                <i class="fa-solid fa-shield-virus checkpoint-icon"></i>
+                                <h4 class="checkpoint-name">Active Safety Matrix</h4>
+                            </div>
+                            <p class="checkpoint-desc">LiDAR sensor alignment, adaptive cruise radar calibration, and 360 camera parity verification.</p>
+                            <div class="checkpoint-action-cue"><i class="fa-solid fa-arrow-pointer"></i> <span>Inspect Telemetry</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Exterior & Paint Depth -->
+                    <div class="checkpoint-card" data-checkpoint="exterior" data-aos="fade-up" data-aos-delay="350">
+                        <div class="checkpoint-thumb-wrap">
+                            <img src="assets/images/inspection/paint-inspection.jpg" alt="Exterior Paint Depth Inspection" class="checkpoint-thumb">
+                            <span class="checkpoint-badge">148.5 µm Laser</span>
+                        </div>
+                        <div class="checkpoint-content">
+                            <div class="checkpoint-header-row">
+                                <i class="fa-solid fa-wand-magic-sparkles checkpoint-icon"></i>
+                                <h4 class="checkpoint-name">Exterior &amp; Paint Depth</h4>
+                            </div>
+                            <p class="checkpoint-desc">Ultrasonic paint micron verification confirming factory-original panels and zero unrecorded touchups.</p>
+                            <div class="checkpoint-action-cue"><i class="fa-solid fa-arrow-pointer"></i> <span>Inspect Telemetry</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4 — OUR JOURNEY ("From One Showroom to Every Drive.")
+         ========================================================================= -->
+    <section class="journey-timeline-section" id="journeyTimelineSection">
+        <div class="container">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="section-tag">
+                    <i class="fa-solid fa-timeline"></i> HERITAGE &amp; INNOVATION
+                </span>
+                <h2 class="section-title-large">From One Showroom <span>To Every Drive.</span></h2>
+                <p class="section-subtitle-text">Tracing 15+ years of automotive milestones, curated acquisitions, and digital innovations.</p>
+            </div>
+
+            <div class="timeline-track-wrapper">
+                <div class="timeline-vertical-line"></div>
+                <div class="timeline-progress-line" id="timelineProgressLine"></div>
+
+                <!-- Milestone 1 -->
+                <div class="timeline-node-item left-node" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card-content">
+                        <div class="timeline-img-wrap">
+                            <img src="assets/images/0-1635455.webp" alt="Founding the Boutique" class="timeline-img">
+                            <div class="timeline-year-badge">2010</div>
+                        </div>
+                        <div class="timeline-card-body">
+                            <span class="timeline-milestone-tag"><i class="fa-solid fa-flag-checkered"></i> INAUGURAL SHOWROOM</span>
+                            <h4 class="timeline-milestone-title">Founding the Boutique</h4>
+                            <p class="timeline-milestone-desc">Stackly opens its initial private gallery with 20 hand-selected European performance cars, establishing bespoke concierge acquisitions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="timeline-node-item right-node" data-aos="fade-left" data-aos-delay="150">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card-content">
+                        <div class="timeline-img-wrap">
+                            <img src="assets/images/Rectangle-78.webp" alt="National Facility Expansion" class="timeline-img">
+                            <div class="timeline-year-badge">2014</div>
+                        </div>
+                        <div class="timeline-card-body">
+                            <span class="timeline-milestone-tag"><i class="fa-solid fa-building-columns"></i> GALLERY EXPANSION</span>
+                            <h4 class="timeline-milestone-title">National Facility Expansion</h4>
+                            <p class="timeline-milestone-desc">Expanded to our state-of-the-art 50,000 sq ft climate-controlled indoor showroom, dynamometer bay, and private client VIP lounge.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="timeline-node-item left-node" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card-content">
+                        <div class="timeline-img-wrap">
+                            <img src="assets/images/0-1538402-1.webp" alt="150-Point Master Certification" class="timeline-img">
+                            <div class="timeline-year-badge">2018</div>
+                        </div>
+                        <div class="timeline-card-body">
+                            <span class="timeline-milestone-tag"><i class="fa-solid fa-award"></i> MASTER PROTOCOL</span>
+                            <h4 class="timeline-milestone-title">150-Point Master Certification</h4>
+                            <p class="timeline-milestone-desc">Pioneered our industry-leading multi-stage laser telemetry inspection and dynamic track-testing benchmark for all candidate vehicles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="timeline-node-item right-node" data-aos="fade-left" data-aos-delay="250">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card-content">
+                        <div class="timeline-img-wrap">
+                            <img src="assets/images/young-woman-driving.webp" alt="Digital Concierge & Direct Financing" class="timeline-img">
+                            <div class="timeline-year-badge">2021</div>
+                        </div>
+                        <div class="timeline-card-body">
+                            <span class="timeline-milestone-tag"><i class="fa-solid fa-laptop-code"></i> DIGITAL SEAMLESSNESS</span>
+                            <h4 class="timeline-milestone-title">Digital Concierge &amp; Direct Financing</h4>
+                            <p class="timeline-milestone-desc">Launched 100% online contract signing, zero-markup direct financing, and enclosed white-glove doorstep vehicle delivery nationwide.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 5 -->
+                <div class="timeline-node-item left-node" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card-content">
+                        <div class="timeline-img-wrap">
+                            <img src="assets/images/slider2.webp" alt="Hybrid & EV Performance Division" class="timeline-img">
+                            <div class="timeline-year-badge">2024</div>
+                        </div>
+                        <div class="timeline-card-body">
+                            <span class="timeline-milestone-tag"><i class="fa-solid fa-bolt-lightning"></i> NEXT-GEN ELECTRIFIED</span>
+                            <h4 class="timeline-milestone-title">Hybrid &amp; EV Performance Division</h4>
+                            <p class="timeline-milestone-desc">Established dedicated high-voltage diagnostic suites for Porsche Taycan, Audi e-tron GT, and cutting-edge hybrid hypercars.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 6 -->
+                <div class="timeline-node-item right-node" data-aos="fade-left" data-aos-delay="350">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card-content">
+                        <div class="timeline-img-wrap">
+                            <img src="assets/images/slider3.webp" alt="The Modern Matrix" class="timeline-img">
+                            <div class="timeline-year-badge">2026</div>
+                        </div>
+                        <div class="timeline-card-body">
+                            <span class="timeline-milestone-tag"><i class="fa-solid fa-globe"></i> NATIONWIDE REACH</span>
+                            <h4 class="timeline-milestone-title">The Modern Matrix</h4>
+                            <p class="timeline-milestone-desc">Serving clients across 50 states with instantaneous bespoke vehicle sourcing, instant equity valuations, and nationwide luxury fleet management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5 — THE STACKLY EXPERIENCE ("Designed Around Your Journey.")
+         ========================================================================= -->
+    <section class="experience-journey-section" id="experienceSection">
+        <div class="journey-ambient-glow"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="badge-pill-accent">
+                    <i class="fa-solid fa-route"></i> BESPOKE CLIENT ROADMAP
+                </span>
+                <h2 class="titling__heading">Designed Around <span class="heading-accent">Your Journey.</span></h2>
+                <div class="heading-accent-line" style="margin: 14px auto 18px;"></div>
+                <p class="section-subtitle-text">Six streamlined phases guiding you effortlessly from initial digital discovery to your first white-glove drive.</p>
+            </div>
+
+            <!-- Connected Pipeline Wrapper with 3D Flip Cards -->
+            <div class="journey-pipeline-wrapper">
+                <div class="journey-track-line">
+                    <div class="journey-track-pulse"></div>
+                </div>
+
+                <div class="journey-steps-grid">
+                    <!-- Step 01 Flip Card -->
+                    <div class="journey-flip-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="journey-flip-inner">
+                            <!-- Front Face -->
+                            <div class="journey-card-front">
+                                <div class="step-card-top-bar"></div>
+                                <div class="step-num-bubble">01</div>
+                                <div class="step-icon-orb">
+                                    <i class="fa-solid fa-compass"></i>
+                                </div>
+                                <span class="step-category-pill">DIGITAL SHOWROOM</span>
+                                <h4 class="step-title">Discover</h4>
+                                <div class="step-metric-chip">
+                                    <i class="fa-solid fa-camera-rotate"></i> <span>360° Studio Tour</span>
+                                </div>
+                                <p class="step-desc">Explore ultra-high-resolution 4K studio walkarounds, verified CARFAX pedigrees, and complete factory build sheets.</p>
+                                <a href="404.html" class="step-action-link" title="Explore Models">
+                                    <span>Explore Models</span> <i class="fa-solid fa-car"></i>
+                                </a>
+                                <div class="flip-hover-hint">
+                                    <i class="fa-solid fa-arrows-rotate"></i> <span>Flip Details</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="journey-card-back">
+                                <div class="back-phase-badge">STAGE 01 &bull; PROTOCOL</div>
+                                <h4 class="back-step-title">Discover &amp; Browse</h4>
+                                <ul class="back-spec-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> 4K 360° Virtual Tour</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Clean CARFAX History</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Factory Spec Sheet</li>
+                                </ul>
+                                <a href="404.html" class="btn-flip-cta" title="Browse 360°">
+                                    <span>Browse 360°</span> <i class="fa-solid fa-car"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 Flip Card -->
+                    <div class="journey-flip-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="journey-flip-inner">
+                            <!-- Front Face -->
+                            <div class="journey-card-front">
+                                <div class="step-card-top-bar"></div>
+                                <div class="step-num-bubble">02</div>
+                                <div class="step-icon-orb">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <span class="step-category-pill">LASER TELEMETRY</span>
+                                <h4 class="step-title">Inspect</h4>
+                                <div class="step-metric-chip">
+                                    <i class="fa-solid fa-shield-check"></i> <span>150-Point Report</span>
+                                </div>
+                                <p class="step-desc">Access unedited multi-stage dynamometer telemetry, ultrasonic paint scans, and digital tire tread depth diagnostics.</p>
+                                <a href="404.html" class="step-action-link" title="View Protocol">
+                                    <span>View Protocol</span> <i class="fa-solid fa-microscope"></i>
+                                </a>
+                                <div class="flip-hover-hint">
+                                    <i class="fa-solid fa-arrows-rotate"></i> <span>Flip Details</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="journey-card-back">
+                                <div class="back-phase-badge">STAGE 02 &bull; PROTOCOL</div>
+                                <h4 class="back-step-title">150-Point Telemetry</h4>
+                                <ul class="back-spec-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Dyno Compression Test</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Ultrasonic Paint Depth</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Laser Rotor Alignment</li>
+                                </ul>
+                                <a href="404.html" class="btn-flip-cta" title="Inspect Data">
+                                    <span>Inspect Data</span> <i class="fa-solid fa-microscope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 Flip Card -->
+                    <div class="journey-flip-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="journey-flip-inner">
+                            <!-- Front Face -->
+                            <div class="journey-card-front">
+                                <div class="step-card-top-bar"></div>
+                                <div class="step-num-bubble">03</div>
+                                <div class="step-icon-orb">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                                <span class="step-category-pill">SPEC BENCHMARK</span>
+                                <h4 class="step-title">Compare</h4>
+                                <div class="step-metric-chip">
+                                    <i class="fa-solid fa-chart-simple"></i> <span>Side-by-Side</span>
+                                </div>
+                                <p class="step-desc">Benchmark horsepower curves, 0-60 sprint times, bespoke options, and tailored financing options side-by-side.</p>
+                                <a href="404.html" class="step-action-link" title="Open Matrix">
+                                    <span>Open Matrix</span> <i class="fa-solid fa-code-compare"></i>
+                                </a>
+                                <div class="flip-hover-hint">
+                                    <i class="fa-solid fa-arrows-rotate"></i> <span>Flip Details</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="journey-card-back">
+                                <div class="back-phase-badge">STAGE 03 &bull; PROTOCOL</div>
+                                <h4 class="back-step-title">Side-by-Side Match</h4>
+                                <ul class="back-spec-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> 3-Vehicle Live Slots</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> HP &amp; Sprint Graphs</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Monthly Cost Analysis</li>
+                                </ul>
+                                <a href="404.html" class="btn-flip-cta" title="Launch Matrix">
+                                    <span>Launch Matrix</span> <i class="fa-solid fa-code-compare"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 Flip Card -->
+                    <div class="journey-flip-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="journey-flip-inner">
+                            <!-- Front Face -->
+                            <div class="journey-card-front">
+                                <div class="step-card-top-bar"></div>
+                                <div class="step-num-bubble">04</div>
+                                <div class="step-icon-orb">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                </div>
+                                <span class="step-category-pill">DIRECT RATES</span>
+                                <h4 class="step-title">Finance</h4>
+                                <div class="step-metric-chip">
+                                    <i class="fa-solid fa-bolt"></i> <span>Zero-Markup Approval</span>
+                                </div>
+                                <p class="step-desc">Lock in zero-markup tier-1 institutional leasing and loan rates with immediate soft-pull digital pre-qualification.</p>
+                                <a href="404.html" class="step-action-link" title="Calculate Rates">
+                                    <span>Calculate Rates</span> <i class="fa-solid fa-calculator"></i>
+                                </a>
+                                <div class="flip-hover-hint">
+                                    <i class="fa-solid fa-arrows-rotate"></i> <span>Flip Details</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="journey-card-back">
+                                <div class="back-phase-badge">STAGE 04 &bull; PROTOCOL</div>
+                                <h4 class="back-step-title">Direct Financing</h4>
+                                <ul class="back-spec-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Soft-Pull Pre-Check</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 100% Zero-Markup APR</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Instant Amortization</li>
+                                </ul>
+                                <a href="404.html" class="btn-flip-cta" title="Apply Pre-Approval">
+                                    <span>Apply Pre-Approval</span> <i class="fa-solid fa-calculator"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 05 Flip Card -->
+                    <div class="journey-flip-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="journey-flip-inner">
+                            <!-- Front Face -->
+                            <div class="journey-card-front">
+                                <div class="step-card-top-bar"></div>
+                                <div class="step-num-bubble">05</div>
+                                <div class="step-icon-orb">
+                                    <i class="fa-solid fa-signature"></i>
+                                </div>
+                                <span class="step-category-pill">10-MIN CLOSING</span>
+                                <h4 class="step-title">Purchase</h4>
+                                <div class="step-metric-chip">
+                                    <i class="fa-solid fa-lock"></i> <span>Encrypted Vault</span>
+                                </div>
+                                <p class="step-desc">Execute seamless digital e-signatures and encrypted wire settlements completely online in under 10 minutes.</p>
+                                <a href="404.html" class="step-action-link" title="Review Process">
+                                    <span>Review Process</span> <i class="fa-solid fa-file-signature"></i>
+                                </a>
+                                <div class="flip-hover-hint">
+                                    <i class="fa-solid fa-arrows-rotate"></i> <span>Flip Details</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="journey-card-back">
+                                <div class="back-phase-badge">STAGE 05 &bull; PROTOCOL</div>
+                                <h4 class="back-step-title">Encrypted Settlement</h4>
+                                <ul class="back-spec-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Online 10-Min Signing</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 256-bit Secure Wire</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Title &amp; Reg Automated</li>
+                                </ul>
+                                <a href="404.html" class="btn-flip-cta" title="Start Secure Buy">
+                                    <span>Start Secure Buy</span> <i class="fa-solid fa-file-signature"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 06 Flip Card -->
+                    <div class="journey-flip-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="journey-flip-inner">
+                            <!-- Front Face -->
+                            <div class="journey-card-front">
+                                <div class="step-card-top-bar"></div>
+                                <div class="step-num-bubble">06</div>
+                                <div class="step-icon-orb">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+                                <span class="step-category-pill">WHITE-GLOVE</span>
+                                <h4 class="step-title">Drive</h4>
+                                <div class="step-metric-chip">
+                                    <i class="fa-solid fa-truck-ramp-box"></i> <span>Enclosed Carrier</span>
+                                </div>
+                                <p class="step-desc">Direct enclosed transport delivers your certified vehicle straight to your driveway with a 7-day trial window.</p>
+                                <a href="404.html" class="step-action-link" title="Get Started">
+                                    <span>Get Started</span> <i class="fa-solid fa-key"></i>
+                                </a>
+                                <div class="flip-hover-hint">
+                                    <i class="fa-solid fa-arrows-rotate"></i> <span>Flip Details</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="journey-card-back">
+                                <div class="back-phase-badge">STAGE 06 &bull; PROTOCOL</div>
+                                <h4 class="back-step-title">Doorstep Handover</h4>
+                                <ul class="back-spec-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Enclosed Carrier Transit</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 50-State GPS Tracking</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 7-Day Test Ownership</li>
+                                </ul>
+                                <a href="404.html" class="btn-flip-cta" title="Launch Drive">
+                                    <span>Launch Drive</span> <i class="fa-solid fa-key"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6 — FINAL BRAND / CUSTOMER CTA ("Your Next Drive Starts Here.")
+         ========================================================================= -->
+    <section class="about-closing-cta-section" id="closingCtaSection">
+        <div class="closing-cta-overlay"></div>
+        <div class="container">
+            <div class="closing-cta-content" data-aos="zoom-in" data-aos-duration="800">
+                <div class="closing-cta-line"></div>
+                <h2 class="closing-cta-title">Your Next Drive <span>Starts Here.</span></h2>
+                <p class="closing-cta-desc">Whether you seek a bespoke track-ready coupe or an executive luxury hybrid, our team is ready to curate your acquisition.</p>
+                
+                <div class="closing-cta-buttons">
+                    <a href="inventory.html" class="btn-cta-sweep">
+                        <i class="fa-solid fa-car"></i>
+                        <span>Explore Inventory</span>
+                    </a>
+                    <a href="contact.html" class="btn-cta-outline">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contact Specialist</span>
+                    </a>
+                    <a href="404.html" class="btn-cta-outline" title="Compare Models">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <span>Compare Models</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    
+                    <div class="footer-col footer-col--about">
+                        <div class="footer-logo">
+                            <img src="assets/images/stackly-logo.webp" alt="Stackly White Logo">
+                        </div>
+                        <p class="footer-about-text">
+                            Stackly is the premier automotive dealer platform providing certified vehicles, transparent vehicle financing, and premium customer service across North America.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--links">
+                        <h4 class="footer-col__title">Useful Links</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> HOME</a></li>
+                            <li><a href="inventory.html"><i class="fa-solid fa-chevron-right"></i> VEHICLE LISTINGS</a></li>
+                            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> ABOUT US</a></li>
+                            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> BLOG</a></li>
+                            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> CONTACT US</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col--posts">
+                        <h4 class="footer-col__title">Latest News</h4>
+                        <div class="footer-mini-posts">
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tips For Better & Safe Driving"><img src="assets/images/news-4-70x70.webp" alt="Mini Post 1" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tips For Better &amp; Safe Driving With Luxury Car</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 15, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tellus Dis Turpis Feugiat Egestas"><img src="assets/images/news5-70x70.webp" alt="Mini Post 2" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tellus Dis Turpis Feugiat Egestas</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 12, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Viverra Sed Diam Leo Nibh Amet"><img src="assets/images/news6-70x70.webp" alt="Mini Post 3" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Viverra Sed Diam Leo Nibh Amet</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 10, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--contact">
+                        <h4 class="footer-col__title">Showroom Timings</h4>
+                        
+                        <div class="timings-box">
+                            <div class="timing-row">
+                                <span>Monday &#8211; Saturday:</span>
+                                <strong>9:00 AM &#8211; 8:00 PM</strong>
+                            </div>
+                            <div class="timing-row">
+                                <span>Sunday:</span>
+                                <strong>10:00 AM &#8211; 6:00 PM</strong>
+                            </div>
+                        </div>
+
+                        <div class="footer-contact-details">
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>MMR Complex, Chinna Thirupathi, Near by Chinna Moniyappan Kovil, Salem 636008.</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="404.html">+91 90909 09090</a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="404.html">info@stackly.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom__inner">
+                <p class="copyright-text">
+                    &copy; 2026 <strong>Stackly</strong> &#8211; All Rights Reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Site Map</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS (Animate On Scroll) JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- GSAP & ScrollTrigger Animations CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Main JS & Specialized About JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/about.js"></script>
+</body>
+</html>

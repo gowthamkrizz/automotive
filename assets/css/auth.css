@@ -1,0 +1,984 @@
+/* ==========================================================================
+   Stackly Luxury Automotive - 3D Moving Car Theme & Authentication
+   ========================================================================== */
+
+:root {
+  --primary: #DD0005;
+  --primary-hover: #b80004;
+  --primary-glow: rgba(221, 0, 5, 0.35);
+  --dark-bg: #090a0d;
+  --dark-card: #121318;
+  --glass-bg: rgba(255, 255, 255, 0.96);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --font-body: 'Roboto Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Roboto Flex', 'Archivo', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body.auth-body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   1. Interactive 3D Automotive Background with Moving Cyber Road
+   -------------------------------------------------------------------------- */
+.auth-page-section {
+  background-color: var(--dark-bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem 6.5rem;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(221, 0, 5, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 10% 85%, rgba(0, 229, 255, 0.08) 0%, transparent 45%),
+    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px;
+}
+
+/* Background Ambient Glow & Laser Rings */
+.auth-bg-ambient-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.auth-radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.auth-radar-ring-1 {
+  width: 550px;
+  height: 550px;
+  border: 1px dashed rgba(221, 0, 5, 0.22);
+  animation: rotateRingClockwise 35s linear infinite;
+}
+
+.auth-radar-ring-2 {
+  width: 850px;
+  height: 850px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  animation: rotateRingCounter 45s linear infinite;
+}
+
+@keyframes rotateRingClockwise {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateRingCounter {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* --------------------------------------------------------------------------
+   2. Background 3D Moving Supercar Track
+   -------------------------------------------------------------------------- */
+.auth-bg-car-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 95px;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Cyber Road Asphalt & Glowing Neon Line */
+.auth-cyber-road {
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  width: 140%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(221, 0, 5, 0.95) 0px,
+    rgba(221, 0, 5, 0.95) 45px,
+    transparent 45px,
+    transparent 85px
+  );
+  box-shadow: 0 0 20px rgba(221, 0, 5, 0.8), 0 0 45px rgba(221, 0, 5, 0.4);
+  animation: authRoadScroll 0.85s linear infinite;
+}
+
+@keyframes authRoadScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-85px); }
+}
+
+/* Moving 3D Supercar Across Track */
+.auth-moving-supercar {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 78px;
+  animation: authSupercarCruise 3.8s ease-in-out infinite alternate;
+}
+
+@keyframes authSupercarCruise {
+  0% { transform: translateX(-58%) translateY(0px) rotate(0deg); }
+  50% { transform: translateX(-48%) translateY(-2px) rotate(0.4deg); }
+  100% { transform: translateX(-54%) translateY(1px) rotate(-0.3deg); }
+}
+
+.supercar-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.95));
+  animation: supercarSuspension 0.22s ease-in-out infinite alternate;
+}
+
+@keyframes supercarSuspension {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(1.2px); }
+}
+
+/* Rotating Wheel Rims */
+.wheel-group {
+  transform-origin: center;
+  animation: spinSupercarWheels 0.35s linear infinite;
+}
+
+.wheel-group.rear-wheel { transform-origin: 100px 68px; }
+.wheel-group.front-wheel { transform-origin: 262px 68px; }
+
+@keyframes spinSupercarWheels {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Headlight Projection Beam */
+.car-headlight-beam {
+  position: absolute;
+  right: -140px;
+  bottom: 8px;
+  width: 160px;
+  height: 36px;
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.65) 0%, rgba(0, 229, 255, 0.15) 60%, transparent 100%);
+  clip-path: polygon(0% 40%, 100% 0%, 100% 100%, 0% 70%);
+  filter: blur(2px);
+  pointer-events: none;
+  animation: headlightFlicker 0.25s infinite alternate;
+}
+
+@keyframes headlightFlicker {
+  0% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+/* Taillight Laser Light Trail */
+.car-taillight-trail {
+  position: absolute;
+  left: -90px;
+  bottom: 14px;
+  width: 110px;
+  height: 6px;
+  background: linear-gradient(270deg, rgba(221, 0, 5, 0.95) 0%, rgba(221, 0, 5, 0.3) 60%, transparent 100%);
+  filter: blur(2px);
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+/* Underglow Neon */
+.car-underglow {
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+  width: 200px;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(221, 0, 5, 0.8) 0%, rgba(221, 0, 5, 0.2) 60%, transparent 80%);
+  filter: blur(5px);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: underglowPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes underglowPulse {
+  0% { opacity: 0.7; transform: scaleX(0.95); }
+  100% { opacity: 1; transform: scaleX(1.05); }
+}
+
+/* Speed Sparks */
+.moving-speed-sparks .spark {
+  position: absolute;
+  height: 1px;
+  background: #00e5ff;
+  box-shadow: 0 0 6px #00e5ff;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.spark.s1 { width: 35px; bottom: 8px; left: 15%; animation: sparkRush 1.4s linear infinite; }
+.spark.s2 { width: 50px; bottom: 12px; left: 65%; animation: sparkRush 1s linear infinite 0.3s; }
+.spark.s3 { width: 25px; bottom: 5px; left: 80%; animation: sparkRush 1.8s linear infinite 0.6s; }
+
+@keyframes sparkRush {
+  from { transform: translateX(100px); opacity: 0; }
+  50% { opacity: 0.9; }
+  to { transform: translateX(-350px); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   3. Auth Split-Card (Luxury Glassmorphic Automotive Model)
+   -------------------------------------------------------------------------- */
+.auth-split-card {
+  max-width: 1060px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 2.5rem;
+  padding: 1.5rem;
+  margin: auto;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Left Brand Showcase Banner */
+.auth-left-banner {
+  background: linear-gradient(160deg, #181518 0%, #0c0b0d 100%);
+  border-radius: 22px;
+  padding: 2.5rem 2rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-left-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at top right, rgba(221, 0, 5, 0.4) 0%, transparent 65%),
+    radial-gradient(circle at bottom left, rgba(0, 229, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.auth-banner-top {
+  position: relative;
+  z-index: 2;
+}
+
+.auth-banner-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.auth-banner-logo img {
+  height: 38px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.auth-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  margin-bottom: 1.15rem;
+}
+
+.auth-badge-pill svg {
+  color: var(--primary);
+}
+
+.auth-banner-headline {
+  font-family: 'Roboto Flex', 'Archivo', Georgia, sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.auth-banner-headline .accent-text {
+  color: var(--primary);
+}
+
+.auth-banner-desc {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: rgba(241, 245, 249, 0.85);
+  margin-bottom: 1rem;
+}
+
+/* Left Image Visual */
+.auth-banner-img-wrap {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-banner-burger-img {
+  max-width: 100%;
+  width: 270px;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  margin: 0 auto;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.75));
+  animation: authCarFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes authCarFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(1.2deg); }
+}
+
+.auth-banner-features {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.auth-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f8fafc;
+  transition: all 0.25s ease;
+}
+
+.auth-feature-pill:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(221, 0, 5, 0.5);
+  transform: translateY(-2px);
+}
+
+.auth-feature-pill svg {
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   4. Right Form Section
+   -------------------------------------------------------------------------- */
+.auth-right-content {
+  padding: 1.25rem 1.5rem 1.25rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.auth-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.auth-back-link svg {
+  color: var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.auth-back-link:hover {
+  color: var(--primary);
+}
+
+.auth-back-link:hover svg {
+  transform: translateX(-3px);
+}
+
+.auth-top-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.auth-heading-group {
+  margin-bottom: 1.5rem;
+}
+
+.auth-main-title {
+  font-family: 'Roboto Flex', 'Archivo', sans-serif;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.auth-main-title .accent-text {
+  color: var(--primary);
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Form Elements */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.auth-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.auth-field-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.auth-label {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+
+.auth-label .required-star {
+  color: var(--primary);
+}
+
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.auth-field-icon {
+  position: absolute;
+  left: 1.1rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: color 0.2s ease;
+  z-index: 2;
+}
+
+.auth-field-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.auth-input {
+  width: 100%;
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.82rem 1.1rem 0.82rem 2.85rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.auth-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.auth-input:focus {
+  background-color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3.5px var(--primary-glow);
+}
+
+.auth-input-wrap:focus-within .auth-field-icon {
+  color: var(--primary);
+}
+
+.auth-input.input-error {
+  border-color: #ef4444 !important;
+  background-color: #fffafb !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14) !important;
+}
+
+.auth-input.input-success {
+  border-color: var(--primary);
+  background-color: #fffdfd;
+}
+
+.auth-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 2.85rem;
+}
+
+.auth-select-arrow {
+  position: absolute;
+  right: 1.1rem;
+  color: #94a3b8;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  z-index: 2;
+}
+
+.password-toggle-btn:hover {
+  color: var(--primary);
+}
+
+.auth-error-msg {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #ef4444;
+  margin-top: 0.35rem;
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.auth-error-msg.visible {
+  display: flex;
+}
+
+.auth-error-msg svg {
+  flex-shrink: 0;
+}
+
+/* Password Validation Rules Checklist */
+.password-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem 1rem;
+  margin-top: 0.65rem;
+  padding: 0.25rem 0.25rem 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: all 0.2s ease;
+}
+
+.checklist-item svg {
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.checklist-item.rule-met {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.checklist-item.rule-met svg {
+  color: #16a34a;
+}
+
+/* Options & Checkbox Row */
+.auth-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.25rem 0;
+  font-size: 0.88rem;
+}
+
+.auth-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.88rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.auth-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-forgot-link,
+.auth-terms-link {
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.auth-forgot-link:hover,
+.auth-terms-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Submit Action Button */
+.auth-submit-btn {
+  width: 100%;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  margin-top: 0.5rem;
+}
+
+.auth-submit-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(221, 0, 5, 0.5);
+}
+
+.auth-submit-btn:active {
+  transform: translateY(0);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Footer Bottom Prompt */
+.auth-footer-prompt {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 1.4rem;
+}
+
+.auth-footer-prompt a {
+  color: var(--primary);
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.auth-footer-prompt a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Toast Notifications */
+.auth-toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.auth-toast {
+  pointer-events: auto;
+  min-width: 300px;
+  max-width: 420px;
+  background: #18181c;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+  border-left: 4px solid var(--primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  animation: authToastSlideIn 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-toast.toast-success { border-left-color: #16a34a; }
+.auth-toast.toast-error { border-left-color: #ef4444; }
+
+.auth-toast-content {
+  flex: 1;
+}
+
+.auth-toast-title {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.auth-toast-message {
+  font-size: 0.78rem;
+  color: rgba(241, 245, 249, 0.8);
+  line-height: 1.35;
+}
+
+.auth-toast-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0 0 0 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.auth-toast-close:hover {
+  color: #ffffff;
+}
+
+.auth-toast.hiding {
+  animation: authToastFadeOut 0.3s ease forwards;
+}
+
+@keyframes authToastSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes authToastFadeOut {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+/* Modals */
+.auth-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 10, 13, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.auth-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.auth-modal-card {
+  background: #ffffff;
+  border-radius: 18px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transform: scale(0.92) translateY(10px);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.auth-modal-backdrop.active .auth-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.auth-modal-header {
+  padding: 1.25rem 1.5rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.auth-modal-title {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.auth-modal-close-btn {
+  background: #f1f5f9;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.auth-modal-body {
+  padding: 1.25rem 1.5rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.auth-modal-footer {
+  padding: 0.85rem 1.5rem 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  border-top: 1px solid #f1f5f9;
+  background: #f8fafc;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .auth-page-section {
+    padding-bottom: 7.5rem;
+  }
+
+  .auth-split-card {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    gap: 2rem;
+    padding: 1.25rem;
+  }
+  
+  .auth-left-banner {
+    padding: 2.25rem 1.75rem;
+    min-height: auto;
+  }
+
+  .auth-banner-burger-img {
+    width: 230px;
+  }
+
+  .auth-right-content {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-page-section {
+    padding: 1.5rem 1rem 7.5rem;
+  }
+  
+  .auth-split-card {
+    border-radius: 20px;
+    padding: 1.15rem;
+    gap: 1.5rem;
+  }
+
+  .auth-form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .password-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-moving-supercar {
+    width: 200px;
+    height: 65px;
+  }
+}

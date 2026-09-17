@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us &#8211; Stackly Dealer</title>
+    
+    <link rel="icon" href="assets/images/cropped-logo-1-32x32.webp" sizes="32x32" type="image/webp">
+    <link rel="apple-touch-icon" href="assets/images/cropped-logo-1-180x180.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;500;600;700;800&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Base CSS Styles & Specialized Contact CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body class="inner-page contact-page">
+
+    <!-- Page Preloader -->
+    <div class="page-loader-wrapper" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-text-content">
+                <div class="text-loader-content-wrap">
+                    <div class="loader-text">LOADING...</div>
+                    <div class="loader-text-progress">LOADING...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header fl-header-transparent" id="siteHeader">
+        <div class="header__inner">
+            <div class="header-content container-fluid">
+                <!-- Logo -->
+                <div class="header-content__logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/images/stackly-logo.webp" alt="Stackly Logo" class="site-logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="header-content__menu" id="desktopNav">
+                    <ul class="nav-menu">
+                        <li class="menu-item ">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="inventory.html" class="nav-link">VEHICLE LISTINGS</a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="about.html" class="nav-link">ABOUT US</a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="contact.html" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-content__right">
+                    <a href="login.html" class="btn btn-header-login" id="loginBtn">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer__header">
+                <img src="assets/images/stackly-logo.webp" alt="Stackly" class="mobile-logo">
+                <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mobile-drawer__body">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="index.html" class="mobile-nav-link ">HOME</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="inventory.html" class="mobile-nav-link ">VEHICLE LISTINGS</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="about.html" class="mobile-nav-link ">ABOUT US</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link ">BLOG</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="contact.html" class="mobile-nav-link active">CONTACT US</a>
+                    </li>
+                </ul>
+
+                <div class="mobile-drawer__footer">
+                    <a href="login.html" class="btn btn-primary btn-block">
+                        <i class="fa-regular fa-user"></i> Login / Register
+                    </a>
+                    <div class="mobile-contact-card">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <span>Talk to an Expert</span>
+                            <strong>+1 (234) 567 8900</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner / Breadcrumb -->
+    <section class="page-hero-banner" style="background-image: url('assets/images/slider1-1.webp');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <h1 class="page-hero-title">CONTACT US</h1>
+            <div class="breadcrumb-trail">
+                <a href="index.html">Home</a>
+                <span class="divider">/</span>
+                <span class="current">Contact Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page Main Content -->
+    <main class="contact-page-wrapper">
+        
+        <!-- ==========================================================================
+             SECTION 1 — CONTACT INFORMATION HUB (4-CARD DASHBOARD)
+             ========================================================================== -->
+        <section class="contact-hub-section" id="contactHubSection">
+            <div class="container">
+                <div class="contact-hub-header" data-aos="fade-up" data-aos-duration="700">
+                    <span class="contact-section-label">Automotive Concierge</span>
+                    <h2 class="contact-section-title">Get In Touch With Stackly</h2>
+                    <p class="contact-section-subtitle">Connect with our dedicated automotive consultants for sales, luxury vehicle acquisition, support, or visit our showroom.</p>
+                </div>
+
+                <div class="contact-hub-grid">
+                    <!-- Card 1: Showroom Location -->
+                    <div class="contact-hub-flip-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hub-card-inner">
+                            <!-- Front Face -->
+                            <div class="hub-card-face hub-card-front">
+                                <div class="hub-card-accent-line"></div>
+                                <div class="img-shimmer-sweep"></div>
+                                <div class="hub-card-icon-wrap">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h3 class="hub-card-title">Showroom Location</h3>
+                                <p class="hub-card-text">
+                                    MMR Complex, Chinna Thirupathi, Near by Chinna Moniyappan Kovil, Salem 636008.
+                                    <strong>Flagship Luxury Experience Center</strong>
+                                </p>
+                                <div class="hub-card-front-footer">
+                                    <span class="hub-flip-hint"><i class="fa-solid fa-rotate"></i> Hover to Flip</span>
+                                    <a href="404.html" class="hub-mini-action-dot" aria-label="Showroom Directions" title="Showroom Location"><i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- Back Face (Popped-up Content) -->
+                            <div class="hub-card-face hub-card-back">
+                                <div class="hub-back-content">
+                                    <span class="hub-back-badge"><i class="fa-solid fa-building-circle-check"></i> VIP LOUNGE</span>
+                                    <h4 class="hub-back-title">Experience Center</h4>
+                                    <ul class="hub-back-features">
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Private Valet Parking</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Dedicated Track Test-Drive</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Espresso &amp; Champagne Bar</li>
+                                    </ul>
+                                    <a href="404.html" class="btn-hub-action">
+                                        <span>Get Directions</span>
+                                        <i class="fa-solid fa-map-location-dot"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Call Our Sales Team -->
+                    <div class="contact-hub-flip-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="hub-card-inner">
+                            <!-- Front Face -->
+                            <div class="hub-card-face hub-card-front">
+                                <div class="hub-card-accent-line"></div>
+                                <div class="img-shimmer-sweep"></div>
+                                <div class="hub-card-icon-wrap">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </div>
+                                <h3 class="hub-card-title">Call Our Sales Team</h3>
+                                <p class="hub-card-text">
+                                    Speak with a certified vehicle specialist for instant inquiries.
+                                    <strong>+1 (234) 567 8900</strong>
+                                </p>
+                                <div class="hub-card-front-footer">
+                                    <span class="hub-flip-hint"><i class="fa-solid fa-rotate"></i> Hover to Flip</span>
+                                    <a href="404.html" class="hub-mini-action-dot" aria-label="Call Sales Team" title="Call Sales Team"><i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- Back Face (Popped-up Content) -->
+                            <div class="hub-card-face hub-card-back">
+                                <div class="hub-back-content">
+                                    <span class="hub-back-badge"><i class="fa-solid fa-bolt"></i> INSTANT DISPATCH</span>
+                                    <h4 class="hub-back-title">Direct Advisory Line</h4>
+                                    <ul class="hub-back-features">
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Response under 60 seconds</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Custom lease &amp; finance quotes</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Multilingual luxury advisors</li>
+                                    </ul>
+                                    <a href="404.html" class="btn-hub-action">
+                                        <span>Call Now</span>
+                                        <i class="fa-solid fa-phone"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Email Support -->
+                    <div class="contact-hub-flip-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="hub-card-inner">
+                            <!-- Front Face -->
+                            <div class="hub-card-face hub-card-front">
+                                <div class="hub-card-accent-line"></div>
+                                <div class="img-shimmer-sweep"></div>
+                                <div class="hub-card-icon-wrap">
+                                    <i class="fa-solid fa-envelope-open-text"></i>
+                                </div>
+                                <h3 class="hub-card-title">Email Support</h3>
+                                <p class="hub-card-text">
+                                    Custom vehicle quotes, financing questions &amp; general inquiries.
+                                    <strong>sales@stackly.com</strong>
+                                </p>
+                                <div class="hub-card-front-footer">
+                                    <span class="hub-flip-hint"><i class="fa-solid fa-rotate"></i> Hover to Flip</span>
+                                    <a href="404.html" class="hub-mini-action-dot" aria-label="Email Support" title="Email Support"><i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- Back Face (Popped-up Content) -->
+                            <div class="hub-card-face hub-card-back">
+                                <div class="hub-back-content">
+                                    <span class="hub-back-badge"><i class="fa-solid fa-shield-halved"></i> 2HR RESPONSE</span>
+                                    <h4 class="hub-back-title">Priority Digital Desk</h4>
+                                    <ul class="hub-back-features">
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Guaranteed 2-hour turnaround</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Window sticker PDF delivery</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Encrypted client agreements</li>
+                                    </ul>
+                                    <a href="404.html" class="btn-hub-action">
+                                        <span>Send Email</span>
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Opening Hours -->
+                    <div class="contact-hub-flip-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="hub-card-inner">
+                            <!-- Front Face -->
+                            <div class="hub-card-face hub-card-front">
+                                <div class="hub-card-accent-line"></div>
+                                <div class="img-shimmer-sweep"></div>
+                                <div class="hub-card-icon-wrap">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <h3 class="hub-card-title">Opening Hours</h3>
+                                <p class="hub-card-text">
+                                    Mon – Fri: 8:30 AM – 8:00 PM<br>
+                                    Sat: 9:00 AM – 7:00 PM | Sun: 10:00 AM – 5:00 PM
+                                    <strong>Open 7 Days a Week</strong>
+                                </p>
+                                <div class="hub-card-front-footer">
+                                    <span class="hub-flip-hint"><i class="fa-solid fa-rotate"></i> Hover to Flip</span>
+                                    <a href="404.html" class="hub-mini-action-dot" aria-label="Opening Hours" title="Opening Hours"><i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- Back Face (Popped-up Content) -->
+                            <div class="hub-card-face hub-card-back">
+                                <div class="hub-back-content">
+                                    <span class="hub-back-badge"><i class="fa-solid fa-calendar-check"></i> 7-DAY VIP ACCESS</span>
+                                    <h4 class="hub-back-title">Concierge Schedule</h4>
+                                    <ul class="hub-back-features">
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Weekdays: 8:30 AM – 8:00 PM</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Weekends: 9:00 AM – 7:00 PM</li>
+                                        <li><i class="fa-solid fa-circle-check text-red"></i> Private after-hours bookings</li>
+                                    </ul>
+                                    <a href="404.html" class="btn-hub-action">
+                                        <span>Book VIP Visit</span>
+                                        <i class="fa-solid fa-calendar-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 2 — FIND OUR SHOWROOM (SPLIT-SCREEN)
+             ========================================================================== -->
+        <section class="showroom-split-section" id="showroomSection">
+            <div class="container">
+                <div class="showroom-split-grid">
+                    
+                    <!-- Left: Interactive Map Container -->
+                    <div class="showroom-map-card" data-aos="fade-right" data-aos-duration="800">
+                        <div class="showroom-map-container">
+                            <iframe 
+                                src="https://maps.google.com/maps?q=MMR+Complex,+Chinna+Thirupathi,+Near+by+Chinna+Moniyappan+Kovil,+Salem+636008&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Stackly Salem Main Showroom Location">
+                            </iframe>
+
+                            <!-- GSAP Animated Custom Red Location Marker HUD -->
+                            <div class="map-marker-overlay" id="showroomMapMarker">
+                                <div class="marker-pulse-ring"></div>
+                                <div class="marker-pin">
+                                    <svg viewBox="0 0 24 24" class="svg-icon"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-4.66l.12-.34h13.77l.11.34V17zM7.5 14c.83 0 1.5-.67 1.5-1.5S8.33 11 7.5 11 6 11.67 6 12.5 6.67 14 7.5 14zm9 0c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/></svg>
+                                </div>
+                                <div class="marker-label-card">
+                                    <span>Stackly Main Showroom</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map HUD Footer Bar -->
+                        <div class="map-hud-bar">
+                            <div class="map-hud-info">
+                                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+                                <span>Salem Experience Center</span>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=MMR+Complex,+Chinna+Thirupathi,+Near+by+Chinna+Moniyappan+Kovil,+Salem+636008" target="_blank" rel="noopener noreferrer" class="map-hud-btn">
+                                <span>Open Maps</span>
+                                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Showroom Information Panel -->
+                    <div class="showroom-info-panel" data-aos="fade-left" data-aos-duration="800">
+                        <div class="showroom-details-card">
+                            
+                            <!-- Dealership Showroom Visual Banner -->
+                            <div class="showroom-visual-card">
+                                <img src="assets/images/g2.webp" alt="Stackly Luxury Dealership Showroom" class="showroom-visual-img">
+                                <div class="showroom-visual-overlay">
+                                    <span class="showroom-badge-tag">
+                                         Certified Facility
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="showroom-heading-wrap mb-24">
+                                <span class="contact-section-label">Visit Us</span>
+                                <h2 class="contact-section-title" style="font-size: 30px; margin-bottom: 8px;">Stackly Main Showroom</h2>
+                                <p class="contact-section-subtitle" style="font-size: 14px;">Explore our private luxury collection with personalized VIP host guidance and direct test tracks.</p>
+                            </div>
+
+                            <div class="showroom-detail-list">
+                                <!-- Address -->
+                                <div class="showroom-detail-item">
+                                    <div class="detail-item-icon">
+                                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    </div>
+                                    <div class="detail-item-content">
+                                        <div class="detail-item-title">Complete Address</div>
+                                        <div class="detail-item-value">MMR Complex, Chinna Thirupathi, Near by Chinna Moniyappan Kovil, Salem 636008.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Working Hours -->
+                                <div class="showroom-detail-item">
+                                    <div class="detail-item-icon">
+                                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                                    </div>
+                                    <div class="detail-item-content">
+                                        <div class="detail-item-title">Working Hours</div>
+                                        <div class="detail-item-value">Mon – Fri: 8:30 AM – 8:00 PM | Sat: 9:00 AM – 7:00 PM | Sun: 10:00 AM – 5:00 PM</div>
+                                    </div>
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="showroom-detail-item">
+                                    <div class="detail-item-icon">
+                                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.99c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.61c0-.55-.45-1-.99-1z"/></svg>
+                                    </div>
+                                    <div class="detail-item-content">
+                                        <div class="detail-item-title">Direct Phone Line</div>
+                                        <div class="detail-item-value"><a href="tel:+12345678900">+1 (234) 567 8900</a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Get Directions CTA -->
+                            <a href="https://www.google.com/maps/search/?api=1&query=MMR+Complex,+Chinna+Thirupathi,+Near+by+Chinna+Moniyappan+Kovil,+Salem+636008" target="_blank" rel="noopener noreferrer" class="showroom-cta-btn">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 3 — SEND US AN INQUIRY (2-COLUMN VEHICLE FORM)
+             ========================================================================== -->
+        <section class="inquiry-form-section" id="inquirySection">
+            <div class="container">
+                <div class="inquiry-layout-grid">
+                    
+                    <!-- Left Side: Automotive Image with Dark Overlay -->
+                    <div class="inquiry-visual-col" data-aos="fade-right" data-aos-duration="800">
+                        <div class="inquiry-bg-image-wrap">
+                            <img src="assets/images/0-1538402-1.webp" alt="Luxury Automotive" class="inquiry-bg-img">
+                            <div class="inquiry-bg-overlay"></div>
+                        </div>
+
+                        <div class="inquiry-visual-content">
+                            <span class="contact-section-label" style="color: #FF4D4D;">Direct Inquiry</span>
+                            <h2 class="contact-section-title text-light">Let’s Find Your Next Car</h2>
+                            <p class="contact-section-subtitle text-light">
+                                Contact the Stackly team for vehicle availability, bespoke test drives, tailored pricing, flexible financing options, or general enquiries.
+                            </p>
+
+                            <div class="inquiry-perks-list">
+                                <div class="inquiry-perk-item">
+                                    <div class="inquiry-perk-icon">
+                                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M11 21h-1l1-7H7.5c-.88 0-.33-.75-.31-.78C8.48 10.94 10.42 7.54 13.01 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.93 17.56 11 21 11 21z"/></svg>
+                                    </div>
+                                    <span>Guaranteed 2-Hour Response Time</span>
+                                </div>
+                                <div class="inquiry-perk-item">
+                                    <div class="inquiry-perk-icon">
+                                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                                    </div>
+                                    <span>Certified Vehicle Specialists & Pricing</span>
+                                </div>
+                                <div class="inquiry-perk-item">
+                                    <div class="inquiry-perk-icon">
+                                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9.5 14.5l-2-2-1.4 1.4 3.4 3.4 7-7-1.4-1.4z"/></svg>
+                                    </div>
+                                    <span>Flexible Weekend & Evening Appointments</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inquiry-visual-footer">
+                            <div class="inquiry-hotline-wrap">
+                                <div class="inquiry-hotline-icon">
+                                    <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z"/></svg>
+                                </div>
+                                <div class="inquiry-hotline-text">
+                                    <span>Need Immediate Help?</span>
+                                    <strong>+1 (234) 567 8900</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Clean Form Container -->
+                    <div class="inquiry-form-card" data-aos="fade-left" data-aos-duration="800">
+                        <div class="inquiry-form-header">
+                            <span class="contact-section-label">Quick Inquiry Form</span>
+                            <h3>Vehicle Inquiry & Contact</h3>
+                            <p>Fill out the form below and our team will get back to you promptly.</p>
+                        </div>
+
+                        <form id="contactInquiryForm" class="inquiry-form" novalidate>
+                            <div class="inquiry-form-grid">
+                                
+                                <!-- 1. Full Name -->
+                                <div class="custom-form-group" data-aos="fade-up" data-aos-delay="100">
+                                    <label for="inquiryFullName" class="custom-form-label">
+                                        Full Name <span class="required-star">*</span>
+                                    </label>
+                                    <div class="custom-input-wrapper">
+                                        <input type="text" id="inquiryFullName" class="custom-form-input" required placeholder="John Doe">
+                                        <svg viewBox="0 0 24 24" class="input-icon-svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- 2. Email Address -->
+                                <div class="custom-form-group" data-aos="fade-up" data-aos-delay="150">
+                                    <label for="inquiryEmail" class="custom-form-label">
+                                        Email Address <span class="required-star">*</span>
+                                    </label>
+                                    <div class="custom-input-wrapper">
+                                        <input type="email" id="inquiryEmail" class="custom-form-input" required placeholder="john@example.com">
+                                        <svg viewBox="0 0 24 24" class="input-icon-svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Phone Number -->
+                                <div class="custom-form-group" data-aos="fade-up" data-aos-delay="200">
+                                    <label for="inquiryPhone" class="custom-form-label">
+                                        Phone Number <span class="required-star">*</span>
+                                    </label>
+                                    <div class="custom-input-wrapper">
+                                        <input type="tel" id="inquiryPhone" class="custom-form-input" placeholder="+1 (234) 567-8900" required>
+                                        <svg viewBox="0 0 24 24" class="input-icon-svg"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.99c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.61c0-.55-.45-1-.99-1z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Vehicle / Model -->
+                                <div class="custom-form-group" data-aos="fade-up" data-aos-delay="250">
+                                    <label for="inquiryVehicle" class="custom-form-label">
+                                        Vehicle / Model
+                                    </label>
+                                    <div class="custom-input-wrapper">
+                                        <input type="text" id="inquiryVehicle" class="custom-form-input" placeholder="e.g. Audi RS6 / Porsche 911">
+                                        <svg viewBox="0 0 24 24" class="input-icon-svg"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-4.66l.12-.34h13.77l.11.34V17zM7.5 14c.83 0 1.5-.67 1.5-1.5S8.33 11 7.5 11 6 11.67 6 12.5 6.67 14 7.5 14zm9 0c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- 5. Inquiry Type Dropdown -->
+                                <div class="custom-form-group form-field-full" data-aos="fade-up" data-aos-delay="300">
+                                    <label for="inquiryType" class="custom-form-label">
+                                        Inquiry Type <span class="required-star">*</span>
+                                    </label>
+                                    <div class="custom-input-wrapper">
+                                        <select id="inquiryType" class="custom-form-select" required>
+                                            <option value="" disabled selected>Select an inquiry category</option>
+                                            <option value="availability">Vehicle Availability</option>
+                                            <option value="testdrive">Book a Test Drive</option>
+                                            <option value="pricing">Pricing & Custom Quotation</option>
+                                            <option value="financing">Financing & Trade-In Valuation</option>
+                                            <option value="general">General Inquiry</option>
+                                            <option value="corporate">Fleet / Corporate Sales</option>
+                                        </select>
+                                        <svg viewBox="0 0 24 24" class="input-icon-svg"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- 6. Message -->
+                                <div class="custom-form-group form-field-full" data-aos="fade-up" data-aos-delay="350">
+                                    <label for="inquiryMessage" class="custom-form-label">
+                                        Message <span class="required-star">*</span>
+                                    </label>
+                                    <div class="custom-input-wrapper">
+                                        <textarea id="inquiryMessage" class="custom-form-textarea" rows="4" required placeholder="Tell us how we can assist you with your vehicle journey..."></textarea>
+                                        <svg viewBox="0 0 24 24" class="input-icon-svg"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- 7. Send Inquiry Button -->
+                                <div class="form-field-full" data-aos="fade-up" data-aos-delay="400">
+                                    <button type="submit" class="inquiry-submit-btn">
+                                        <span>Send Inquiry</span>
+                                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Non-blocking feedback alert -->
+                            <div class="form-feedback-alert" id="formFeedbackAlert"></div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 4 — BOOK A TEST DRIVE + FINAL CTA
+             ========================================================================== -->
+        <section class="test-drive-cta-section" id="testDriveSection">
+            <div class="test-drive-bg-wrap">
+                <img src="assets/images/slider3.webp" alt="Stackly Test Drive Experience" class="test-drive-bg-img">
+                <div class="test-drive-bg-overlay"></div>
+            </div>
+
+            <div class="container test-drive-content">
+                <div class="test-drive-badge" data-aos="fade-down" data-aos-duration="600">
+                    <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 4C6.48 4 2 8.48 2 14c0 2.21.72 4.25 1.94 5.91l1.45-1.45C4.54 17.06 4 15.6 4 14c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.6-.54 3.06-1.39 4.46l1.45 1.45C21.28 18.25 22 16.21 22 14c0-5.52-4.48-10-10-10zm-1 5.08V11a2 2 0 1 0 2 0V9.08a7.012 7.012 0 0 0-2 0z"/></svg>
+                    <span>BOOK YOUR TEST DRIVE</span>
+                </div>
+
+                <h2 class="test-drive-heading" data-aos="zoom-in" data-aos-duration="800">
+                    “See it. Feel it. Drive it.”
+                </h2>
+
+                <p class="test-drive-tagline" data-aos="fade-up" data-aos-delay="150">
+                    Uncompromising Luxury & Performance at Your Fingertips
+                </p>
+
+                <p class="test-drive-desc" data-aos="fade-up" data-aos-delay="250">
+                    Experience the precision engineering of our world-class inventory firsthand. Schedule an exclusive private test drive with our certified product specialists.
+                </p>
+
+                <div class="test-drive-actions" data-aos="fade-up" data-aos-delay="350">
+                    <a href="#inquirySection" class="cta-btn-primary">
+                        <span>Book a Test Drive</span>
+                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                    </a>
+                    <a href="inventory.html" class="cta-btn-secondary">
+                        <span>View Vehicle Listings</span>
+                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-4.66l.12-.34h13.77l.11.34V17zM7.5 14c.83 0 1.5-.67 1.5-1.5S8.33 11 7.5 11 6 11.67 6 12.5 6.67 14 7.5 14zm9 0c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/></svg>
+                    </a>
+                </div>
+
+                <div class="test-drive-perks-row" data-aos="fade-up" data-aos-delay="450">
+                    <div class="perk-pill">
+                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9.5 14.5l-2-2-1.4 1.4 3.4 3.4 7-7-1.4-1.4z"/></svg>
+                        <span>Flexible 7-Day Appointment Times</span>
+                    </div>
+                    <div class="perk-pill">
+                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <span>Dedicated Showroom Specialist</span>
+                    </div>
+                    <div class="perk-pill">
+                        <svg viewBox="0 0 24 24" class="svg-icon"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM2 21h18v-2H2v2z"/></svg>
+                        <span>VIP Lounge & Refreshments</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    
+                    <div class="footer-col footer-col--about">
+                        <div class="footer-logo">
+                            <img src="assets/images/stackly-logo.webp" alt="Stackly White Logo">
+                        </div>
+                        <p class="footer-about-text">
+                            Stackly is the premier automotive dealer platform providing certified vehicles, transparent vehicle financing, and premium customer service across North America.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--links">
+                        <h4 class="footer-col__title">Useful Links</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> HOME</a></li>
+                            <li><a href="inventory.html"><i class="fa-solid fa-chevron-right"></i> VEHICLE LISTINGS</a></li>
+                            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> ABOUT US</a></li>
+                            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> BLOG</a></li>
+                            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> CONTACT US</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col--posts">
+                        <h4 class="footer-col__title">Latest News</h4>
+                        <div class="footer-mini-posts">
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tips For Better & Safe Driving"><img src="assets/images/news-4-70x70.webp" alt="Mini Post 1" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tips For Better &amp; Safe Driving With Luxury Car</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 15, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tellus Dis Turpis Feugiat Egestas"><img src="assets/images/news5-70x70.webp" alt="Mini Post 2" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tellus Dis Turpis Feugiat Egestas</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 12, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Viverra Sed Diam Leo Nibh Amet"><img src="assets/images/news6-70x70.webp" alt="Mini Post 3" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Viverra Sed Diam Leo Nibh Amet</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 10, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--contact">
+                        <h4 class="footer-col__title">Showroom Timings</h4>
+                        
+                        <div class="timings-box">
+                            <div class="timing-row">
+                                <span>Monday &#8211; Saturday:</span>
+                                <strong>9:00 AM &#8211; 8:00 PM</strong>
+                            </div>
+                            <div class="timing-row">
+                                <span>Sunday:</span>
+                                <strong>10:00 AM &#8211; 6:00 PM</strong>
+                            </div>
+                        </div>
+
+                        <div class="footer-contact-details">
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>MMR Complex, Chinna Thirupathi, Near by Chinna Moniyappan Kovil, Salem 636008.</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="404.html">+91 90909 09090</a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="404.html">info@stackly.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom__inner">
+                <p class="copyright-text">
+                    &copy; 2026 <strong>Stackly</strong> &#8211; All Rights Reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Site Map</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS (Animate On Scroll) JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- GSAP 3 & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
+</body>
+</html>

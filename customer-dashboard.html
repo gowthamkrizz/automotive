@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Client Dashboard – Stackly Luxury Automotive</title>
+  <meta name="description" content="Manage your bespoke vehicle orders, track live carrier delivery, schedule VIP track drives, and access exclusive Stackly showroom allocations.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/cropped-logo-1-32x32.webp" sizes="32x32" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/images/cropped-logo-1-180x180.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;600;700;800&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Dashboard CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="dash-sidebar-overlay" id="dashSidebarOverlay"></div>
+
+    <!-- 1. Left Sidebar Navigation -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div>
+        <!-- Brand & Portal Tag -->
+        <div class="dash-sidebar-brand">
+          <a href="index.html" class="dash-brand-link">
+            <img src="assets/images/stackly-logo.webp" alt="Stackly Logo" class="dash-brand-logo">
+          </a>
+          <span class="dash-portal-badge">VIP CLIENT</span>
+          <button class="dash-sidebar-close" id="dashSidebarCloseBtn" aria-label="Close sidebar">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="dash-nav-menu">
+          <li class="dash-nav-item active">
+            <a href="#overview" class="dash-nav-link" data-tab-target="overviewTab">
+              <i class="fa-solid fa-gauge-high"></i>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#orders" class="dash-nav-link" data-tab-target="ordersTab">
+              <i class="fa-solid fa-truck-fast"></i>
+              <span>Active Orders</span>
+              <span class="dash-nav-badge">1 Live</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#testdrives" class="dash-nav-link" data-tab-target="testDrivesTab">
+              <i class="fa-solid fa-flag-checkered"></i>
+              <span>VIP Test Drives</span>
+              <span class="dash-nav-badge" style="background:#06b6d4;">2</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#garage" class="dash-nav-link" data-tab-target="garageTab">
+              <i class="fa-solid fa-warehouse"></i>
+              <span>My Garage</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#service" class="dash-nav-link" data-tab-target="serviceTab">
+              <i class="fa-solid fa-wrench"></i>
+              <span>Service & Care</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#rewards" class="dash-nav-link" data-tab-target="rewardsTab">
+              <i class="fa-solid fa-gem"></i>
+              <span>VIP Rewards</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Concierge Assistance Card -->
+      <div>
+        <div class="dash-sidebar-concierge">
+          <div class="dash-concierge-header">
+            <i class="fa-solid fa-headset"></i>
+            <span>24/7 VIP Concierge</span>
+          </div>
+          <p class="dash-concierge-desc">
+            Direct priority hotline to your dedicated automotive acquisitions advisor.
+          </p>
+          <a href="404.html" class="dash-concierge-btn">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Test Drive</span>
+          </a>
+        </div>
+
+        <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--dash-border); display: flex; align-items: center; justify-content: space-between;">
+          <a href="index.html" style="font-size: 0.8rem; color: var(--dash-text-dim); display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-arrow-left"></i> Public Showroom
+          </a>
+          <button class="btn-dash-logout" style="font-size: 0.8rem; color: var(--dash-primary); font-weight: 700; cursor: pointer;">
+            Logout <i class="fa-solid fa-power-off"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. Main Workspace -->
+    <div class="dash-main-stage">
+      
+      <!-- Top Sticky Header -->
+      <header class="dash-top-header">
+        <div class="dash-header-left">
+          <button class="dash-mobile-menu-btn" id="dashMobileMenuBtn" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <div class="dash-header-right">
+          <a href="404.html" class="dash-action-btn-primary">
+            <i class="fa-solid fa-key"></i>
+            <span>Request Test Drive</span>
+          </a>
+
+          <!-- Notifications Bell (Links to 404) -->
+          <div class="dash-notif-wrap">
+            <a href="404.html" class="dash-notif-btn" aria-label="View notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-notif-dot"></span>
+            </a>
+          </div>
+
+          <!-- User Profile Chip (Links to 404) -->
+          <a href="404.html" class="dash-user-chip" title="View Profile Matrix">
+            <img src="assets/images/ava1.webp" alt="Client Avatar" class="dash-avatar-img">
+            <div class="dash-user-info">
+              <span class="dash-user-name">Alexander Sterling</span>
+              <span class="dash-user-role">Platinum Member</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Area with Tabs -->
+      <main class="dash-content-container">
+        
+        <!-- ========================================================= -->
+        <!-- TAB 1: OVERVIEW -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane active" id="overviewTab">
+          
+          <!-- Hero Welcome Banner -->
+          <div class="dash-hero-banner">
+            <h1 class="dash-hero-title">
+              Welcome to the Showroom, <span class="user-greeting-name">Alexander</span>!
+            </h1>
+            <p class="dash-hero-subtitle">
+              Your bespoke vehicle acquisition portfolio is active. Track your pending enclosed delivery, review private track drive bookings, or reserve new allocations.
+            </p>
+            <div class="dash-hero-actions">
+              <a href="404.html" class="btn-dash-primary">
+                <i class="fa-solid fa-car-rear"></i> Browse Certified Inventory
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-calendar-check"></i> Book Track Day Test
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-phone"></i> Contact Concierge
+              </a>
+            </div>
+          </div>
+
+          <!-- Key Metrics Grid -->
+          <div class="dash-metrics-grid">
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Active Deliveries</h3>
+                <div class="dash-metric-value">1 <span style="font-size: 1rem; color: var(--dash-cyan); font-weight: 600;">In Transit</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-circle-check"></i> Arriving in 2 Days
+                </div>
+              </div>
+              <div class="dash-metric-icon-box cyan">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>VIP Test Drives</h3>
+                <div class="dash-metric-value">2 <span style="font-size: 1rem; color: var(--dash-gold); font-weight: 600;">Confirmed</span></div>
+                <div class="dash-metric-change neutral">
+                  <i class="fa-solid fa-clock"></i> Next: Friday 2:00 PM
+                </div>
+              </div>
+              <div class="dash-metric-icon-box gold">
+                <i class="fa-solid fa-flag-checkered"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Garage Favorites</h3>
+                <div class="dash-metric-value">6 <span style="font-size: 1rem; color: var(--dash-primary); font-weight: 600;">Saved</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-fire"></i> 2 Exclusive Price Drops
+                </div>
+              </div>
+              <div class="dash-metric-icon-box">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Reward Balance</h3>
+                <div class="dash-metric-value">$1,000</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-gem"></i> Trade-In Allowance
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Order Delivery GPS Progress Tracker -->
+          <div class="dash-tracking-card">
+            <div class="dash-section-header">
+              <div class="dash-section-title">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <span>Active Delivery Live GPS Tracker &bull; 2026 Porsche 911 GT3 RS</span>
+              </div>
+              <span class="status-pill transit"><i class="fa-solid fa-spinner fa-spin"></i> On Schedule</span>
+            </div>
+
+            <!-- Multi-step Delivery Progress Line -->
+            <div class="dash-tracker-timeline">
+              <div class="dash-tracker-step completed">
+                <div class="dash-step-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="dash-step-label">Bespoke Build Signed</div>
+                <div class="dash-step-sub">Confirmed Sep 12</div>
+              </div>
+              <div class="dash-tracker-step completed">
+                <div class="dash-step-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="dash-step-label">150-Point Certified Check</div>
+                <div class="dash-step-sub">Passed 100% Sep 14</div>
+              </div>
+              <div class="dash-tracker-step active">
+                <div class="dash-step-icon"><i class="fa-solid fa-truck"></i></div>
+                <div class="dash-step-label">Enclosed Transit</div>
+                <div class="dash-step-sub">Carrier In Route &bull; 140 Miles</div>
+              </div>
+              <div class="dash-tracker-step">
+                <div class="dash-step-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                <div class="dash-step-label">VIP White-Glove Handover</div>
+                <div class="dash-step-sub">Est. Sep 19 &bull; 10:00 AM</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Curated Vehicles Showcase -->
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-crown" style="color: var(--dash-gold);"></i>
+              <span>Curated Private Allocations Ready for You</span>
+            </div>
+            <a href="404.html" style="font-size: 0.85rem; color: var(--dash-primary); font-weight: 700;">
+              View Full Inventory <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="dash-vehicles-grid">
+            <!-- Vehicle 1 -->
+            <div class="dash-vehicle-card">
+              <div class="dash-card-media">
+                <img src="assets/images/slider1-1.webp" alt="Audi R8 Performance" class="dash-card-img">
+                <span class="dash-card-status-badge in-transit">In Showroom</span>
+              </div>
+              <div class="dash-card-body">
+                <h4 class="dash-card-title">Audi R8 V10 Performance</h4>
+                <div class="dash-card-vin">VIN: WUAZZZ42ZKN004812</div>
+                <div class="dash-card-specs">
+                  <div class="dash-spec-item"><i class="fa-solid fa-gauge"></i> 602 HP</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-bolt"></i> 0-60 in 3.1s</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-gears"></i> S Tronic 7-Spd</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-road"></i> 1,420 Miles</div>
+                </div>
+                <div class="dash-card-footer">
+                  <div class="dash-card-price">$209,500</div>
+                  <a href="404.html" class="dash-card-action-btn" style="display: inline-flex; align-items: center; justify-content: center;">Book Drive</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicle 2 -->
+            <div class="dash-vehicle-card">
+              <div class="dash-card-media">
+                <img src="assets/images/slider2.webp" alt="Mercedes-AMG GT Coupe" class="dash-card-img">
+                <span class="dash-card-status-badge reserved">VIP Allocation</span>
+              </div>
+              <div class="dash-card-body">
+                <h4 class="dash-card-title">Mercedes-AMG GT 63 Coupe</h4>
+                <div class="dash-card-vin">VIN: W1K7J8HB1MF089231</div>
+                <div class="dash-card-specs">
+                  <div class="dash-spec-item"><i class="fa-solid fa-gauge"></i> 577 HP V8</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-bolt"></i> 0-60 in 3.0s</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-gears"></i> AMG SPEEDSHIFT</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-road"></i> Brand New</div>
+                </div>
+                <div class="dash-card-footer">
+                  <div class="dash-card-price">$184,900</div>
+                  <a href="404.html" class="dash-card-action-btn" style="display: inline-flex; align-items: center; justify-content: center;">Book Drive</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicle 3 -->
+            <div class="dash-vehicle-card">
+              <div class="dash-card-media">
+                <img src="assets/images/slider3.webp" alt="Ferrari F8 Tributo" class="dash-card-img">
+                <span class="dash-card-status-badge">Certified Pre-Owned</span>
+              </div>
+              <div class="dash-card-body">
+                <h4 class="dash-card-title">Ferrari F8 Tributo Spider</h4>
+                <div class="dash-card-vin">VIN: ZFF89LMA4M0258190</div>
+                <div class="dash-card-specs">
+                  <div class="dash-spec-item"><i class="fa-solid fa-gauge"></i> 710 HP Twin-Turbo</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-bolt"></i> 0-60 in 2.8s</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-gears"></i> F1 Dual-Clutch</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-road"></i> 3,110 Miles</div>
+                </div>
+                <div class="dash-card-footer">
+                  <div class="dash-card-price">$348,000</div>
+                  <a href="404.html" class="dash-card-action-btn" style="display: inline-flex; align-items: center; justify-content: center;">Book Drive</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 2: ACTIVE ORDERS -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="ordersTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-truck-fast"></i>
+              <span>Active Orders & Enclosed Carrier Logistics</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="status-pill transit"><i class="fa-solid fa-truck"></i> 1 In-Transit</span>
+              <span class="status-pill" style="background: rgba(245, 158, 11, 0.15); color: var(--dash-gold); border: 1px solid rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-gears"></i> 1 In Production</span>
+              <span class="status-pill confirmed"><i class="fa-solid fa-circle-check"></i> 1 Delivered</span>
+            </div>
+          </div>
+
+          <!-- Order 1: Live In Transit -->
+          <div class="dash-order-card">
+            <div class="dash-order-header">
+              <div class="dash-order-vehicle">
+                <img src="assets/images/slider1-1.webp" alt="Porsche GT3 RS" class="dash-order-thumb">
+                <div>
+                  <div class="dash-order-title">2026 Porsche 911 GT3 RS (Weissach Package)</div>
+                  <div class="dash-order-meta">
+                    <span><strong>Order ID:</strong> #STK-9904</span>
+                    <span><strong>VIN:</strong> WP0AF2A97NS298101</span>
+                    <span><strong>Color:</strong> Shark Blue / Carbon</span>
+                    <span><strong>Total MSRP:</strong> $289,500</span>
+                  </div>
+                </div>
+              </div>
+              <span class="status-pill transit" style="font-size: 0.85rem; padding: 0.4rem 0.9rem;">
+                <i class="fa-solid fa-spinner fa-spin"></i> In Enclosed Transit
+              </span>
+            </div>
+
+            <!-- Live GPS Progress Tracker -->
+            <div class="dash-tracker-timeline" style="margin: 1.5rem 0;">
+              <div class="dash-tracker-step completed">
+                <div class="dash-step-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="dash-step-label">Port of Entry & Customs</div>
+                <div class="dash-step-sub">Cleared Sep 12 &bull; Los Angeles</div>
+              </div>
+              <div class="dash-tracker-step completed">
+                <div class="dash-step-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="dash-step-label">150-Pt Master Inspection</div>
+                <div class="dash-step-sub">Passed 100% Sep 14 &bull; Stackly Bay</div>
+              </div>
+              <div class="dash-tracker-step active">
+                <div class="dash-step-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="dash-step-label">Enclosed White-Glove Carrier</div>
+                <div class="dash-step-sub">Pilot Transport Rig #EX-8821 &bull; 140 Miles Out</div>
+              </div>
+              <div class="dash-tracker-step">
+                <div class="dash-step-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+                <div class="dash-step-label">VIP Private Handover</div>
+                <div class="dash-step-sub">Est. Sep 19 &bull; 10:00 AM (Beverly Hills)</div>
+              </div>
+            </div>
+
+            <!-- Carrier Live Telemetry Metrics -->
+            <div class="dash-telemetry-grid">
+              <div class="dash-telemetry-item">
+                <span class="dash-telemetry-label">Carrier Speed</span>
+                <span class="dash-telemetry-val"><i class="fa-solid fa-gauge-high" style="color: var(--dash-cyan);"></i> 62 MPH</span>
+              </div>
+              <div class="dash-telemetry-item">
+                <span class="dash-telemetry-label">Cargo Bay Temp</span>
+                <span class="dash-telemetry-val"><i class="fa-solid fa-temperature-half" style="color: var(--dash-green);"></i> 68.4°F (Regulated)</span>
+              </div>
+              <div class="dash-telemetry-item">
+                <span class="dash-telemetry-label">Shock Sensor</span>
+                <span class="dash-telemetry-val"><i class="fa-solid fa-shield-halved" style="color: var(--dash-green);"></i> 0.02G (Smooth)</span>
+              </div>
+              <div class="dash-telemetry-item">
+                <span class="dash-telemetry-label">Lead Carrier Pilot</span>
+                <span class="dash-telemetry-val"><i class="fa-solid fa-user-shield" style="color: var(--dash-gold);"></i> Robert Vance (#402)</span>
+              </div>
+            </div>
+
+            <div class="dash-order-actions">
+              <a href="404.html" class="dash-card-action-btn">
+                <i class="fa-solid fa-satellite"></i> Open Live GPS Telemetry
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-file-pdf"></i> View Window Sticker & Specs
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-comment-dots"></i> Gate Access Instructions
+              </a>
+            </div>
+          </div>
+
+          <!-- Order 2: In Production -->
+          <div class="dash-order-card">
+            <div class="dash-order-header">
+              <div class="dash-order-vehicle">
+                <img src="assets/images/slider2.webp" alt="Aston Martin DBS" class="dash-order-thumb">
+                <div>
+                  <div class="dash-order-title">2027 Aston Martin DBS 770 Ultimate</div>
+                  <div class="dash-order-meta">
+                    <span><strong>Order ID:</strong> #STK-8921</span>
+                    <span><strong>VIN:</strong> SCFRTFAW8PGL00291</span>
+                    <span><strong>Color:</strong> Cosmopolitan Yellow / Alcantara</span>
+                    <span><strong>Total MSRP:</strong> $387,600</span>
+                  </div>
+                </div>
+              </div>
+              <span class="status-pill" style="background: rgba(245, 158, 11, 0.15); color: var(--dash-gold); border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.85rem; padding: 0.4rem 0.9rem;">
+                <i class="fa-solid fa-gears"></i> Bespoke Phase 3 (Interior Trim)
+              </span>
+            </div>
+
+            <p style="color: var(--dash-text-muted); font-size: 0.88rem; line-height: 1.5; margin: 0.5rem 0 1rem;">
+              Your bespoke commission is currently on the Q by Aston Martin tailoring line. Hand-stitched yellow contrast Alcantara and forged carbon bucket seats are being installed at Gaydon, UK facility.
+            </p>
+
+            <div class="dash-order-actions">
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-images"></i> View Factory Build Photos (12)
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-file-contract"></i> Build Specification Sheet
+              </a>
+            </div>
+          </div>
+
+          <!-- Order 3: Delivered Archive -->
+          <div class="dash-order-card">
+            <div class="dash-order-header">
+              <div class="dash-order-vehicle">
+                <img src="assets/images/slider3.webp" alt="Ferrari SF90" class="dash-order-thumb">
+                <div>
+                  <div class="dash-order-title">2025 Ferrari SF90 Stradale Assetto Fiorano</div>
+                  <div class="dash-order-meta">
+                    <span><strong>Order ID:</strong> #STK-7712</span>
+                    <span><strong>VIN:</strong> ZFF94LMA8P0281904</span>
+                    <span><strong>Delivered:</strong> July 18, 2026 &bull; Beverly Hills Residence</span>
+                  </div>
+                </div>
+              </div>
+              <span class="status-pill confirmed" style="font-size: 0.85rem; padding: 0.4rem 0.9rem;">
+                <i class="fa-solid fa-circle-check"></i> Handover Complete
+              </span>
+            </div>
+
+            <div class="dash-order-actions">
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-award"></i> Certificate of Authenticity
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-receipt"></i> Download Bill of Sale
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 3: VIP TEST DRIVES -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="testDrivesTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-flag-checkered"></i>
+              <span>Your Scheduled VIP Track Days & Private Drives</span>
+            </div>
+            <a href="404.html" class="dash-action-btn-primary">
+              <i class="fa-solid fa-plus"></i> Schedule New Test Drive
+            </a>
+          </div>
+
+          <!-- Upcoming Drives Grid -->
+          <div class="dash-testdrive-grid">
+            <!-- Drive 1 -->
+            <div class="dash-testdrive-card">
+              <div class="dash-testdrive-top">
+                <img src="assets/images/slider2.webp" alt="Mercedes-AMG GT">
+                <div class="dash-testdrive-date-badge">
+                  <i class="fa-solid fa-calendar-day" style="color: var(--dash-cyan);"></i>
+                  <span>Fri, Sep 22 &bull; 2:00 PM</span>
+                </div>
+              </div>
+              <div class="dash-testdrive-body">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                    <h4 style="font-size: 1.15rem; color: #ffffff; font-weight: 800;">Mercedes-AMG GT 63 Coupe</h4>
+                    <span class="status-pill confirmed">Confirmed</span>
+                  </div>
+                  <div style="font-size: 0.82rem; color: var(--dash-text-muted); display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.75rem;">
+                    <i class="fa-solid fa-location-dot" style="color: var(--dash-primary);"></i>
+                    <span>Thermal Club Raceway &bull; Track A (Pro Circuit)</span>
+                  </div>
+                  <div class="dash-instructor-chip">
+                    <img src="assets/images/ava1.webp" alt="Marcus Vance" class="dash-instructor-img">
+                    <div style="flex:1;">
+                      <div style="font-size: 0.82rem; font-weight: 800; color: #ffffff;">Marcus Vance</div>
+                      <div style="font-size: 0.74rem; color: var(--dash-text-muted);">Lead Pro Instructor &bull; Nürburgring Veteran</div>
+                    </div>
+                  </div>
+                  <div style="font-size: 0.8rem; color: var(--dash-text-muted); line-height: 1.4; margin-bottom: 1rem;">
+                    Full track access included. Stilo ST5 carbon helmet, telemetry recording, and 1-on-1 pro debriefing reserved.
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  <a href="404.html" class="btn-dash-primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem 0.8rem;">
+                    <i class="fa-solid fa-calendar-plus"></i> Add to Calendar
+                  </a>
+                  <a href="404.html" class="btn-dash-secondary" style="font-size: 0.8rem; padding: 0.5rem 0.8rem;">
+                    <i class="fa-solid fa-map"></i> Circuit Briefing
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drive 2 -->
+            <div class="dash-testdrive-card">
+              <div class="dash-testdrive-top">
+                <img src="assets/images/slider3.webp" alt="Ferrari F8 Tributo">
+                <div class="dash-testdrive-date-badge">
+                  <i class="fa-solid fa-calendar-day" style="color: var(--dash-gold);"></i>
+                  <span>Thu, Sep 28 &bull; 11:30 AM</span>
+                </div>
+              </div>
+              <div class="dash-testdrive-body">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                    <h4 style="font-size: 1.15rem; color: #ffffff; font-weight: 800;">Ferrari F8 Tributo Spider</h4>
+                    <span class="status-pill confirmed">Confirmed</span>
+                  </div>
+                  <div style="font-size: 0.82rem; color: var(--dash-text-muted); display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.75rem;">
+                    <i class="fa-solid fa-location-dot" style="color: var(--dash-primary);"></i>
+                    <span>Stackly Private Proving Ground (Handling Circuit)</span>
+                  </div>
+                  <div class="dash-instructor-chip">
+                    <img src="assets/images/ava1.webp" alt="Elena Rostova" class="dash-instructor-img">
+                    <div style="flex:1;">
+                      <div style="font-size: 0.82rem; font-weight: 800; color: #ffffff;">Elena Rostova</div>
+                      <div style="font-size: 0.74rem; color: var(--dash-text-muted);">Maranello Certified Dynamics Specialist</div>
+                    </div>
+                  </div>
+                  <div style="font-size: 0.8rem; color: var(--dash-text-muted); line-height: 1.4; margin-bottom: 1rem;">
+                    Launch control 0-100 sprints, high-speed skidpad handling, and active aero aerodynamic calibration test.
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  <a href="404.html" class="btn-dash-primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem 0.8rem;">
+                    <i class="fa-solid fa-calendar-plus"></i> Add to Calendar
+                  </a>
+                  <a href="404.html" class="btn-dash-secondary" style="font-size: 0.8rem; padding: 0.5rem 0.8rem;">
+                    <i class="fa-solid fa-map"></i> Circuit Briefing
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Telemetry & Track Performance Review of Past Drives -->
+          <div class="dash-table-card">
+            <h3 style="margin-bottom: 0.4rem; font-size: 1.1rem; color: #ffffff;">
+              <i class="fa-solid fa-chart-line" style="color: var(--dash-cyan); margin-right: 0.5rem;"></i>
+              Past Track Telemetry & Instructor Debriefs
+            </h3>
+            <p style="color: var(--dash-text-muted); font-size: 0.86rem; margin-bottom: 1.25rem;">
+              Full digital telemetry data synchronized directly from on-board AIM race loggers during your private test sessions.
+            </p>
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th style="min-width: 240px;">Vehicle Tested</th>
+                    <th>Date</th>
+                    <th>Best Lap Time</th>
+                    <th>Peak Speed</th>
+                    <th>Max Lateral G</th>
+                    <th>Instructor Evaluation</th>
+                    <th style="text-align: center;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider1-1.webp" alt="McLaren 750S" class="dash-table-thumb">
+                        <span class="dash-table-vehicle-title">McLaren 750S Coupe</span>
+                      </div>
+                    </td>
+                    <td style="color: var(--dash-text-muted);">Aug 22, 2026</td>
+                    <td><strong style="color: var(--dash-green); font-size: 0.95rem;">1:21.42</strong></td>
+                    <td style="font-weight: 700;">168.4 MPH</td>
+                    <td style="color: var(--dash-cyan); font-weight: 700;">1.45 G</td>
+                    <td><span class="status-pill confirmed">Mastery Tier &bull; Flawless Apex</span></td>
+                    <td style="text-align: center;">
+                      <a href="404.html" class="btn-dash-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.76rem;">
+                        <i class="fa-solid fa-file-waveform"></i> PDF
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="Huracan" class="dash-table-thumb">
+                        <span class="dash-table-vehicle-title">Lamborghini Huracán Tecnica</span>
+                      </div>
+                    </td>
+                    <td style="color: var(--dash-text-muted);">Jul 10, 2026</td>
+                    <td><strong style="color: var(--dash-green); font-size: 0.95rem;">1:23.88</strong></td>
+                    <td style="font-weight: 700;">161.2 MPH</td>
+                    <td style="color: var(--dash-cyan); font-weight: 700;">1.38 G</td>
+                    <td><span class="status-pill confirmed">Excellent Throttle Control</span></td>
+                    <td style="text-align: center;">
+                      <a href="404.html" class="btn-dash-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.76rem;">
+                        <i class="fa-solid fa-file-waveform"></i> PDF
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 4: MY GARAGE -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="garageTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-warehouse"></i>
+              <span>My Private Collection & Connected Vehicles (2)</span>
+            </div>
+            <a href="404.html" class="btn-dash-secondary">
+              <i class="fa-solid fa-rotate"></i> Sync Telemetry
+            </a>
+          </div>
+
+          <!-- Owned Supercars Grid -->
+          <div class="dash-garage-owned-grid">
+            <!-- Owned Car 1 -->
+            <div class="dash-garage-card">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                <div>
+                  <h4 style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">2024 Ferrari SF90 Stradale Assetto Fiorano</h4>
+                  <div style="font-size: 0.82rem; color: var(--dash-text-muted);">VIN: ZFF94LMA8P0281904 &bull; Rosso Corsa</div>
+                </div>
+                <span class="digital-key-badge pulse">
+                  <i class="fa-solid fa-signal"></i> Digital Key Active
+                </span>
+              </div>
+
+              <div style="height: 180px; border-radius: var(--dash-radius-md); overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--dash-border);">
+                <img src="assets/images/slider3.webp" alt="Ferrari SF90" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+              <!-- Quick Status Gauges -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Odometer</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff;">1,840 mi</div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Hybrid Battery</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-green);">99% Health</div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Brake Life</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-cyan);">88% Remaining</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <a href="404.html" class="dash-card-action-btn" style="flex: 1;">
+                  <i class="fa-solid fa-mobile-screen-button"></i> Digital Key Remote
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-wrench"></i> Service Bay
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-calculator"></i> Appraisal
+                </a>
+              </div>
+            </div>
+
+            <!-- Owned Car 2 -->
+            <div class="dash-garage-card">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                <div>
+                  <h4 style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">2023 Porsche 911 Turbo S Cabriolet</h4>
+                  <div style="font-size: 0.82rem; color: var(--dash-text-muted);">VIN: WP0CD2A92NS109823 &bull; GT Silver Metallic</div>
+                </div>
+                <span class="digital-key-badge pulse">
+                  <i class="fa-solid fa-signal"></i> Digital Key Active
+                </span>
+              </div>
+
+              <div style="height: 180px; border-radius: var(--dash-radius-md); overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--dash-border);">
+                <img src="assets/images/slider1-1.webp" alt="Porsche 911 Turbo S" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+              <!-- Quick Status Gauges -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Odometer</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff;">4,120 mi</div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Synthetic Oil</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-green);">92% Health</div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Asset Shield</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-gold);">Active</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <a href="404.html" class="dash-card-action-btn" style="flex: 1;">
+                  <i class="fa-solid fa-mobile-screen-button"></i> Digital Key Remote
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-wrench"></i> Service Bay
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-calculator"></i> Appraisal
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saved Wishlist & Allocations Header -->
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-heart" style="color: var(--dash-primary);"></i>
+              <span>Saved Showroom Wishlist & Private Allocations (4 Saved)</span>
+            </div>
+            <a href="404.html" style="font-size: 0.85rem; color: var(--dash-primary); font-weight: 700;">
+              Explore More Allocations <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="dash-vehicles-grid">
+            <!-- Wishlist 1 -->
+            <div class="dash-vehicle-card" id="wishlistCard1">
+              <div class="dash-card-media">
+                <img src="assets/images/slider1-1.webp" alt="Audi R8" class="dash-card-img">
+                <span class="dash-card-status-badge in-transit">Price Drop (-$6,500)</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <h4 class="dash-card-title">Audi R8 V10 Performance</h4>
+                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </a>
+                </div>
+                <div class="dash-card-vin">VIN: WUAZZZ42ZKN004812</div>
+                <div class="dash-card-specs">
+                  <div class="dash-spec-item"><i class="fa-solid fa-gauge"></i> 602 HP V10</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-bolt"></i> 0-60 in 3.1s</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-road"></i> 1,420 Miles</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-shield-halved"></i> Factory CPO</div>
+                </div>
+                <div class="dash-card-footer">
+                  <div class="dash-card-price">$209,500</div>
+                  <a href="404.html" class="dash-card-action-btn">Book Drive</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist 2 -->
+            <div class="dash-vehicle-card" id="wishlistCard2">
+              <div class="dash-card-media">
+                <img src="assets/images/slider2.webp" alt="McLaren 750S" class="dash-card-img">
+                <span class="dash-card-status-badge reserved">VIP Allocation</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <h4 class="dash-card-title">McLaren 750S Spider</h4>
+                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </a>
+                </div>
+                <div class="dash-card-vin">VIN: SBM11FBA8PW008129</div>
+                <div class="dash-card-specs">
+                  <div class="dash-spec-item"><i class="fa-solid fa-gauge"></i> 740 HP Twin-Turbo</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-bolt"></i> 0-60 in 2.7s</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-road"></i> Delivery Miles</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-wind"></i> Retractable Hardtop</div>
+                </div>
+                <div class="dash-card-footer">
+                  <div class="dash-card-price">$345,000</div>
+                  <a href="404.html" class="dash-card-action-btn">Book Drive</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist 3 -->
+            <div class="dash-vehicle-card" id="wishlistCard3">
+              <div class="dash-card-media">
+                <img src="assets/images/gmc-acadia-front-side-0-707031-scaled.webp" alt="GMC Acadia Denali" class="dash-card-img">
+                <span class="dash-card-status-badge">Showroom Ready</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <h4 class="dash-card-title">GMC Acadia Denali Ultimate</h4>
+                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </a>
+                </div>
+                <div class="dash-card-vin">VIN: 1GKS2CKJ8NR198302</div>
+                <div class="dash-card-specs">
+                  <div class="dash-spec-item"><i class="fa-solid fa-gauge"></i> 328 HP Turbo</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-chair"></i> 7-Passenger VIP</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-shield-halved"></i> Super Cruise</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-road"></i> 12 Miles</div>
+                </div>
+                <div class="dash-card-footer">
+                  <div class="dash-card-price">$62,800</div>
+                  <a href="404.html" class="dash-card-action-btn">Reserve Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist 4 -->
+            <div class="dash-vehicle-card" id="wishlistCard4">
+              <div class="dash-card-media">
+                <img src="assets/images/slider3.webp" alt="Lamborghini Revuelto" class="dash-card-img">
+                <span class="dash-card-status-badge in-transit">2027 Allocation Slot</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <h4 class="dash-card-title">Lamborghini Revuelto V12 Hybrid</h4>
+                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </a>
+                </div>
+                <div class="dash-card-vin">VIN: ZHWU81A39PLA00192</div>
+                <div class="dash-card-specs">
+                  <div class="dash-spec-item"><i class="fa-solid fa-gauge"></i> 1,001 HP Hybrid</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-bolt"></i> 0-60 in 2.5s</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-fire"></i> Build Slot #14</div>
+                  <div class="dash-spec-item"><i class="fa-solid fa-bolt-lightning"></i> 3 E-Motors</div>
+                </div>
+                <div class="dash-card-footer">
+                  <div class="dash-card-price">$608,000</div>
+                  <a href="404.html" class="dash-card-action-btn">Request Slot</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 5: SERVICE & MAINTENANCE -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="serviceTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-wrench"></i>
+              <span>Certified Concierge Maintenance & Live Diagnostics</span>
+            </div>
+            <a href="404.html" class="dash-action-btn-primary">
+              <i class="fa-solid fa-calendar-plus"></i> Reserve Certified Service Bay
+            </a>
+          </div>
+
+          <!-- Vehicle Diagnostics Gauges -->
+          <div class="dash-diagnostics-grid">
+            <div class="dash-diag-card">
+              <div class="dash-diag-header">
+                <span>Synthetic Racing Oil</span>
+                <i class="fa-solid fa-oil-can" style="color: var(--dash-green);"></i>
+              </div>
+              <div class="dash-diag-value">92% <span style="font-size: 0.8rem; font-weight: 500; color: var(--dash-text-muted);">Health</span></div>
+              <div class="dash-progress-bar-wrap">
+                <div class="dash-progress-fill green" style="width: 92%;"></div>
+              </div>
+              <div style="font-size: 0.74rem; color: var(--dash-text-dim); margin-top: 0.5rem;">Next change in 5,880 miles</div>
+            </div>
+
+            <div class="dash-diag-card">
+              <div class="dash-diag-header">
+                <span>Carbon Ceramic Brakes</span>
+                <i class="fa-solid fa-circle-dot" style="color: var(--dash-cyan);"></i>
+              </div>
+              <div class="dash-diag-value">88% <span style="font-size: 0.8rem; font-weight: 500; color: var(--dash-text-muted);">Pad Life</span></div>
+              <div class="dash-progress-bar-wrap">
+                <div class="dash-progress-fill cyan" style="width: 88%;"></div>
+              </div>
+              <div style="font-size: 0.74rem; color: var(--dash-text-dim); margin-top: 0.5rem;">Front: 9.8mm / Rear: 9.4mm</div>
+            </div>
+
+            <div class="dash-diag-card">
+              <div class="dash-diag-header">
+                <span>9H Ceramic Coating</span>
+                <i class="fa-solid fa-shield-halved" style="color: var(--dash-gold);"></i>
+              </div>
+              <div class="dash-diag-value">98% <span style="font-size: 0.8rem; font-weight: 500; color: var(--dash-text-muted);">Hydrophobic</span></div>
+              <div class="dash-progress-bar-wrap">
+                <div class="dash-progress-fill gold" style="width: 98%;"></div>
+              </div>
+              <div style="font-size: 0.74rem; color: var(--dash-text-dim); margin-top: 0.5rem;">Warranty valid through 2029</div>
+            </div>
+
+            <div class="dash-diag-card">
+              <div class="dash-diag-header">
+                <span>Tire Pressure (TPMS)</span>
+                <i class="fa-solid fa-gauge" style="color: var(--dash-green);"></i>
+              </div>
+              <div class="dash-diag-value">34 / 36 <span style="font-size: 0.8rem; font-weight: 500; color: var(--dash-text-muted);">PSI</span></div>
+              <div class="dash-progress-bar-wrap">
+                <div class="dash-progress-fill green" style="width: 95%;"></div>
+              </div>
+              <div style="font-size: 0.74rem; color: var(--dash-text-dim); margin-top: 0.5rem;">Michelin Pilot Sport Cup 2 (Optimal)</div>
+            </div>
+          </div>
+
+          <!-- Upcoming Scheduled Service Appointment Banner -->
+          <div class="dash-hero-banner" style="background: linear-gradient(135deg, #18202b 0%, #0f151e 100%); border-left: 4px solid var(--dash-cyan); margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span class="status-pill confirmed" style="margin-bottom: 0.5rem; display: inline-block;"><i class="fa-solid fa-clock"></i> Upcoming Service Confirmed</span>
+                <h3 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.25rem;">Annual 150-Point Master Guild Certification</h3>
+                <p style="color: var(--dash-text-muted); font-size: 0.88rem;">
+                  Friday, Sep 25, 2026 &bull; 9:00 AM &bull; Stackly Beverly Hills Master Bay &bull; Assigned: Master Tech #042
+                </p>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-truck-ramp-box"></i> Enclosed Valet Pickup
+                </a>
+                <a href="404.html" class="btn-dash-primary">
+                  <i class="fa-solid fa-car"></i> Reserve Loaner
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certified Service Packages -->
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-sparkles" style="color: var(--dash-gold);"></i>
+              <span>Stackly Certified Supercar Care Packages</span>
+            </div>
+          </div>
+
+          <div class="dash-service-packages-grid">
+            <!-- Pkg 1 -->
+            <div class="dash-service-pkg-card">
+              <div style="display: flex; flex-direction: column; flex: 1;">
+                <span class="dash-portal-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--dash-cyan); border-color: rgba(6, 182, 212, 0.3);">Track Pre-Flight</span>
+                <h4 style="font-size: 1.2rem; color: #ffffff; margin-top: 0.6rem;">Track Day Prep & Inspection</h4>
+                <div class="dash-pkg-price">$1,250 <span style="font-size: 0.8rem; font-weight: 400; color: var(--dash-text-muted);">/ session</span></div>
+                <ul class="dash-pkg-list">
+                  <li><i class="fa-solid fa-check"></i> High-temp Motul RBF 660 brake fluid flush</li>
+                  <li><i class="fa-solid fa-check"></i> Carbon rotor ultrasonic micro-crack scanning</li>
+                  <li><i class="fa-solid fa-check"></i> Corner-balancing & race alignment setup</li>
+                  <li><i class="fa-solid fa-check"></i> Telemetry transponder sync & calibration</li>
+                </ul>
+              </div>
+              <a href="404.html" class="btn-dash-primary">Reserve Track Prep</a>
+            </div>
+
+            <!-- Pkg 2 -->
+            <div class="dash-service-pkg-card">
+              <div style="display: flex; flex-direction: column; flex: 1;">
+                <span class="dash-portal-badge">Aesthetic Armor</span>
+                <h4 style="font-size: 1.2rem; color: #ffffff; margin-top: 0.6rem;">Level 3 Ceramic Coating & PPF Refresh</h4>
+                <div class="dash-pkg-price">$2,400 <span style="font-size: 0.8rem; font-weight: 400; color: var(--dash-text-muted);">/ full package</span></div>
+                <ul class="dash-pkg-list">
+                  <li><i class="fa-solid fa-check"></i> 3-stage dual-action optical paint correction</li>
+                  <li><i class="fa-solid fa-check"></i> 9H dual-layer hydrophobic ceramic coat</li>
+                  <li><i class="fa-solid fa-check"></i> Self-healing PPF edge sealing & gloss revival</li>
+                  <li><i class="fa-solid fa-check"></i> Leather conditioner & UV cabin shield</li>
+                </ul>
+              </div>
+              <a href="404.html" class="btn-dash-primary">Reserve Detailing</a>
+            </div>
+
+            <!-- Pkg 3 -->
+            <div class="dash-service-pkg-card">
+              <div style="display: flex; flex-direction: column; flex: 1;">
+                <span class="dash-portal-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--dash-gold); border-color: rgba(245, 158, 11, 0.3);">Performance Tuning</span>
+                <h4 style="font-size: 1.2rem; color: #ffffff; margin-top: 0.6rem;">Factory Dyno & ECU Software Remap</h4>
+                <div class="dash-pkg-price">$1,850 <span style="font-size: 0.8rem; font-weight: 400; color: var(--dash-text-muted);">/ session</span></div>
+                <ul class="dash-pkg-list">
+                  <li><i class="fa-solid fa-check"></i> All-wheel dyno power curve baseline run</li>
+                  <li><i class="fa-solid fa-check"></i> Factory OEM ECU firmware enhancement</li>
+                  <li><i class="fa-solid fa-check"></i> Exhaust flap valve controller optimization</li>
+                  <li><i class="fa-solid fa-check"></i> Full dynamometer printout & video recording</li>
+                </ul>
+              </div>
+              <a href="404.html" class="btn-dash-primary">Reserve Dyno Tuning</a>
+            </div>
+          </div>
+
+          <!-- Service History Records Table -->
+          <div class="dash-table-card">
+            <h3 style="margin-bottom: 0.4rem; font-size: 1.1rem; color: #ffffff;">Certified Service History Log</h3>
+            <p style="color: var(--dash-text-muted); font-size: 0.86rem; margin-bottom: 1.25rem;">
+              Full electronic blockchain-verified service records for warranty protection and provenance resale value.
+            </p>
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Vehicle</th>
+                    <th>Service Operation</th>
+                    <th>Facility</th>
+                    <th>Lead Specialist</th>
+                    <th>Status</th>
+                    <th>Certificate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Aug 14, 2026</td>
+                    <td>2024 Ferrari SF90 Stradale</td>
+                    <td>150-Point Ceramic Coat & Synthetic Oil Flush</td>
+                    <td>Stackly Beverly Hills Master Bay</td>
+                    <td>Master Tech #042</td>
+                    <td><span class="status-pill confirmed">Verified Passed</span></td>
+                    <td>
+                      <a href="404.html" class="btn-dash-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                        <i class="fa-solid fa-file-pdf"></i> View PDF
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>May 10, 2026</td>
+                    <td>2023 Porsche 911 Turbo S</td>
+                    <td>Brake Pad Calibration & 4-Wheel Laser Alignment</td>
+                    <td>Stackly Beverly Hills Master Bay</td>
+                    <td>Senior Tech #019</td>
+                    <td><span class="status-pill confirmed">Verified Passed</span></td>
+                    <td>
+                      <a href="404.html" class="btn-dash-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                        <i class="fa-solid fa-file-pdf"></i> View PDF
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 6: VIP REWARDS -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="rewardsTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-gem" style="color: var(--dash-gold);"></i>
+              <span>Stackly Elite VIP Rewards & Privileges</span>
+            </div>
+          </div>
+
+          <!-- Loyalty Tier Status Card -->
+          <div class="dash-tier-progress-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+              <div>
+                <span class="dash-portal-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--dash-gold); border-color: rgba(245, 158, 11, 0.4);">Current Status</span>
+                <h2 style="font-size: 1.8rem; color: #ffffff; font-weight: 800; margin-top: 0.4rem;">
+                  Platinum Concierge Tier &bull; <span style="color: var(--dash-gold);" id="userRewardsBalance">18,500</span> Points
+                </h2>
+                <p style="color: var(--dash-text-muted); font-size: 0.88rem;">
+                  You are 6,500 points away from unlocking <strong style="color: #ffffff;">Black Diamond Founder Tier</strong>.
+                </p>
+              </div>
+              <div style="background: rgba(0,0,0,0.4); padding: 0.8rem 1.2rem; border-radius: var(--dash-radius-md); border: 1px solid rgba(245, 158, 11, 0.25); text-align: right;">
+                <div style="font-size: 0.72rem; color: var(--dash-text-dim); text-transform: uppercase;">Active Trade-In Credit</div>
+                <div style="font-size: 1.4rem; font-weight: 800; color: var(--dash-gold);">$1,000.00</div>
+              </div>
+            </div>
+
+            <!-- Tier Milestone Progress Bar -->
+            <div style="margin-bottom: 0.75rem;">
+              <div class="dash-progress-bar-wrap" style="height: 10px; background: rgba(0, 0, 0, 0.5);">
+                <div class="dash-progress-fill gold" style="width: 74%;"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--dash-text-muted);">
+              <span>Gold (10,000 Pts)</span>
+              <span style="color: var(--dash-gold); font-weight: 700;">Platinum (18,500 Pts - Current)</span>
+              <span>Black Diamond (25,000 Pts)</span>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <div style="font-size: 0.82rem; color: var(--dash-text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-circle-check" style="color: var(--dash-gold);"></i> 1.5x Points Multiplier
+              </div>
+              <div style="font-size: 0.82rem; color: var(--dash-text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-circle-check" style="color: var(--dash-gold);"></i> 4x Complimentary Track Days
+              </div>
+              <div style="font-size: 0.82rem; color: var(--dash-text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-circle-check" style="color: var(--dash-gold);"></i> Priority Allocations Access
+              </div>
+              <div style="font-size: 0.82rem; color: var(--dash-text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-circle-check" style="color: var(--dash-gold);"></i> Zero-Deposit Commissioning
+              </div>
+            </div>
+          </div>
+
+          <!-- Redeemable VIP Rewards Catalog -->
+          <div class="dash-section-header" style="margin-top: 1.5rem;">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-gift" style="color: var(--dash-primary);"></i>
+              <span>Redeemable VIP Member Privileges</span>
+            </div>
+          </div>
+
+          <div class="dash-rewards-grid">
+            <!-- Perk 1 -->
+            <div class="dash-reward-item-card">
+              <div style="display: flex; flex-direction: column; flex: 1;">
+                <div class="dash-reward-cost-badge">
+                  <i class="fa-solid fa-fire"></i> Ready to Apply ($1,000)
+                </div>
+                <h4 style="font-size: 1.2rem; color: #ffffff; font-weight: 800; margin-bottom: 0.5rem; min-height: 2.8rem;">$1,000 Trade-In Cash Credit</h4>
+                <p style="color: var(--dash-text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                  Direct financial credit applicable toward your next bespoke vehicle purchase, down payment, or lease contract.
+                </p>
+              </div>
+              <a href="404.html" class="btn-dash-primary">
+                Apply to Next Acquisition
+              </a>
+            </div>
+
+            <!-- Perk 2 -->
+            <div class="dash-reward-item-card">
+              <div style="display: flex; flex-direction: column; flex: 1;">
+                <div class="dash-reward-cost-badge">
+                  <i class="fa-solid fa-gem"></i> 3,500 Points
+                </div>
+                <h4 style="font-size: 1.2rem; color: #ffffff; font-weight: 800; margin-bottom: 0.5rem; min-height: 2.8rem;">Thermal Club Full-Day Track Pass</h4>
+                <p style="color: var(--dash-text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                  Complimentary full-day private track pass with dedicated pit garage, fuel barrel, and personal pro driving coach.
+                </p>
+              </div>
+              <a href="404.html" class="btn-dash-primary">
+                Redeem (3,500 Pts)
+              </a>
+            </div>
+
+            <!-- Perk 3 -->
+            <div class="dash-reward-item-card">
+              <div style="display: flex; flex-direction: column; flex: 1;">
+                <div class="dash-reward-cost-badge">
+                  <i class="fa-solid fa-gem"></i> 2,000 Points
+                </div>
+                <h4 style="font-size: 1.2rem; color: #ffffff; font-weight: 800; margin-bottom: 0.5rem; min-height: 2.8rem;">Level 3 Ceramic Coating Package</h4>
+                <p style="color: var(--dash-text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                  Complete 9H ceramic coating application with optical paint correction for any vehicle in your private garage.
+                </p>
+              </div>
+              <a href="404.html" class="btn-dash-primary">
+                Redeem (2,000 Pts)
+              </a>
+            </div>
+
+            <!-- Perk 4 -->
+            <div class="dash-reward-item-card">
+              <div style="display: flex; flex-direction: column; flex: 1;">
+                <div class="dash-reward-cost-badge">
+                  <i class="fa-solid fa-gem"></i> 10,000 Points
+                </div>
+                <h4 style="font-size: 1.2rem; color: #ffffff; font-weight: 800; margin-bottom: 0.5rem; min-height: 2.8rem;">Monterey Car Week Helicopter Transfer</h4>
+                <p style="color: var(--dash-text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                  Private luxury helicopter charter from LAX / SFO directly to Pebble Beach Concours d'Elegance VIP Helipad.
+                </p>
+              </div>
+              <a href="404.html" class="btn-dash-primary">
+                Redeem (10,000 Pts)
+              </a>
+            </div>
+          </div>
+
+          <!-- VIP Referral Program Box -->
+          <div class="dash-referral-card">
+            <div style="flex: 1 1 320px;">
+              <span class="dash-portal-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Referral Program</span>
+              <h3 style="font-size: 1.3rem; color: #ffffff; margin-top: 0.5rem; margin-bottom: 0.3rem;">Invite Fellow Collectors & Earn $2,500</h3>
+              <p style="color: var(--dash-text-muted); font-size: 0.88rem; max-width: 520px;">
+                Share your personal VIP invitation link. When a colleague acquires or commissions a vehicle through Stackly, both of you receive $2,500 showroom credit and 5,000 VIP tier points.
+              </p>
+            </div>
+            <div class="dash-referral-input-group" style="flex: 1 1 360px; max-width: 520px;">
+              <input type="text" id="referralLinkInput" value="https://stacklyautomotive.com/vip?ref=ALEXANDER-STERLING-VIP" readonly>
+              <a href="404.html" class="btn-dash-primary" id="copyReferralBtn" style="padding: 0.55rem 1.1rem; font-size: 0.82rem; border-radius: 8px;">
+                <i class="fa-solid fa-copy"></i> Copy Link
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- 3. Mobile Bottom Navigation Bar (No Settings Button) -->
+    <nav class="dash-mobile-bottom-bar">
+      <a href="#overview" class="dash-bottom-nav-item active" data-tab-target="overviewTab">
+        <i class="fa-solid fa-gauge-high"></i>
+        <span>Home</span>
+      </a>
+      <a href="#orders" class="dash-bottom-nav-item" data-tab-target="ordersTab">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>Orders</span>
+      </a>
+      <a href="#testdrives" class="dash-bottom-nav-item" data-tab-target="testDrivesTab">
+        <i class="fa-solid fa-flag-checkered"></i>
+        <span>Drives</span>
+      </a>
+      <a href="#garage" class="dash-bottom-nav-item" data-tab-target="garageTab">
+        <i class="fa-solid fa-warehouse"></i>
+        <span>Garage</span>
+      </a>
+      <a href="#service" class="dash-bottom-nav-item" data-tab-target="serviceTab">
+        <i class="fa-solid fa-wrench"></i>
+        <span>Service</span>
+      </a>
+      <a href="#rewards" class="dash-bottom-nav-item" data-tab-target="rewardsTab">
+        <i class="fa-solid fa-gem"></i>
+        <span>Rewards</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- Modal 1: Book VIP Test Drive -->
+  <div class="dash-modal-backdrop" id="bookTestDriveModal">
+    <div class="dash-modal-card">
+      <div class="dash-modal-header">
+        <div class="dash-modal-title">
+          <i class="fa-solid fa-flag-checkered"></i>
+          <span>Schedule VIP Track Day Test Drive</span>
+        </div>
+        <button class="dash-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="bookTestDriveForm">
+        <div class="dash-modal-body">
+          <div class="dash-form-group">
+            <label class="dash-form-label">Select Vehicle</label>
+            <select class="dash-form-input" id="testDriveVehicleSelect" required>
+              <option value="Porsche 911 GT3 RS">2026 Porsche 911 GT3 RS ($289,500)</option>
+              <option value="Mercedes-AMG GT 63">Mercedes-AMG GT 63 Coupe ($184,900)</option>
+              <option value="Ferrari F8 Tributo">Ferrari F8 Tributo Spider ($348,000)</option>
+              <option value="McLaren 750S Spider">McLaren 750S Spider ($345,000)</option>
+              <option value="Audi R8 V10">Audi R8 V10 Performance ($209,500)</option>
+              <option value="GMC Acadia Denali">GMC Acadia Denali Ultimate ($62,800)</option>
+            </select>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Preferred Date & Time</label>
+            <input type="datetime-local" class="dash-form-input" required>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Proving Ground Location</label>
+            <select class="dash-form-input">
+              <option value="thermal">Thermal Club Raceway &bull; Track A (Pro Circuit)</option>
+              <option value="proving">Stackly Private Proving Ground (Dynamics Pad)</option>
+              <option value="laguna">Laguna Seca Raceway (VIP Session)</option>
+              <option value="residence">Private Enclosed Delivery to Residence</option>
+            </select>
+          </div>
+        </div>
+        <div class="dash-modal-footer">
+          <button type="button" class="btn-dash-secondary btn-modal-cancel">Cancel</button>
+          <button type="submit" class="btn-dash-primary">Confirm VIP Reservation</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Schedule Service Bay -->
+  <div class="dash-modal-backdrop" id="scheduleServiceModal">
+    <div class="dash-modal-card">
+      <div class="dash-modal-header">
+        <div class="dash-modal-title">
+          <i class="fa-solid fa-wrench"></i>
+          <span>Reserve Certified Service Bay</span>
+        </div>
+        <button class="dash-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="scheduleServiceForm">
+        <div class="dash-modal-body">
+          <div class="dash-form-group">
+            <label class="dash-form-label">Select Vehicle from Garage</label>
+            <select class="dash-form-input">
+              <option>2024 Ferrari SF90 Stradale (VIN: ZFF94LMA8P0281904)</option>
+              <option>2023 Porsche 911 Turbo S (VIN: WP0CD2A92NS109823)</option>
+              <option>Other Bespoke Vehicle in Collection</option>
+            </select>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Service Package</label>
+            <select class="dash-form-input">
+              <option>150-Point Master Guild Inspection & Diagnostics</option>
+              <option>Track Day Prep & High-Temp Fluid Flush</option>
+              <option>Level 3 Ceramic Coating & PPF Refresh</option>
+              <option>Factory Dyno & ECU Software Remap</option>
+            </select>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Preferred Appointment Date</label>
+            <input type="date" class="dash-form-input" required>
+          </div>
+        </div>
+        <div class="dash-modal-footer">
+          <button type="button" class="btn-dash-secondary btn-modal-cancel">Cancel</button>
+          <button type="submit" class="btn-dash-primary">Reserve Certified Bay</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: Live Carrier GPS Telemetry Map -->
+  <div class="dash-modal-backdrop" id="carrierGpsModal">
+    <div class="dash-modal-card" style="max-width: 680px;">
+      <div class="dash-modal-header">
+        <div class="dash-modal-title">
+          <i class="fa-solid fa-satellite" style="color: var(--dash-cyan);"></i>
+          <span id="carrierModalTitle">Live Carrier GPS Telemetry &bull; 2026 Porsche 911 GT3 RS</span>
+        </div>
+        <button class="dash-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="dash-modal-body">
+        <div style="background: #090b10; border: 1px solid var(--dash-border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; position: relative; overflow: hidden;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div style="font-size: 0.85rem; font-weight: 800; color: #ffffff; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+              Live GPS Satellite Lock: 34.0736° N, 118.4004° W
+            </div>
+            <span class="status-pill transit">62 MPH</span>
+          </div>
+          
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.82rem; color: var(--dash-text-muted);">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+              <span><strong>Hauler:</strong> Pilot Transport Precision Enclosed Rig #EX-8821</span>
+              <span><strong>Driver:</strong> Capt. Robert Vance</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+              <span><strong>Current Location:</strong> Highway 15 Southbound &bull; Mile Marker 114</span>
+              <span><strong>Est. Arrival:</strong> Sep 19 &bull; 10:00 AM</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span><strong>Cabin Temperature:</strong> 68.4°F (Regulated)</span>
+              <span><strong>Shock/Vibration:</strong> 0.02G (Optimal)</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="button" class="btn-dash-primary" style="flex: 1;" onclick="showToast('Calling Driver', 'Connecting to secure satellite phone of Robert Vance (#402)...', 'info')">
+              <i class="fa-solid fa-phone"></i> Call Driver Hotline
+            </button>
+            <button type="button" class="btn-dash-secondary" onclick="showToast('Telemetry Refreshed', 'GPS coordinates updated with live satellite ping.', 'success')">
+              <i class="fa-solid fa-rotate"></i> Ping Satellite
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="dash-modal-footer">
+        <button type="button" class="btn-dash-secondary btn-modal-cancel">Close Telemetry</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Digital Key Access Simulator -->
+  <div class="dash-modal-backdrop" id="digitalKeyModal">
+    <div class="dash-modal-card" style="max-width: 520px;">
+      <div class="dash-modal-header">
+        <div class="dash-modal-title">
+          <i class="fa-solid fa-mobile-screen-button" style="color: var(--dash-green);"></i>
+          <span id="digitalKeyCarName">Digital Key Remote Access</span>
+        </div>
+        <button class="dash-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="dash-modal-body">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); border: 2px solid #10b981; display: inline-flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #10b981; margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-key"></i>
+          </div>
+          <h4 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 0.25rem;" id="digitalKeyStatusText">Connected &bull; Vehicle In Range</h4>
+          <p style="font-size: 0.8rem; color: var(--dash-text-muted);">Encrypted UWB Biometric Satellite Handshake Established</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
+          <button type="button" class="btn-dash-secondary" style="padding: 1rem; text-align: center;" onclick="showToast('Vehicle Unlocked', 'Doors unlocked via UWB proximity digital key.', 'success')">
+            <i class="fa-solid fa-lock-open" style="font-size: 1.25rem; color: var(--dash-green); margin-bottom: 0.4rem; display: block;"></i>
+            Unlock Doors
+          </button>
+          <button type="button" class="btn-dash-secondary" style="padding: 1rem; text-align: center;" onclick="showToast('Vehicle Locked', 'Doors locked & ultrasonic alarm system armed.', 'info')">
+            <i class="fa-solid fa-lock" style="font-size: 1.25rem; color: var(--dash-cyan); margin-bottom: 0.4rem; display: block;"></i>
+            Lock & Arm
+          </button>
+          <button type="button" class="btn-dash-secondary" style="padding: 1rem; text-align: center;" onclick="showToast('Engine Started', 'Twin-Turbo engine remote started & warm-up cycle initiated.', 'success')">
+            <i class="fa-solid fa-power-off" style="font-size: 1.25rem; color: var(--dash-primary); margin-bottom: 0.4rem; display: block;"></i>
+            Remote Start
+          </button>
+          <button type="button" class="btn-dash-secondary" style="padding: 1rem; text-align: center;" onclick="showToast('Climate Activated', 'Cabin climate pre-conditioning to 68°F.', 'info')">
+            <i class="fa-solid fa-fan" style="font-size: 1.25rem; color: var(--dash-gold); margin-bottom: 0.4rem; display: block;"></i>
+            Climate 68°F
+          </button>
+        </div>
+      </div>
+      <div class="dash-modal-footer">
+        <button type="button" class="btn-dash-secondary btn-modal-cancel">Close Remote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Window Sticker & Spec Sheet Viewer -->
+  <div class="dash-modal-backdrop" id="specSheetModal">
+    <div class="dash-modal-card" style="max-width: 600px;">
+      <div class="dash-modal-header">
+        <div class="dash-modal-title">
+          <i class="fa-solid fa-file-invoice" style="color: var(--dash-gold);"></i>
+          <span id="specSheetModalTitle">Official Window Sticker & Specification</span>
+        </div>
+        <button class="dash-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="dash-modal-body">
+        <div style="background: #090a0e; border: 1px solid var(--dash-border); border-radius: 12px; padding: 1.5rem; font-family: monospace; font-size: 0.85rem; color: #e2e8f0; line-height: 1.6;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 2px solid var(--dash-primary); padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <div>
+              <strong style="color: #ffffff; font-size: 1rem;" id="specModelName">2026 Porsche 911 GT3 RS</strong>
+              <div style="color: var(--dash-text-muted);" id="specVinNumber">VIN: WP0AF2A97NS298101</div>
+            </div>
+            <div style="text-align: right;">
+              <strong style="color: var(--dash-gold); font-size: 1.1rem;" id="specMSRPAmount">$289,500.00</strong>
+              <div style="color: var(--dash-green);">MSRP Certified</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1rem;">
+            <div style="color: var(--dash-gold); font-weight: bold; margin-bottom: 0.3rem;">INSTALLED FACTORY OPTIONS:</div>
+            <ul style="list-style: square; padding-left: 1.2rem; color: var(--dash-text-muted); font-size: 0.8rem;">
+              <li>Weissach Package with Exposed Carbon Weave Hood & Roof</li>
+              <li>Forged Magnesium Lightweight Center-Lock Wheels</li>
+              <li>Porsche Ceramic Composite Brakes (PCCB) with Yellow Calipers</li>
+              <li>Front Axle Hydraulic Lift System with GPS Memory</li>
+              <li>Bespoke Shark Blue Exterior with Clubsport Interior Cage</li>
+              <li>Bose High-End Surround Sound System</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="dash-modal-footer">
+        <button type="button" class="btn-dash-primary" onclick="showToast('PDF Saved', 'Window sticker downloaded to your device.', 'success')">
+          <i class="fa-solid fa-download"></i> Download PDF
+        </button>
+        <button type="button" class="btn-dash-secondary btn-modal-cancel">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard JavaScript -->
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

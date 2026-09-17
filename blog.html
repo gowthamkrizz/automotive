@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog &amp; Articles &#8211; Stackly Luxury Automotive Magazine</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/cropped-logo-1-32x32.webp" sizes="32x32" type="image/webp">
+    <link rel="apple-touch-icon" href="assets/images/cropped-logo-1-180x180.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;500;600;700;800&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Base Stylesheet & Specialized Blog Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+<body class="inner-page blog-page">
+
+    <!-- Page Preloader -->
+    <div class="page-loader-wrapper" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-text-content">
+                <div class="text-loader-content-wrap">
+                    <div class="loader-text">LOADING...</div>
+                    <div class="loader-text-progress">LOADING...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section (Floating Navbar with Active Indicator) -->
+    <header class="header fl-header-transparent" id="siteHeader">
+        <div class="header__inner">
+            <div class="header-content container-fluid">
+                <!-- Logo -->
+                <div class="header-content__logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/images/stackly-logo.webp" alt="Stackly Logo" class="site-logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="header-content__menu" id="desktopNav">
+                    <ul class="nav-menu">
+                        <li class="menu-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="inventory.html" class="nav-link">VEHICLE LISTINGS</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="about.html" class="nav-link">ABOUT US</a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="contact.html" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-content__right">
+                    <a href="login.html" class="btn btn-header-login" id="loginBtn">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer__header">
+                <img src="assets/images/stackly-logo.webp" alt="Stackly" class="mobile-logo">
+                <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mobile-drawer__body">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="index.html" class="mobile-nav-link">HOME</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="inventory.html" class="mobile-nav-link">VEHICLE LISTINGS</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="about.html" class="mobile-nav-link">ABOUT US</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link active">BLOG</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+                    </li>
+                </ul>
+
+                <div class="mobile-drawer__footer">
+                    <a href="login.html" class="btn btn-primary btn-block">
+                        <i class="fa-regular fa-user"></i> Login / Register
+                    </a>
+                    <div class="mobile-contact-card">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <span>Talk to an Expert</span>
+                            <strong>+1 (234) 567 8900</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner / Breadcrumb (Retained Hero Section) -->
+    <section class="page-hero-banner" style="background-image: url('assets/images/slider3.webp');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <h1 class="page-hero-title">BLOG &amp; ARTICLES</h1>
+            <div class="breadcrumb-trail">
+                <a href="index.html">Home</a>
+                <span class="divider">/</span>
+                <span class="current">Blog</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 1 — FEATURED AUTOMOTIVE STORIES
+         ========================================================================= -->
+    <section class="featured-stories-section" id="featuredStoriesSection">
+        <div class="featured-stories-ambient-glow"></div>
+        <div class="container">
+            <div class="section-header-wrap" data-aos="fade-up" data-aos-duration="700">
+                <span class="section-tag spotlight-pill">
+                    <span class="live-pulse-dot"></span>
+                    <i class="fa-solid fa-fire-flame-curved"></i> EDITORIAL SPOTLIGHT
+                </span>
+                <h2 class="section-title-large">Featured Automotive <span>Stories.</span></h2>
+                <p class="section-subtitle-text">Curated long-form journalism, world premiere analyses, and exclusive track evaluations.</p>
+                
+                <!-- Editorial Filter Tabs -->
+                <div class="editorial-filter-bar" data-aos="fade-up" data-aos-delay="100">
+                    <button class="editorial-filter-pill active" data-filter="all">
+                        <i class="fa-solid fa-layer-group"></i> All Stories
+                    </button>
+                    <button class="editorial-filter-pill" data-filter="hypercar">
+                        <i class="fa-solid fa-bolt"></i> Hypercars &amp; Track
+                    </button>
+                    <button class="editorial-filter-pill" data-filter="suv">
+                        <i class="fa-solid fa-crown"></i> Luxury SUVs
+                    </button>
+                    <button class="editorial-filter-pill" data-filter="offroad">
+                        <i class="fa-solid fa-mountain"></i> Off-Road &amp; 4x4
+                    </button>
+                </div>
+            </div>
+
+            <div class="featured-editorial-grid">
+                <!-- Large Featured Story Card (Left) -->
+                <article class="featured-main-card" data-category="hypercar" data-aos="fade-right" data-aos-duration="800">
+                    <div class="featured-main-img-wrap">
+                        <img src="assets/images/slider2.webp" alt="Hypercar Aerodynamics" class="featured-main-img">
+                        <div class="img-shimmer-sweep"></div>
+                        <div class="featured-img-top-bar">
+                            <span class="article-cat-badge badge-featured">
+                                <span class="badge-live-pulse"></span>
+                                <i class="fa-solid fa-bolt"></i> COVER STORY
+                            </span>
+                            <button class="story-bookmark-btn" aria-label="Bookmark Story" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                        </div>
+                        <div class="featured-img-bottom-bar">
+                            <span class="image-overlay-chip">
+                                <i class="fa-solid fa-headphones"></i> 8 Min Audio Edition Available
+                            </span>
+                            <span class="image-overlay-chip chip-red">
+                                <i class="fa-solid fa-gauge-high"></i> Track Verified
+                            </span>
+                        </div>
+                    </div>
+                    <div class="featured-main-content">
+                        <div class="article-author-chip-row">
+                            <div class="author-avatar-wrap">
+                                <img src="assets/images/ava1.webp" alt="Alexandre Vance" class="author-avatar-img">
+                                <div class="author-meta-info">
+                                    <strong class="author-name">Alexandre Vance <i class="fa-solid fa-circle-check author-verified"></i></strong>
+                                    <span class="author-role">Chief Technical Editor</span>
+                                </div>
+                            </div>
+                            <div class="article-meta-chips">
+                                <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                            </div>
+                        </div>
+
+                        <h3 class="featured-main-title">
+                            <a href="#featured-story">2026 Hypercar Revolution: Active Telemetry, Venturi Tunnels &amp; Hybrid V12s</a>
+                        </h3>
+                        <p class="featured-main-excerpt">
+                            An in-depth engineering breakdown exploring how ground-effect aerodynamics, regenerative battery boost systems, and active carbon suspension geometry are redefining transcontinental performance standards across the world's most prestigious marques.
+                        </p>
+
+                        <!-- Live Telemetry / Specs Strip -->
+                        <div class="story-specs-strip">
+                            <div class="spec-strip-item">
+                                <span class="spec-label"><i class="fa-solid fa-bolt text-red"></i> Powertrain</span>
+                                <strong class="spec-val">1,020 HP Hybrid V12</strong>
+                            </div>
+                            <div class="spec-strip-item">
+                                <span class="spec-label"><i class="fa-solid fa-stopwatch text-red"></i> 0-60 MPH</span>
+                                <strong class="spec-val">2.1 Seconds</strong>
+                            </div>
+                            <div class="spec-strip-item">
+                                <span class="spec-label"><i class="fa-solid fa-trophy text-red"></i> Lap Telemetry</span>
+                                <strong class="spec-val">6:44.2 Nürburgring</strong>
+                            </div>
+                        </div>
+
+                        <div class="featured-main-footer">
+                            <a href="404.html" class="btn-read-featured" title="Read Full Article">
+                                <span>Read Full Article</span>
+                                <div class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                            </a>
+                            <div class="featured-footer-stats">
+                                <span class="story-trending-chip"><i class="fa-solid fa-arrow-trend-up"></i> 4.8k Views</span>
+                                <span class="blog-cat-count"><i class="fa-solid fa-bookmark"></i> Exclusive</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Stacked 2 Cards (Right) -->
+                <div class="featured-side-stack">
+                    <!-- Stack Card 1 -->
+                    <article class="featured-side-card" data-category="suv" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+                        <div class="featured-side-img-wrap">
+                            <a href="404.html">
+                                <img src="assets/images/Rectangle-78.webp" alt="Aston Martin DBX707" class="featured-side-img">
+                            </a>
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="article-cat-badge badge-glow">
+                                <i class="fa-solid fa-crown"></i> LUXURY SUV
+                            </span>
+                            <button class="story-bookmark-btn bookmark-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                        </div>
+                        <div class="featured-side-content">
+                            <div>
+                                <div class="article-meta-row">
+                                    <span><i class="fa-regular fa-calendar"></i> Sep 12, 2026</span>
+                                    <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                                    <span class="badge-mini-spec">707 HP • Twin-Turbo V8</span>
+                                </div>
+                                <h4 class="featured-side-title">
+                                    <a href="404.html">Aston Martin DBX707: The 700HP Super-SUV Redefining Grand Touring</a>
+                                </h4>
+                                <p class="featured-side-excerpt">
+                                    Track-bred steering precision meets hand-stitched Bridge of Weir leather in Britain's most ferocious luxury crossover.
+                                </p>
+                            </div>
+                            <div class="featured-side-bottom">
+                                <a href="404.html" class="read-more-link" title="Read Story">
+                                    <span>Read Story</span>
+                                    <div class="mini-arrow-circle"><i class="fa-solid fa-arrow-right"></i></div>
+                                </a>
+                                <span class="side-views-count"><i class="fa-regular fa-eye"></i> 3.2k</span>
+                            </div>
+                        </div>
+                        <div class="card-bottom-progress"></div>
+                    </article>
+
+                    <!-- Stack Card 2 -->
+                    <article class="featured-side-card" data-category="offroad" data-aos="fade-left" data-aos-duration="800" data-aos-delay="250">
+                        <div class="featured-side-img-wrap">
+                            <a href="404.html">
+                                <img src="assets/images/0-1516192-scaled.webp" alt="Defender V8 Expedition" class="featured-side-img">
+                            </a>
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="article-cat-badge badge-glow">
+                                <i class="fa-solid fa-mountain"></i> OFF-ROAD V8
+                            </span>
+                            <button class="story-bookmark-btn bookmark-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                        </div>
+                        <div class="featured-side-content">
+                            <div>
+                                <div class="article-meta-row">
+                                    <span><i class="fa-regular fa-calendar"></i> Sep 10, 2026</span>
+                                    <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                                    <span class="badge-mini-spec">518 HP • Carpathian V8</span>
+                                </div>
+                                <h4 class="featured-side-title">
+                                    <a href="404.html">Defender V8 Carpathian Edition: British Refinement Meets All-Terrain Mastery</a>
+                                </h4>
+                                <p class="featured-side-excerpt">
+                                    Testing adaptive air suspension and terrain response protocols across high-altitude alpine passes.
+                                </p>
+                            </div>
+                            <div class="featured-side-bottom">
+                                <a href="404.html" class="read-more-link" title="Read Story">
+                                    <span>Read Story</span>
+                                    <div class="mini-arrow-circle"><i class="fa-solid fa-arrow-right"></i></div>
+                                </a>
+                                <span class="side-views-count"><i class="fa-regular fa-eye"></i> 2.9k</span>
+                            </div>
+                        </div>
+                        <div class="card-bottom-progress"></div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2 — LATEST AUTOMOTIVE NEWS
+         ========================================================================= -->
+    <section class="latest-news-section" id="latestNewsSection">
+        <div class="news-section-ambient-bg"></div>
+        <div class="container">
+            <div class="section-header-wrap" data-aos="fade-up" data-aos-duration="700">
+                <span class="section-tag news-radar-tag">
+                    <span class="radar-ping-ring"></span>
+                    <i class="fa-solid fa-satellite-dish"></i> LIVE DISPATCH &amp; INDUSTRY RADAR
+                </span>
+                <h2 class="section-title-large">Latest Automotive <span>News.</span></h2>
+                <p class="section-subtitle-text">Stay informed with daily coverage of industry breakthroughs, new car debuts, and performance tech.</p>
+
+                <!-- Breaking News Ticker Bar -->
+                <div class="news-live-ticker-wrap" data-aos="fade-up" data-aos-delay="100">
+                    <div class="ticker-label">
+                        <span class="ticker-live-dot"></span>
+                        <i class="fa-solid fa-bolt"></i> FLASH DISPATCH
+                    </div>
+                    <div class="ticker-marquee-track">
+                        <div class="ticker-marquee-content">
+                            <span>🔴 BREAKING: 2027 Porsche 911 GT3 RS Facelift Announced with Active Dynamic DRS Diffusers</span>
+                            <span class="ticker-sep">•</span>
+                            <span>⚡ Solid-State 650-Mile Battery Architecture Validated Across 2,000 High-Voltage Test Cycles</span>
+                            <span class="ticker-sep">•</span>
+                            <span>🏆 Mercedes-AMG GT Black Series Sets Benchmark 6:48 Production Lap Telemetry</span>
+                            <span class="ticker-sep">•</span>
+                            <span>💎 Global Collector Supercar Market Surpasses $48B Valuation</span>
+                            <span class="ticker-sep">•</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Filter Pills -->
+                <div class="news-filter-bar" data-aos="fade-up" data-aos-delay="150">
+                    <button class="news-filter-pill active" data-news-filter="all">
+                        <i class="fa-solid fa-border-all"></i> All News
+                    </button>
+                    <button class="news-filter-pill" data-news-filter="launches">
+                        <i class="fa-solid fa-rocket"></i> Launches &amp; Supercars
+                    </button>
+                    <button class="news-filter-pill" data-news-filter="evtech">
+                        <i class="fa-solid fa-charging-station"></i> EV &amp; Battery Tech
+                    </button>
+                    <button class="news-filter-pill" data-news-filter="performance">
+                        <i class="fa-solid fa-gauge-high"></i> Track &amp; Telemetry
+                    </button>
+                    <button class="news-filter-pill" data-news-filter="tech">
+                        <i class="fa-solid fa-microchip"></i> AI &amp; Engineering
+                    </button>
+                </div>
+            </div>
+
+            <div class="news-cards-grid">
+                <!-- News Card 1 -->
+                <article class="news-card-item" data-category="launches" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-card-thumb-wrap">
+                        <a href="404.html">
+                            <img src="assets/images/news-1-1-520x390.webp" alt="Porsche GT3 RS" class="news-card-img">
+                        </a>
+                        <div class="img-shimmer-sweep"></div>
+                        <span class="article-cat-badge badge-news-glow">
+                            <i class="fa-solid fa-rocket"></i> LAUNCHES
+                        </span>
+                        <a href="404.html" class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </a>
+                        <span class="news-time-chip">
+                            <i class="fa-solid fa-circle text-red live-dot"></i> 2h ago
+                        </span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 3 min read</span>
+                            <span class="badge-mini-spec">9,000 RPM Flat-6</span>
+                        </div>
+                        <h4 class="news-card-title">
+                            <a href="404.html">2027 Porsche 911 GT3 RS Facelift Revealed with Active Aero Diffusers</a>
+                        </h4>
+                        <p class="news-card-desc">
+                            Weissach engineers introduce dynamic carbon winglets and DRS actuation for unprecedented Nürburgring lap performance.
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link" title="Read Full Report">
+                                <span>Read Full Report</span>
+                                <div class="mini-arrow-circle" title="Active Aero Telemetry"><i class="fa-solid fa-wind"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 2.8k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- News Card 2 -->
+                <article class="news-card-item" data-category="evtech" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-card-thumb-wrap">
+                        <a href="404.html">
+                            <img src="assets/images/slider1-1.webp" alt="Solid State Battery EV" class="news-card-img">
+                        </a>
+                        <div class="img-shimmer-sweep"></div>
+                        <span class="article-cat-badge badge-news-glow">
+                            <i class="fa-solid fa-charging-station"></i> EV TECH
+                        </span>
+                        <a href="404.html" class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </a>
+                        <span class="news-time-chip">
+                            <i class="fa-solid fa-circle text-red live-dot"></i> 5h ago
+                        </span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 13, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                            <span class="badge-mini-spec">800V Ceramic Cells</span>
+                        </div>
+                        <h4 class="news-card-title">
+                            <a href="404.html">Solid-State Battery Breakthrough Delivers 650 Miles on a 10-Minute Charge</a>
+                        </h4>
+                        <p class="news-card-desc">
+                            Ceramic electrolyte cells demonstrate zero thermal degradation across 2,000 rigorous high-voltage test cycles.
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link" title="Read Full Report">
+                                <span>Read Full Report</span>
+                                <div class="mini-arrow-circle" title="Solid-State EV Breakthrough"><i class="fa-solid fa-bolt-lightning"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 3.4k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- News Card 3 -->
+                <article class="news-card-item" data-category="performance" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-card-thumb-wrap">
+                        <a href="404.html">
+                            <img src="assets/images/0-1538402-1.webp" alt="Mercedes-AMG GT" class="news-card-img">
+                        </a>
+                        <div class="img-shimmer-sweep"></div>
+                        <span class="article-cat-badge badge-news-glow">
+                            <i class="fa-solid fa-gauge-high"></i> PERFORMANCE
+                        </span>
+                        <a href="404.html" class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </a>
+                        <span class="news-time-chip">
+                            <i class="fa-solid fa-circle text-red live-dot"></i> 1d ago
+                        </span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 11, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                            <span class="badge-mini-spec">720 HP Flat-Plane V8</span>
+                        </div>
+                        <h4 class="news-card-title">
+                            <a href="404.html">Mercedes-AMG GT Black Series Sets New Production Lap Record</a>
+                        </h4>
+                        <p class="news-card-desc">
+                            Twin-turbo flat-plane crank V8 paired with motorsport suspension achieves benchmark telemetry downforce.
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link" title="Read Full Report">
+                                <span>Read Full Report</span>
+                                <div class="mini-arrow-circle" title="Lap Record Telemetry"><i class="fa-solid fa-stopwatch"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 4.1k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- News Card 4 -->
+                <article class="news-card-item" data-category="tech" data-aos="fade-up" data-aos-delay="400">
+                    <div class="news-card-thumb-wrap">
+                        <a href="404.html">
+                            <img src="assets/images/g3.webp" alt="LiDAR Sensor Integration" class="news-card-img">
+                        </a>
+                        <div class="img-shimmer-sweep"></div>
+                        <span class="article-cat-badge badge-news-glow">
+                            <i class="fa-solid fa-microchip"></i> TECH &amp; AI
+                        </span>
+                        <a href="404.html" class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </a>
+                        <span class="news-time-chip">
+                            <i class="fa-solid fa-circle text-red live-dot"></i> 2d ago
+                        </span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 09, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 3 min read</span>
+                            <span class="badge-mini-spec">Level 3 Autonomous</span>
+                        </div>
+                        <h4 class="news-card-title">
+                            <a href="404.html">Next-Gen LiDAR Sensors Integrate Flawlessly into Carbon Roof Panels</a>
+                        </h4>
+                        <p class="news-card-desc">
+                            Level 3 autonomous cruising systems achieve millimeter precision without altering luxury coupe body silhouettes.
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link" title="Read Full Report">
+                                <span>Read Full Report</span>
+                                <div class="mini-arrow-circle" title="LiDAR & AI Architecture"><i class="fa-solid fa-microchip"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 1.9k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- News Card 5 -->
+                <article class="news-card-item" data-category="tech" data-aos="fade-up" data-aos-delay="500">
+                    <div class="news-card-thumb-wrap">
+                        <a href="404.html">
+                            <img src="assets/images/0-1635455.webp" alt="Carbon Ceramic Maintenance" class="news-card-img">
+                        </a>
+                        <div class="img-shimmer-sweep"></div>
+                        <span class="article-cat-badge badge-news-glow">
+                            <i class="fa-solid fa-wrench"></i> ENGINEERING
+                        </span>
+                        <a href="404.html" class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </a>
+                        <span class="news-time-chip">
+                            <i class="fa-solid fa-circle text-red live-dot"></i> 3d ago
+                        </span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 08, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                            <span class="badge-mini-spec">1,000°C Thermal Parity</span>
+                        </div>
+                        <h4 class="news-card-title">
+                            <a href="404.html">5 Essential Carbon Ceramic Brake Care Rules for Track Enthusiasts</a>
+                        </h4>
+                        <p class="news-card-desc">
+                            Mastering thermal cooldown laps, ultrasonic pad inspections, and preventing disc matrix crystallization.
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link" title="Read Full Report">
+                                <span>Read Full Report</span>
+                                <div class="mini-arrow-circle" title="Ceramic Engineering Guide"><i class="fa-solid fa-wrench"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 2.1k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- News Card 6 -->
+                <article class="news-card-item" data-category="launches" data-aos="fade-up" data-aos-delay="600">
+                    <div class="news-card-thumb-wrap">
+                        <a href="404.html">
+                            <img src="assets/images/news-3-520x390.webp" alt="Exotic Car Market" class="news-card-img">
+                        </a>
+                        <div class="img-shimmer-sweep"></div>
+                        <span class="article-cat-badge badge-news-glow">
+                            <i class="fa-solid fa-chart-line"></i> INDUSTRY
+                        </span>
+                        <a href="404.html" class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </a>
+                        <span class="news-time-chip">
+                            <i class="fa-solid fa-circle text-red live-dot"></i> 4d ago
+                        </span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 06, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                            <span class="badge-mini-spec">+24.8% Index ROI</span>
+                        </div>
+                        <h4 class="news-card-title">
+                            <a href="404.html">Global Exotic Car Market Surpasses $48B Valuation in 2026</a>
+                        </h4>
+                        <p class="news-card-desc">
+                            Limited homologation series and rare manual supercars outpace traditional investment indices across North America.
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link" title="Read Full Report">
+                                <span>Read Full Report</span>
+                                <div class="mini-arrow-circle" title="Market Index Insights"><i class="fa-solid fa-chart-line"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 3.7k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3 — AUTOMOTIVE CATEGORIES (Dark Luxury Matrix with 3D Flip & Pop-up)
+         ========================================================================= -->
+    <section class="blog-categories-section" id="blogCategoriesSection">
+        <div class="blog-cat-ambient-mesh"></div>
+        <div class="container">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="section-tag tag-dark">
+                    <span class="live-pulse-dot"></span>
+                    <i class="fa-solid fa-layer-group"></i> TAXONOMY &amp; TOPICS
+                </span>
+                <h2 class="section-title-large text-white">Explore By <span>Category.</span></h2>
+                <p class="section-subtitle-text" style="color: #aaaaaa;">Navigate our extensive library of automotive analysis categorized by domain expertise. <span class="text-red font-weight-bold">Hover to flip card details.</span></p>
+            </div>
+
+            <div class="blog-categories-grid">
+                <!-- Cat 1: New Cars -->
+                <div class="category-flip-card active-card" data-category="new-cars" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="category-flip-inner">
+                        <!-- Front Face -->
+                        <div class="category-card-front">
+                            <div class="blog-cat-icon-box">
+                                <i class="fa-solid fa-car-side"></i>
+                            </div>
+                            <h4 class="blog-cat-name">New Cars</h4>
+                            <p class="blog-cat-desc">Flagship debuts &amp; world releases</p>
+                            <div class="category-front-footer">
+                                <span class="blog-cat-count">38 Articles</span>
+                                <span class="category-flip-hint"><i class="fa-solid fa-rotate"></i> Flip</span>
+                            </div>
+                            <div class="card-front-glow"></div>
+                        </div>
+                        <!-- Back Face (Popped-up Content) -->
+                        <div class="category-card-back">
+                            <div class="category-back-content">
+                                <span class="cat-back-badge"><i class="fa-solid fa-fire"></i> TOP TOPIC</span>
+                                <h5 class="cat-back-title">New Cars Hub</h5>
+                                <ul class="cat-subtopics-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> 2027 World Premieres</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Homologation Specials</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> V12 &amp; Hybrid Unveils</li>
+                                </ul>
+                                <a href="404.html" class="btn-cat-explore">
+                                    <span>Browse 38 Articles</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cat 2: Electric Vehicles -->
+                <div class="category-flip-card" data-category="electric-vehicles" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="category-flip-inner">
+                        <!-- Front Face -->
+                        <div class="category-card-front">
+                            <div class="blog-cat-icon-box">
+                                <i class="fa-solid fa-bolt-lightning"></i>
+                            </div>
+                            <h4 class="blog-cat-name">Electric Vehicles</h4>
+                            <p class="blog-cat-desc">Next-gen EVs &amp; battery tech</p>
+                            <div class="category-front-footer">
+                                <span class="blog-cat-count">24 Articles</span>
+                                <span class="category-flip-hint"><i class="fa-solid fa-rotate"></i> Flip</span>
+                            </div>
+                            <div class="card-front-glow"></div>
+                        </div>
+                        <!-- Back Face (Popped-up Content) -->
+                        <div class="category-card-back">
+                            <div class="category-back-content">
+                                <span class="cat-back-badge"><i class="fa-solid fa-charging-station"></i> 800V TECH</span>
+                                <h5 class="cat-back-title">EV &amp; Battery Hub</h5>
+                                <ul class="cat-subtopics-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Solid-State Cell Tests</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Tri-Motor Powertrains</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Hyper-EV Track Times</li>
+                                </ul>
+                                <a href="404.html" class="btn-cat-explore">
+                                    <span>Browse 24 Articles</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cat 3: Performance -->
+                <div class="category-flip-card" data-category="performance" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="category-flip-inner">
+                        <!-- Front Face -->
+                        <div class="category-card-front">
+                            <div class="blog-cat-icon-box">
+                                <i class="fa-solid fa-gauge-high"></i>
+                            </div>
+                            <h4 class="blog-cat-name">Performance</h4>
+                            <p class="blog-cat-desc">Supercars, track &amp; tuning</p>
+                            <div class="category-front-footer">
+                                <span class="blog-cat-count">19 Articles</span>
+                                <span class="category-flip-hint"><i class="fa-solid fa-rotate"></i> Flip</span>
+                            </div>
+                            <div class="card-front-glow"></div>
+                        </div>
+                        <!-- Back Face (Popped-up Content) -->
+                        <div class="category-card-back">
+                            <div class="category-back-content">
+                                <span class="cat-back-badge"><i class="fa-solid fa-trophy"></i> TRACK TELEMETRY</span>
+                                <h5 class="cat-back-title">Performance Hub</h5>
+                                <ul class="cat-subtopics-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Nürburgring Sector Laps</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Active Aero &amp; DRS Tests</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Twin-Turbo Stage Builds</li>
+                                </ul>
+                                <a href="404.html" class="btn-cat-explore">
+                                    <span>Browse 19 Articles</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cat 4: Car Reviews -->
+                <div class="category-flip-card" data-category="car-reviews" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="category-flip-inner">
+                        <!-- Front Face -->
+                        <div class="category-card-front">
+                            <div class="blog-cat-icon-box">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h4 class="blog-cat-name">Car Reviews</h4>
+                            <p class="blog-cat-desc">In-depth road tests &amp; scoring</p>
+                            <div class="category-front-footer">
+                                <span class="blog-cat-count">42 Articles</span>
+                                <span class="category-flip-hint"><i class="fa-solid fa-rotate"></i> Flip</span>
+                            </div>
+                            <div class="card-front-glow"></div>
+                        </div>
+                        <!-- Back Face (Popped-up Content) -->
+                        <div class="category-card-back">
+                            <div class="category-back-content">
+                                <span class="cat-back-badge"><i class="fa-solid fa-award"></i> 9.8 RATED</span>
+                                <h5 class="cat-back-title">Reviews &amp; Scoring</h5>
+                                <ul class="cat-subtopics-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> 1,000-Mile Dyno Verdicts</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Cabin Ergonomics Matrix</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Road Noise Decibels</li>
+                                </ul>
+                                <a href="404.html" class="btn-cat-explore">
+                                    <span>Browse 42 Articles</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cat 5: Maintenance -->
+                <div class="category-flip-card" data-category="maintenance" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="category-flip-inner">
+                        <!-- Front Face -->
+                        <div class="category-card-front">
+                            <div class="blog-cat-icon-box">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <h4 class="blog-cat-name">Maintenance</h4>
+                            <p class="blog-cat-desc">Longevity, diagnostics &amp; care</p>
+                            <div class="category-front-footer">
+                                <span class="blog-cat-count">15 Articles</span>
+                                <span class="category-flip-hint"><i class="fa-solid fa-rotate"></i> Flip</span>
+                            </div>
+                            <div class="card-front-glow"></div>
+                        </div>
+                        <!-- Back Face (Popped-up Content) -->
+                        <div class="category-card-back">
+                            <div class="category-back-content">
+                                <span class="cat-back-badge"><i class="fa-solid fa-shield-halved"></i> MASTER TECH</span>
+                                <h5 class="cat-back-title">Care &amp; Diagnostics</h5>
+                                <ul class="cat-subtopics-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Carbon Ceramic Rotors</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Thermal Fluid Analysis</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Dry-Sump Lubrication</li>
+                                </ul>
+                                <a href="404.html" class="btn-cat-explore">
+                                    <span>Browse 15 Articles</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cat 6: Automotive Tech -->
+                <div class="category-flip-card" data-category="automotive-technology" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="category-flip-inner">
+                        <!-- Front Face -->
+                        <div class="category-card-front">
+                            <div class="blog-cat-icon-box">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h4 class="blog-cat-name">Automotive Tech</h4>
+                            <p class="blog-cat-desc">AI, LiDAR &amp; digital cockpits</p>
+                            <div class="category-front-footer">
+                                <span class="blog-cat-count">27 Articles</span>
+                                <span class="category-flip-hint"><i class="fa-solid fa-rotate"></i> Flip</span>
+                            </div>
+                            <div class="card-front-glow"></div>
+                        </div>
+                        <!-- Back Face (Popped-up Content) -->
+                        <div class="category-card-back">
+                            <div class="category-back-content">
+                                <span class="cat-back-badge"><i class="fa-solid fa-brain"></i> AI &amp; AVIONICS</span>
+                                <h5 class="cat-back-title">Future Tech Hub</h5>
+                                <ul class="cat-subtopics-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> LiDAR Millimeter Scans</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Neural Head-Up Displays</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Predictive Suspension</li>
+                                </ul>
+                                <a href="404.html" class="btn-cat-explore">
+                                    <span>Browse 27 Articles</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4 — EXPERT CAR REVIEWS (TELEMETRY SHOWCASE)
+         ========================================================================= -->
+    <section class="expert-reviews-section" id="expertReviewsSection">
+        <div class="reviews-ambient-glow"></div>
+        <div class="container">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="section-tag spotlight-pill">
+                    <span class="live-pulse-dot"></span>
+                    <i class="fa-solid fa-gauge-simple-high"></i> INDEPENDENT TELEMETRY TESTING
+                </span>
+                <h2 class="section-title-large">Expert Car <span>Reviews.</span></h2>
+                <p class="section-subtitle-text">Rigorous instrumented track testing, dyno telemetry benchmarks, and real-world ergonomics scoring.</p>
+            </div>
+
+            <!-- Featured Split Review Showcase -->
+            <div class="review-showcase-split" data-aos="fade-up" data-aos-duration="900">
+                <div class="review-media-col">
+                    <div class="review-img-inner-wrap">
+                        <img src="assets/images/0-1538402-1.webp" alt="Mercedes AMG GT Review" class="review-main-img">
+                        <div class="img-shimmer-sweep"></div>
+                        <div class="review-img-top-bar">
+                            <span class="review-tag-badge">
+                                <span class="badge-live-pulse"></span>
+                                <i class="fa-solid fa-certificate"></i> CERTIFIED ROAD TEST
+                            </span>
+                            <button class="story-bookmark-btn bookmark-mini" aria-label="Bookmark Review" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                        </div>
+                        <div class="review-img-bottom-bar">
+                            <span class="image-overlay-chip">
+                                <i class="fa-solid fa-flag-checkered"></i> Nürburgring Nordschleife Validated
+                            </span>
+                            <span class="image-overlay-chip chip-red">
+                                <i class="fa-solid fa-gauge"></i> Dyno Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-content-col">
+                    <div class="review-score-header">
+                        <div class="score-counter-box">
+                            <strong id="reviewMainScore" data-score="9.8">0.0</strong>
+                            <span>/ 10</span>
+                        </div>
+                        <div class="review-stars-wrap">
+                            <div class="star-rating-icons">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span class="score-verdict-label">Stackly Rating: Extraordinary</span>
+                        </div>
+                    </div>
+
+                    <h3 class="review-model-title">
+                        <a href="404.html">2026 Mercedes-AMG GT 63 S E-Performance</a>
+                    </h3>
+
+                    <!-- Telemetry Spec Cards -->
+                    <div class="review-specs-grid">
+                        <div class="review-spec-item">
+                            <i class="fa-solid fa-bolt spec-icon-mini"></i>
+                            <div>
+                                <strong>831 HP</strong>
+                                <span>V8 Hybrid</span>
+                            </div>
+                        </div>
+                        <div class="review-spec-item">
+                            <i class="fa-solid fa-stopwatch spec-icon-mini"></i>
+                            <div>
+                                <strong>2.7s</strong>
+                                <span>0-60 MPH</span>
+                            </div>
+                        </div>
+                        <div class="review-spec-item">
+                            <i class="fa-solid fa-gauge-high spec-icon-mini"></i>
+                            <div>
+                                <strong>196 MPH</strong>
+                                <span>Top Speed</span>
+                            </div>
+                        </div>
+                        <div class="review-spec-item">
+                            <i class="fa-solid fa-gears spec-icon-mini"></i>
+                            <div>
+                                <strong>1,050 LB-FT</strong>
+                                <span>Torque</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evaluation Telemetry Bars -->
+                    <div class="review-meter-bars">
+                        <div class="meter-bar-item">
+                            <div class="meter-bar-header">
+                                <span>Launch &amp; Acceleration</span>
+                                <strong>9.9 / 10</strong>
+                            </div>
+                            <div class="meter-progress-track">
+                                <div class="meter-progress-fill" style="width: 99%;"></div>
+                            </div>
+                        </div>
+                        <div class="meter-bar-item">
+                            <div class="meter-bar-header">
+                                <span>Chassis &amp; Track Grip</span>
+                                <strong>9.8 / 10</strong>
+                            </div>
+                            <div class="meter-progress-track">
+                                <div class="meter-progress-fill" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="review-verdict-quote">
+                        “A masterclass in electrified grand touring dynamics. The active hydraulic anti-roll suspension and immediate electric torque delivery make the AMG GT effortlessly dominant on any circuit.”
+                    </p>
+
+                    <div class="review-tester-footer">
+                        <div class="tester-avatar-info">
+                            <img src="assets/images/ava2.webp" alt="Marcus Thorne" class="tester-img">
+                            <div>
+                                <strong>Marcus Thorne <i class="fa-solid fa-circle-check text-red"></i></strong>
+                                <span>Senior Track Evaluator</span>
+                            </div>
+                        </div>
+                        <a href="404.html" class="btn-read-featured">
+                            <span>Read Full Review</span>
+                            <div class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Review Cards Row -->
+            <div class="secondary-reviews-grid">
+                <!-- Mini Review 1 -->
+                <article class="mini-review-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mini-review-thumb-wrap">
+                        <img src="assets/images/slider2.webp" alt="Porsche Taycan Review" class="mini-review-img">
+                        <div class="img-shimmer-sweep"></div>
+                        <div class="mini-score-badge">9.6 <span>/ 10</span></div>
+                        <button class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </button>
+                    </div>
+                    <div class="mini-review-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                            <span class="badge-mini-spec">750 HP • Dual Motor</span>
+                        </div>
+                        <h4 class="mini-review-title">
+                            <a href="404.html">Porsche Taycan Turbo S Track Edition</a>
+                        </h4>
+                        <p class="mini-review-desc">Searing electric launch control paired with quintessential Porsche chassis communication.</p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link">
+                                <span>Read Review</span>
+                                <div class="mini-arrow-circle" title="Porsche Taycan EV Review"><i class="fa-solid fa-bolt"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 3.1k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- Mini Review 2 -->
+                <article class="mini-review-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mini-review-thumb-wrap">
+                        <img src="assets/images/0-1516192-scaled.webp" alt="Land Rover Defender V8" class="mini-review-img">
+                        <div class="img-shimmer-sweep"></div>
+                        <div class="mini-score-badge">9.4 <span>/ 10</span></div>
+                        <button class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </button>
+                    </div>
+                    <div class="mini-review-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 11, 2026</span>
+                            <span class="badge-mini-spec">518 HP • Supercharged V8</span>
+                        </div>
+                        <h4 class="mini-review-title">
+                            <a href="404.html">Land Rover Defender 110 V8 Expedition</a>
+                        </h4>
+                        <p class="mini-review-desc">Bespoke luxury cabin isolation mated to world-conquering electronic terrain response.</p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link">
+                                <span>Read Review</span>
+                                <div class="mini-arrow-circle" title="Defender Expedition Review"><i class="fa-solid fa-mountain"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 2.7k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- Mini Review 3 -->
+                <article class="mini-review-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mini-review-thumb-wrap">
+                        <img src="assets/images/slider3.webp" alt="Cadillac Celestiq" class="mini-review-img">
+                        <div class="img-shimmer-sweep"></div>
+                        <div class="mini-score-badge">9.7 <span>/ 10</span></div>
+                        <button class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Story" title="Save to Reading List">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </button>
+                    </div>
+                    <div class="mini-review-body">
+                        <div class="article-meta-row">
+                            <span><i class="fa-regular fa-calendar"></i> Sep 08, 2026</span>
+                            <span class="badge-mini-spec">600 HP • Magnetic Ride 4.0</span>
+                        </div>
+                        <h4 class="mini-review-title">
+                            <a href="404.html">Cadillac Celestiq Handcrafted EV Bespoke</a>
+                        </h4>
+                        <p class="mini-review-desc">Hand-built American ultra-luxury setting new milestones for bespoke acoustic tranquility.</p>
+                        <div class="news-card-footer">
+                            <a href="404.html" class="read-more-link">
+                                <span>Read Review</span>
+                                <div class="mini-arrow-circle" title="Celestiq Bespoke Review"><i class="fa-solid fa-gem"></i></div>
+                            </a>
+                            <span class="side-views-count"><i class="fa-regular fa-eye"></i> 3.5k</span>
+                        </div>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5 — AUTOMOTIVE INSIGHTS & TIPS (Asymmetric Grid)
+         ========================================================================= -->
+    <section class="insights-tips-section" id="insightsTipsSection">
+        <div class="insights-ambient-glow"></div>
+        <div class="container">
+            <div class="section-header-wrap" data-aos="fade-up">
+                <span class="section-tag spotlight-pill">
+                    <span class="live-pulse-dot"></span>
+                    <i class="fa-solid fa-compass-drafting"></i> OWNER'S MASTER HANDBOOK
+                </span>
+                <h2 class="section-title-large">Automotive Insights <span>&amp; Tips.</span></h2>
+                <p class="section-subtitle-text">Practical advisory guides designed to elevate your vehicle maintenance, acquisition, and driving precision.</p>
+            </div>
+
+            <div class="insights-asym-grid">
+                <!-- Large Featured Spotlight Guide -->
+                <article class="insights-spotlight-card" data-aos="fade-right" data-aos-duration="900">
+                    <div class="insights-spotlight-img-wrap">
+                        <img src="assets/images/Rectangle-92.webp" alt="Ceramic Coating Guide" class="insights-spotlight-img">
+                        <div class="img-shimmer-sweep"></div>
+                        <div class="featured-img-top-bar">
+                            <span class="article-cat-badge badge-featured">
+                                <span class="badge-live-pulse"></span>
+                                <i class="fa-solid fa-shield-halved"></i> MASTER ADVISORY
+                            </span>
+                            <button class="story-bookmark-btn bookmark-mini" aria-label="Bookmark Guide" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                        </div>
+                        <div class="featured-img-bottom-bar">
+                            <span class="image-overlay-chip">
+                                <i class="fa-solid fa-clock"></i> 7 Min Deep Dive
+                            </span>
+                            <span class="image-overlay-chip chip-red">
+                                <i class="fa-solid fa-certificate"></i> Certified Tech Spec
+                            </span>
+                        </div>
+                    </div>
+                    <div class="insights-spotlight-body">
+                        <div class="article-author-chip-row">
+                            <div class="author-avatar-wrap">
+                                <img src="assets/images/ava1.webp" alt="Julian Thorne" class="author-avatar-img">
+                                <div class="author-meta-info">
+                                    <strong class="author-name">Julian Thorne <i class="fa-solid fa-circle-check author-verified"></i></strong>
+                                    <span class="author-role">Master Detailing &amp; Materials Specialist</span>
+                                </div>
+                            </div>
+                            <div class="article-meta-chips">
+                                <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                            </div>
+                        </div>
+
+                        <h3 class="insights-spotlight-title">
+                            <a href="404.html">Mastering Graphene Ceramic Coatings: The Ultimate Long-Term Paint Protection Protocol</a>
+                        </h3>
+                        <p class="insights-spotlight-desc">
+                            Protecting your supercar's factory paint depth against harsh track gravel, UV oxidation, and chemical micro-marring with multi-stage nano-graphene bonding techniques.
+                        </p>
+
+                        <!-- Key Protocol Highlights -->
+                        <div class="story-specs-strip">
+                            <div class="spec-strip-item">
+                                <span class="spec-label"><i class="fa-solid fa-shield text-red"></i> Hardness</span>
+                                <strong class="spec-val">10H Nano-Matrix</strong>
+                            </div>
+                            <div class="spec-strip-item">
+                                <span class="spec-label"><i class="fa-solid fa-droplet text-red"></i> Hydrophobic</span>
+                                <strong class="spec-val">115° Contact Angle</strong>
+                            </div>
+                            <div class="spec-strip-item">
+                                <span class="spec-label"><i class="fa-solid fa-clock-rotate-left text-red"></i> Durability</span>
+                                <strong class="spec-val">7-Year Warranty</strong>
+                            </div>
+                        </div>
+
+                        <div class="featured-main-footer">
+                            <a href="404.html" class="btn-read-featured">
+                                <span>Read Complete Guide</span>
+                                <div class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                            </a>
+                            <div class="featured-footer-stats">
+                                <span class="story-trending-chip"><i class="fa-solid fa-arrow-trend-up"></i> 4.3k Reads</span>
+                                <span class="blog-cat-count"><i class="fa-solid fa-shield-halved"></i> 100% Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4 Asymmetric Advisory Cards Grid -->
+                <div class="insights-advisory-grid">
+                    <!-- Advisory 1: Buying Checklist -->
+                    <article class="insights-advisory-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="insights-advisory-img-wrap">
+                            <img src="assets/images/young-woman-driving.webp" alt="Car Buying Checklist" class="insights-advisory-img">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="article-cat-badge badge-news-glow">
+                                <i class="fa-solid fa-clipboard-check"></i> BUYING ADVICE
+                            </span>
+                            <button class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Guide" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            <span class="news-time-chip">4 min read</span>
+                        </div>
+                        <div class="insights-advisory-body">
+                            <h4 class="insights-advisory-title">
+                                <a href="404.html">Pre-Purchase Checklist: 10 Critical Factors Before Acquiring an Exotic GT</a>
+                            </h4>
+                            <p class="insights-advisory-snippet">Verifying ECU telemetry logs, title lineage, and carbon tub integrity before closing.</p>
+                            <div class="insights-advisory-footer">
+                                <a href="404.html" class="read-more-link">
+                                    <span>View Checklist</span>
+                                    <div class="mini-arrow-circle" title="Exotic Pre-Purchase Checklist"><i class="fa-solid fa-clipboard-check"></i></div>
+                                </a>
+                                <span class="side-views-count"><i class="fa-regular fa-eye"></i> 2.6k</span>
+                            </div>
+                        </div>
+                        <div class="news-card-progress-bar"></div>
+                    </article>
+
+                    <!-- Advisory 2: EV Ownership Tips -->
+                    <article class="insights-advisory-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="insights-advisory-img-wrap">
+                            <img src="assets/images/g4.webp" alt="EV Battery Longevity" class="insights-advisory-img">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="article-cat-badge badge-news-glow">
+                                <i class="fa-solid fa-battery-half"></i> EV CHARGING
+                            </span>
+                            <button class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Guide" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            <span class="news-time-chip">5 min read</span>
+                        </div>
+                        <div class="insights-advisory-body">
+                            <h4 class="insights-advisory-title">
+                                <a href="404.html">Optimizing Lithium-Ion Battery Longevity: Fast Charging Best Practices</a>
+                            </h4>
+                            <p class="insights-advisory-snippet">Thermal preconditioning protocols and optimal 20-80% depth-of-discharge management.</p>
+                            <div class="insights-advisory-footer">
+                                <a href="404.html" class="read-more-link">
+                                    <span>Read Tips</span>
+                                    <div class="mini-arrow-circle" title="EV Battery Care Guide"><i class="fa-solid fa-battery-half"></i></div>
+                                </a>
+                                <span class="side-views-count"><i class="fa-regular fa-eye"></i> 3.1k</span>
+                            </div>
+                        </div>
+                        <div class="news-card-progress-bar"></div>
+                    </article>
+
+                    <!-- Advisory 3: Seasonal Car-Care Guide -->
+                    <article class="insights-advisory-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="insights-advisory-img-wrap">
+                            <img src="assets/images/g2.webp" alt="Winterizing Performance Fleet" class="insights-advisory-img">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="article-cat-badge badge-news-glow">
+                                <i class="fa-solid fa-snowflake"></i> SEASONAL CARE
+                            </span>
+                            <button class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Guide" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            <span class="news-time-chip">3 min read</span>
+                        </div>
+                        <div class="insights-advisory-body">
+                            <h4 class="insights-advisory-title">
+                                <a href="404.html">Winterizing Your Fleet: Tire Compounds, Fluid Viscosity &amp; Storage</a>
+                            </h4>
+                            <p class="insights-advisory-snippet">Selecting low-viscosity synthetic oils, trickle charging, and climate-controlled bay humidity.</p>
+                            <div class="insights-advisory-footer">
+                                <a href="404.html" class="read-more-link">
+                                    <span>Read Guide</span>
+                                    <div class="mini-arrow-circle" title="Winter Storage Guide"><i class="fa-solid fa-snowflake"></i></div>
+                                </a>
+                                <span class="side-views-count"><i class="fa-regular fa-eye"></i> 1.9k</span>
+                            </div>
+                        </div>
+                        <div class="news-card-progress-bar"></div>
+                    </article>
+
+                    <!-- Advisory 4: Smart Driving Tips -->
+                    <article class="insights-advisory-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="insights-advisory-img-wrap">
+                            <img src="assets/images/g1.webp" alt="Apex Telemetry Driving" class="insights-advisory-img">
+                            <div class="img-shimmer-sweep"></div>
+                            <span class="article-cat-badge badge-news-glow">
+                                <i class="fa-solid fa-road"></i> DRIVING SKILLS
+                            </span>
+                            <button class="story-bookmark-btn bookmark-news-mini" aria-label="Bookmark Guide" title="Save to Reading List">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            <span class="news-time-chip">6 min read</span>
+                        </div>
+                        <div class="insights-advisory-body">
+                            <h4 class="insights-advisory-title">
+                                <a href="404.html">Apex Telemetry: How Trail-Braking Transforms Corner Entry Speeds</a>
+                            </h4>
+                            <p class="insights-advisory-snippet">Weight transfer dynamics and gradual brake release for maximizing front axle grip.</p>
+                            <div class="insights-advisory-footer">
+                                <a href="404.html" class="read-more-link">
+                                    <span>Learn Technique</span>
+                                    <div class="mini-arrow-circle" title="Apex Driving Technique"><i class="fa-solid fa-road"></i></div>
+                                </a>
+                                <span class="side-views-count"><i class="fa-regular fa-eye"></i> 3.8k</span>
+                            </div>
+                        </div>
+                        <div class="news-card-progress-bar"></div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6 — NEWSLETTER + TRENDING ARTICLES (VIP CONCIERGE)
+         ========================================================================= -->
+    <section class="newsletter-trending-section" id="newsletterTrendingSection" style="background-image: url('assets/images/slider3.webp');">
+        <div class="newsletter-bg-overlay"></div>
+        <div class="speed-lines-overlay"></div>
+        <div class="container newsletter-content-relative">
+            <!-- Newsletter Signup Card -->
+            <div class="newsletter-card-wrap" data-aos="zoom-in" data-aos-duration="800">
+                <div class="img-shimmer-sweep"></div>
+                <span class="section-tag spotlight-pill">
+                    <span class="live-pulse-dot"></span>
+                    <i class="fa-solid fa-paper-plane"></i> VIP CONCIERGE BRIEFING
+                </span>
+                <h2 class="newsletter-title">Stay Ahead of <span>the Curve.</span></h2>
+                <p class="newsletter-desc">
+                    Receive curated luxury automotive dispatches, track telemetry benchmarks, and private vehicle releases delivered directly to your inbox every Thursday morning.
+                </p>
+
+                <!-- VIP Perks Strip -->
+                <div class="vip-perks-row">
+                    <span class="vip-perk-item"><i class="fa-solid fa-circle-check text-red"></i> Weekly Instrumented Dyno Tests</span>
+                    <span class="vip-perk-item"><i class="fa-solid fa-bolt text-red"></i> Private Homologation Drops</span>
+                    <span class="vip-perk-item"><i class="fa-solid fa-shield-halved text-red"></i> Encrypted Dispatches</span>
+                </div>
+                
+                <form class="newsletter-form" id="blogNewsletterForm" novalidate>
+                    <div class="newsletter-input-group">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" class="newsletter-input" id="newsletterEmailInput" placeholder="Enter your email address..." autocomplete="email">
+                    </div>
+                    <button type="submit" class="btn-newsletter-sub" id="btnNewsletterSub">
+                        <span>Subscribe Now</span>
+                        <div class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                    </button>
+                </form>
+                <div class="newsletter-feedback-msg" id="newsletterFeedbackMsg" style="display: none;"></div>
+                <div class="newsletter-privacy">
+                    <i class="fa-solid fa-lock"></i> Zero spam. Strictly encrypted private dealership communications. Unsubscribe anytime.
+                </div>
+            </div>
+
+            <!-- Horizontal Trending Articles Strip -->
+            <div class="trending-strip-header" data-aos="fade-up">
+                <div class="trending-header-title">
+                    <i class="fa-solid fa-arrow-trend-up text-red"></i>
+                    <span>Trending Articles This Week</span>
+                </div>
+                <span class="trending-live-badge"><span class="badge-live-pulse"></span> UPDATED HOURLY</span>
+            </div>
+
+            <div class="trending-articles-grid">
+                <!-- Trending 1 -->
+                <article class="trending-item-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-shimmer-sweep"></div>
+                    <div class="trending-num-badge">01</div>
+                    <div class="trending-thumb-wrap">
+                        <img src="assets/images/news-1-1-520x390.webp" alt="Trending V12" class="trending-thumb-img">
+                    </div>
+                    <div class="trending-info-col">
+                        <span class="trending-cat-label">SUPERCAR</span>
+                        <h5 class="trending-title"><a href="404.html">The Top 5 Naturally Aspirated V12 Engines Ever Built</a></h5>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- Trending 2 -->
+                <article class="trending-item-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-shimmer-sweep"></div>
+                    <div class="trending-num-badge">02</div>
+                    <div class="trending-thumb-wrap">
+                        <img src="assets/images/slider1-1.webp" alt="Trending Manual" class="trending-thumb-img">
+                    </div>
+                    <div class="trending-info-col">
+                        <span class="trending-cat-label">MARKET</span>
+                        <h5 class="trending-title"><a href="404.html">Why Rare Manual Transmissions Command 40% Valuation Premiums</a></h5>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- Trending 3 -->
+                <article class="trending-item-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="img-shimmer-sweep"></div>
+                    <div class="trending-num-badge">03</div>
+                    <div class="trending-thumb-wrap">
+                        <img src="assets/images/0-1538402-1.webp" alt="Trending Ceramic" class="trending-thumb-img">
+                    </div>
+                    <div class="trending-info-col">
+                        <span class="trending-cat-label">TRACK</span>
+                        <h5 class="trending-title"><a href="404.html">Carbon Ceramic vs Cast Iron Rotors: Real-World Thermal Analysis</a></h5>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+
+                <!-- Trending 4 -->
+                <article class="trending-item-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="img-shimmer-sweep"></div>
+                    <div class="trending-num-badge">04</div>
+                    <div class="trending-thumb-wrap">
+                        <img src="assets/images/slider2.webp" alt="Trending Aero" class="trending-thumb-img">
+                    </div>
+                    <div class="trending-info-col">
+                        <span class="trending-cat-label">AERO TECH</span>
+                        <h5 class="trending-title"><a href="404.html">Active Aerodynamics: From F1 Drag Reduction to Road Cars</a></h5>
+                    </div>
+                    <div class="news-card-progress-bar"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    
+                    <div class="footer-col footer-col--about">
+                        <div class="footer-logo">
+                            <img src="assets/images/stackly-logo.webp" alt="Stackly White Logo">
+                        </div>
+                        <p class="footer-about-text">
+                            Stackly is the premier automotive dealer platform providing certified vehicles, transparent vehicle financing, and premium customer service across North America.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--links">
+                        <h4 class="footer-col__title">Useful Links</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> HOME</a></li>
+                            <li><a href="inventory.html"><i class="fa-solid fa-chevron-right"></i> VEHICLE LISTINGS</a></li>
+                            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> ABOUT US</a></li>
+                            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> BLOG</a></li>
+                            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> CONTACT US</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col--posts">
+                        <h4 class="footer-col__title">Latest News</h4>
+                        <div class="footer-mini-posts">
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tips For Better & Safe Driving"><img src="assets/images/news-4-70x70.webp" alt="Mini Post 1" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tips For Better &amp; Safe Driving With Luxury Car</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 15, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Tellus Dis Turpis Feugiat Egestas"><img src="assets/images/news5-70x70.webp" alt="Mini Post 2" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Tellus Dis Turpis Feugiat Egestas</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 12, 2024</span>
+                                </div>
+                            </div>
+                            <div class="mini-post">
+                                <a href="404.html" aria-label="Viverra Sed Diam Leo Nibh Amet"><img src="assets/images/news6-70x70.webp" alt="Mini Post 3" class="mini-thumb"></a>
+                                <div class="mini-content">
+                                    <h5 class="mini-title"><a href="404.html">Viverra Sed Diam Leo Nibh Amet</a></h5>
+                                    <span class="mini-date"><i class="fa-regular fa-clock"></i> May 10, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col footer-col--contact">
+                        <h4 class="footer-col__title">Showroom Timings</h4>
+                        
+                        <div class="timings-box">
+                            <div class="timing-row">
+                                <span>Monday &#8211; Saturday:</span>
+                                <strong>9:00 AM &#8211; 8:00 PM</strong>
+                            </div>
+                            <div class="timing-row">
+                                <span>Sunday:</span>
+                                <strong>10:00 AM &#8211; 6:00 PM</strong>
+                            </div>
+                        </div>
+
+                        <div class="footer-contact-details">
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>MMR Complex, Chinna Thirupathi, Near by Chinna Moniyappan Kovil, Salem 636008.</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="404.html">+91 90909 09090</a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="404.html">info@stackly.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom__inner">
+                <p class="copyright-text">
+                    &copy; 2026 <strong>Stackly</strong> &#8211; All Rights Reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Site Map</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS (Animate On Scroll) JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- GSAP 3 & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Main JS & Specialized Blog JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/blog.js"></script>
+</body>
+</html>

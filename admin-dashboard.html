@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Admin Dashboard – Stackly Luxury Automotive</title>
+  <meta name="description" content="Dealership executive administration, exotic vehicle inventory management, VIP sales pipeline, and track day operations.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/cropped-logo-1-32x32.webp" sizes="32x32" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/images/cropped-logo-1-180x180.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;600;700;800&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Dashboard CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="dash-sidebar-overlay" id="dashSidebarOverlay"></div>
+
+    <!-- 1. Left Sidebar Navigation -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div>
+        <!-- Brand & Admin Badge -->
+        <div class="dash-sidebar-brand">
+          <a href="index.html" class="dash-brand-link">
+            <img src="assets/images/stackly-logo.webp" alt="Stackly Logo" class="dash-brand-logo">
+          </a>
+          <span class="dash-portal-badge admin-badge">ADMIN SUITE</span>
+          <button class="dash-sidebar-close" id="dashSidebarCloseBtn" aria-label="Close sidebar">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="dash-nav-menu">
+          <li class="dash-nav-item active">
+            <a href="#admin-overview" class="dash-nav-link" data-tab-target="adminOverviewTab">
+              <i class="fa-solid fa-chart-pie"></i>
+              <span>Executive Overview</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#admin-inventory" class="dash-nav-link" data-tab-target="adminInventoryTab">
+              <i class="fa-solid fa-car-side"></i>
+              <span>Vehicle Inventory</span>
+              <span class="dash-nav-badge" style="background:#f59e0b; color:#000;">128</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#admin-orders" class="dash-nav-link" data-tab-target="adminOrdersTab">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <span>Sales Pipeline</span>
+              <span class="dash-nav-badge">42</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#admin-drives" class="dash-nav-link" data-tab-target="adminDrivesTab">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>Test Drive Roster</span>
+              <span class="dash-nav-badge" style="background:#06b6d4;">14</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#admin-clients" class="dash-nav-link" data-tab-target="adminClientsTab">
+              <i class="fa-solid fa-users-gear"></i>
+              <span>VIP Client Roster</span>
+            </a>
+          </li>
+          <li class="dash-nav-item">
+            <a href="#admin-service" class="dash-nav-link" data-tab-target="adminServiceTab">
+              <i class="fa-solid fa-warehouse"></i>
+              <span>Service Bays</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dealership Status Indicator Card -->
+      <div>
+        <div class="dash-sidebar-concierge" style="border-color: rgba(245, 158, 11, 0.25);">
+          <div class="dash-concierge-header">
+            <i class="fa-solid fa-signal" style="color: var(--dash-green);"></i>
+            <span style="color: #ffffff;">Beverly Hills Supercenter</span>
+          </div>
+          <p class="dash-concierge-desc">
+            System Online &bull; 128 Active Certified Listings &bull; 4 Bays Operating
+          </p>
+          <a href="404.html" class="dash-concierge-btn" style="background: var(--dash-gold); color: #000; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Vehicle Listing</span>
+          </a>
+        </div>
+
+        <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--dash-border); display: flex; align-items: center; justify-content: space-between;">
+          <a href="index.html" style="font-size: 0.8rem; color: var(--dash-text-dim); display: flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-arrow-left"></i> Public Showroom
+          </a>
+          <button class="btn-dash-logout" style="font-size: 0.8rem; color: var(--dash-primary); font-weight: 700; cursor: pointer;">
+            Logout <i class="fa-solid fa-power-off"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. Main Workspace -->
+    <div class="dash-main-stage">
+      
+      <!-- Top Sticky Header -->
+      <header class="dash-top-header">
+        <div class="dash-header-left">
+          <button class="dash-mobile-menu-btn" id="dashMobileMenuBtn" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <div class="dash-header-right">
+          <a href="404.html" class="dash-action-btn-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000;">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Exotic Listing</span>
+          </a>
+
+          <!-- Notifications Bell (Links to 404) -->
+          <div class="dash-notif-wrap">
+            <a href="404.html" class="dash-notif-btn" aria-label="View notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-notif-dot" style="background: var(--dash-gold); box-shadow: 0 0 8px var(--dash-gold);"></span>
+            </a>
+          </div>
+
+          <!-- User Profile Chip (Links to 404) -->
+          <a href="404.html" class="dash-user-chip" title="View Profile Matrix">
+            <img src="assets/images/ava2.webp" alt="Admin Avatar" class="dash-avatar-img" style="border-color: var(--dash-gold);">
+            <div class="dash-user-info">
+              <span class="dash-user-name">Sarah Jenkins</span>
+              <span class="dash-user-role" style="color: var(--dash-gold);">General Manager</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Area with Tabs -->
+      <main class="dash-content-container">
+        
+        <!-- ========================================================= -->
+        <!-- TAB 1: EXECUTIVE OVERVIEW -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane active" id="adminOverviewTab">
+          
+          <!-- Hero Welcome Banner -->
+          <div class="dash-hero-banner" style="background: linear-gradient(135deg, #1f1b18 0%, #12100d 100%);">
+            <h1 class="dash-hero-title">
+              Dealership Executive Suite &bull; <span style="color: var(--dash-gold);">Live Operations</span>
+            </h1>
+            <p class="dash-hero-subtitle">
+              Real-time telemetry across luxury acquisitions, private client track bookings, certified 150-point inspections, and monthly dealership revenue.
+            </p>
+            <div class="dash-hero-actions">
+              <a href="404.html" class="btn-dash-primary" style="background: var(--dash-gold); color: #000;">
+                <i class="fa-solid fa-plus"></i> Publish New Listing
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-eye"></i> View Live Showroom
+              </a>
+              <a href="404.html" class="btn-dash-secondary">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Financial Audits
+              </a>
+            </div>
+          </div>
+
+          <!-- 4 Executive Metric Cards -->
+          <div class="dash-metrics-grid">
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Total Revenue YTD</h3>
+                <div class="dash-metric-value">$18.4M</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-arrow-trend-up"></i> +24.6% vs Last Year
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Vehicles Sold</h3>
+                <div class="dash-metric-value">42 <span style="font-size: 1rem; color: var(--dash-gold); font-weight: 600;">Units</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-arrow-trend-up"></i> 108% of Monthly Goal
+                </div>
+              </div>
+              <div class="dash-metric-icon-box gold">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Active Inventory</h3>
+                <div class="dash-metric-value">128 <span style="font-size: 1rem; color: var(--dash-cyan); font-weight: 600;">Cars</span></div>
+                <div class="dash-metric-change neutral">
+                  <i class="fa-solid fa-certificate"></i> 100% Certified 150-Pt
+                </div>
+              </div>
+              <div class="dash-metric-icon-box cyan">
+                <i class="fa-solid fa-car"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Pending Track Drives</h3>
+                <div class="dash-metric-value">14 <span style="font-size: 1rem; color: var(--dash-primary); font-weight: 600;">Today</span></div>
+                <div class="dash-metric-change neutral">
+                  <i class="fa-solid fa-clock"></i> 4 Pro Drivers Active
+                </div>
+              </div>
+              <div class="dash-metric-icon-box">
+                <i class="fa-solid fa-flag-checkered"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dealership Target & Fleet Allocation Matrix -->
+          <div class="dash-admin-grid-2">
+            <div class="dash-config-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h4 style="color: #ffffff; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-solid fa-bullseye" style="color: var(--dash-gold);"></i> Monthly Target & Gross Margin Matrix
+                </h4>
+                <span class="status-pill confirmed">105% of Goal</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--dash-text-muted); margin-bottom: 0.35rem;">
+                    <span>Monthly Quota (42 / 40 Sold)</span>
+                    <strong style="color: #ffffff;">$18.4M Gross</strong>
+                  </div>
+                  <div class="dash-progress-bar-wrap">
+                    <div class="dash-progress-fill gold" style="width: 100%;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--dash-text-muted); margin-bottom: 0.35rem;">
+                    <span>Average Dealership Margin</span>
+                    <strong style="color: var(--dash-green);">18.4% Net</strong>
+                  </div>
+                  <div class="dash-progress-bar-wrap">
+                    <div class="dash-progress-fill green" style="width: 84%;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--dash-text-muted); margin-bottom: 0.35rem;">
+                    <span>Escrow Clearing Speed (Avg 1.8 Days)</span>
+                    <strong style="color: var(--dash-cyan);">Optimal</strong>
+                  </div>
+                  <div class="dash-progress-bar-wrap">
+                    <div class="dash-progress-fill cyan" style="width: 92%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-config-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h4 style="color: #ffffff; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-solid fa-warehouse" style="color: var(--dash-cyan);"></i> Live Showroom & Fleet Status
+                </h4>
+                <span class="status-pill transit">128 Total Exotics</span>
+              </div>
+              <div class="dash-subcard-grid">
+                <div class="dash-subcard-box">
+                  <div class="dash-subcard-label">Beverly Hills Floor</div>
+                  <div class="dash-subcard-val">64 Exotics</div>
+                  <div class="dash-subcard-status" style="color: var(--dash-green);"><i class="fa-solid fa-circle-check"></i> Ready to Handover</div>
+                </div>
+                <div class="dash-subcard-box">
+                  <div class="dash-subcard-label">Enclosed Transit</div>
+                  <div class="dash-subcard-val" style="color: var(--dash-cyan);">28 Units</div>
+                  <div class="dash-subcard-status" style="color: var(--dash-text-muted);"><i class="fa-solid fa-truck"></i> Live GPS Synced</div>
+                </div>
+                <div class="dash-subcard-box">
+                  <div class="dash-subcard-label">Thermal Club Pit</div>
+                  <div class="dash-subcard-val" style="color: var(--dash-gold);">14 Supercars</div>
+                  <div class="dash-subcard-status" style="color: var(--dash-text-muted);"><i class="fa-solid fa-flag-checkered"></i> Track Prepped</div>
+                </div>
+                <div class="dash-subcard-box">
+                  <div class="dash-subcard-label">Port Customs Bay</div>
+                  <div class="dash-subcard-val">22 Units</div>
+                  <div class="dash-subcard-status" style="color: var(--dash-gold);"><i class="fa-solid fa-shield"></i> 150-Pt Clearing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Transactions Table -->
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-receipt"></i>
+              <span>Recent Acquisitions & Vehicle Sales</span>
+            </div>
+            <a href="404.html" style="font-size: 0.85rem; color: var(--dash-gold); font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
+              View Full Transaction Ledger <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="dash-table-card">
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Vehicle Model</th>
+                    <th>Buyer / Client</th>
+                    <th>Sales Director</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th style="text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Ferrari F8" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Ferrari F8 Tributo Spider</span>
+                          <span class="dash-table-vehicle-sub">Rosso Corsa &bull; V8 Bi-Turbo</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Lord Arthur Harrington</td>
+                    <td>Sarah Jenkins (GM)</td>
+                    <td><span class="dash-price-strong">$348,000</span></td>
+                    <td><span class="status-pill confirmed">Contract Signed</span></td>
+                    <td>Today &bull; 10:45 AM</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">
+                          <i class="fa-solid fa-file-contract"></i> Deal
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider1-1.webp" alt="Porsche GT3" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2026 Porsche 911 GT3 RS</span>
+                          <span class="dash-table-vehicle-sub">Shark Blue &bull; Weissach</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Alexander Sterling</td>
+                    <td>Elena Rostova</td>
+                    <td><span class="dash-price-strong">$289,500</span></td>
+                    <td><span class="status-pill transit">Enclosed Transit</span></td>
+                    <td>Sep 16, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">
+                          <i class="fa-solid fa-satellite"></i> GPS
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="AMG GT" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Mercedes-AMG GT 63 Coupe</span>
+                          <span class="dash-table-vehicle-sub">Selenite Grey &bull; 4MATIC+</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Dr. Julian Vance</td>
+                    <td>Marcus Vance</td>
+                    <td><span class="dash-price-strong">$184,900</span></td>
+                    <td><span class="status-pill pending">Pending Finance</span></td>
+                    <td>Sep 15, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">
+                          <i class="fa-solid fa-money-check-dollar"></i> Escrow
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/gmc-acadia-front-side-0-707031-scaled.webp" alt="GMC Acadia" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">GMC Acadia Denali Ultimate</span>
+                          <span class="dash-table-vehicle-sub">Onyx Black &bull; Super Cruise</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Victoria Chen</td>
+                    <td>David Miller</td>
+                    <td><span class="dash-price-strong">$62,800</span></td>
+                    <td><span class="status-pill confirmed">Delivered</span></td>
+                    <td>Sep 14, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">
+                          <i class="fa-solid fa-receipt"></i> Receipt
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="Aston Martin DBS" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Aston Martin DBS 770 Ultimate</span>
+                          <span class="dash-table-vehicle-sub">Yellow &bull; 759 HP V12</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Lady Genevieve Dubois</td>
+                    <td>Sarah Jenkins (GM)</td>
+                    <td><span class="dash-price-strong">$387,600</span></td>
+                    <td><span class="status-pill pending">Bespoke Build</span></td>
+                    <td>Sep 12, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">
+                          <i class="fa-solid fa-images"></i> Build
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Lamborghini Revuelto" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Lamborghini Revuelto V12</span>
+                          <span class="dash-table-vehicle-sub">Arancio Apodis &bull; Hybrid</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Marcus Thorne</td>
+                    <td>David Miller</td>
+                    <td><span class="dash-price-strong">$608,000</span></td>
+                    <td><span class="status-pill confirmed">Allocation Slot</span></td>
+                    <td>Sep 10, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">
+                          <i class="fa-solid fa-certificate"></i> Slot #14
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 2: INVENTORY MANAGEMENT -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="adminInventoryTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-car-side"></i>
+              <span>Showroom Vehicle Inventory & Pricing Engine (128 Total)</span>
+            </div>
+            <a href="404.html" class="dash-action-btn-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000;">
+              <i class="fa-solid fa-plus"></i> Add Vehicle Listing
+            </a>
+          </div>
+
+          <!-- 4 Status Filter Summary Cards -->
+          <div class="dash-admin-grid-4">
+            <div class="dash-pipeline-card">
+              <div class="dash-pipeline-label">In Showroom</div>
+              <div class="dash-pipeline-val">64 <span style="font-size: 0.82rem; font-weight: 500; color: var(--dash-green);">Ready</span></div>
+              <div class="dash-pipeline-sub">Inspection passed 100%</div>
+            </div>
+            <div class="dash-pipeline-card">
+              <div class="dash-pipeline-label">Enclosed Transit</div>
+              <div class="dash-pipeline-val" style="color: var(--dash-cyan);">28 <span style="font-size: 0.82rem; font-weight: 500; color: var(--dash-cyan);">In Route</span></div>
+              <div class="dash-pipeline-sub">Live carrier GPS synced</div>
+            </div>
+            <div class="dash-pipeline-card">
+              <div class="dash-pipeline-label">VIP Allocations</div>
+              <div class="dash-pipeline-val" style="color: var(--dash-gold);">24 <span style="font-size: 0.82rem; font-weight: 500; color: var(--dash-gold);">Reserved</span></div>
+              <div class="dash-pipeline-sub">Bespoke client commissions</div>
+            </div>
+            <div class="dash-pipeline-card">
+              <div class="dash-pipeline-label">Sold / Archive</div>
+              <div class="dash-pipeline-val" style="color: var(--dash-primary);">12 <span style="font-size: 0.82rem; font-weight: 500; color: var(--dash-primary);">Transferred</span></div>
+              <div class="dash-pipeline-sub">Title & ownership complete</div>
+            </div>
+          </div>
+
+          <div class="dash-table-card">
+            <div class="dash-table-controls">
+              <div class="dash-table-filters">
+                <select class="dash-filter-select">
+                  <option>All Makes (Porsche, AMG, Ferrari, Audi, Aston Martin, GMC)</option>
+                  <option>Exotic Supercars</option>
+                  <option>Luxury SUVs</option>
+                  <option>Certified Pre-Owned</option>
+                </select>
+                <select class="dash-filter-select">
+                  <option>All Inventory Statuses</option>
+                  <option>In Showroom</option>
+                  <option>Enclosed Transit</option>
+                  <option>VIP Reserved</option>
+                  <option>Sold</option>
+                </select>
+              </div>
+              <span style="font-size: 0.8rem; color: var(--dash-text-muted);">Displaying 8 Certified Showroom Exotics</span>
+            </div>
+
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Vehicle Details</th>
+                    <th>VIN Number</th>
+                    <th>Odometer</th>
+                    <th>MSRP Price</th>
+                    <th>Status</th>
+                    <th style="text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider1-1.webp" alt="Porsche GT3" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2026 Porsche 911 GT3 RS Weissach</span>
+                          <span class="dash-table-vehicle-sub">Shark Blue &bull; Carbon Aero</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">WP0AF2A97NS298101</span></td>
+                    <td>12 mi (New)</td>
+                    <td><span class="dash-price-strong">$289,500</span></td>
+                    <td><span class="status-pill transit">In Showroom</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Edit</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider1-1.webp" alt="Audi R8" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2026 Audi R8 V10 Performance</span>
+                          <span class="dash-table-vehicle-sub">Mythos Black &bull; Red Stitching</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">WUAZZZ42ZKN004812</span></td>
+                    <td>1,420 mi</td>
+                    <td><span class="dash-price-strong">$209,500</span></td>
+                    <td><span class="status-pill transit">In Showroom</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Edit</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="AMG GT" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2026 Mercedes-AMG GT 63 Coupe</span>
+                          <span class="dash-table-vehicle-sub">Selenite Grey Magno</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">W1K7J8HB1MF089231</span></td>
+                    <td>0 mi (New)</td>
+                    <td><span class="dash-price-strong">$184,900</span></td>
+                    <td><span class="status-pill pending">VIP Reserved</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Edit</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Ferrari F8" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2025 Ferrari F8 Tributo Spider</span>
+                          <span class="dash-table-vehicle-sub">Rosso Corsa &bull; Carbon Diffuser</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">ZFF89LMA4M0258190</span></td>
+                    <td>3,110 mi</td>
+                    <td><span class="dash-price-strong">$348,000</span></td>
+                    <td><span class="status-pill transit">In Showroom</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Edit</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="Aston Martin DBS" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2027 Aston Martin DBS 770 Ultimate</span>
+                          <span class="dash-table-vehicle-sub">Cosmopolitan Yellow &bull; Alcantara</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">SCFRTFAW8PGL00291</span></td>
+                    <td>Delivery Miles</td>
+                    <td><span class="dash-price-strong">$387,600</span></td>
+                    <td><span class="status-pill transit">Enclosed Transit</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Edit</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Ferrari SF90" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2024 Ferrari SF90 Stradale Assetto</span>
+                          <span class="dash-table-vehicle-sub">Giallo Modena &bull; Racing Seats</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">ZFF94LMA8P0281904</span></td>
+                    <td>850 mi</td>
+                    <td><span class="dash-price-strong">$528,000</span></td>
+                    <td><span class="status-pill sold">Sold</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Archive</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Lamborghini Revuelto" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2026 Lamborghini Revuelto V12 Hybrid</span>
+                          <span class="dash-table-vehicle-sub">Arancio Apodis &bull; Titanium Exhaust</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">ZHWU81A39PLA00192</span></td>
+                    <td>0 mi (New)</td>
+                    <td><span class="dash-price-strong">$608,000</span></td>
+                    <td><span class="status-pill pending">VIP Reserved</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Edit</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/gmc-acadia-front-side-0-707031-scaled.webp" alt="GMC Acadia" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2025 GMC Acadia Denali Ultimate</span>
+                          <span class="dash-table-vehicle-sub">Onyx Black &bull; Super Cruise</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-mono-code">1GKS2CKJ8NR198302</span></td>
+                    <td>12 mi</td>
+                    <td><span class="dash-price-strong">$62,800</span></td>
+                    <td><span class="status-pill transit">In Showroom</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Edit</a>
+                        <a href="404.html" class="dash-btn-action-icon" title="View Inspection PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 3: SALES PIPELINE -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="adminOrdersTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <span>Live Sales Pipeline & Acquisition Contracts</span>
+            </div>
+            <a href="404.html" class="dash-action-btn-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000;">
+              <i class="fa-solid fa-plus"></i> Initiate Bespoke Acquisition
+            </a>
+          </div>
+
+          <!-- 4 Pipeline Metrics Cards -->
+          <div class="dash-metrics-grid">
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Active Pipeline Volume</h3>
+                <div class="dash-metric-value">$14.2M</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-arrow-trend-up"></i> +18.2% MoM
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Active Escrow Deals</h3>
+                <div class="dash-metric-value">8 <span style="font-size: 1rem; color: var(--dash-gold); font-weight: 600;">Contracts</span></div>
+                <div class="dash-metric-change neutral">
+                  <i class="fa-solid fa-shield-halved"></i> 100% Secured Wire
+                </div>
+              </div>
+              <div class="dash-metric-icon-box gold">
+                <i class="fa-solid fa-file-signature"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Avg Acquisition Size</h3>
+                <div class="dash-metric-value">$338.5K</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-gem"></i> Ultra-High Net Worth
+                </div>
+              </div>
+              <div class="dash-metric-icon-box cyan">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Escrow Close Rate</h3>
+                <div class="dash-metric-value">94.2%</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-circle-check"></i> Industry Leading
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pipeline Stage Workflow Matrix -->
+          <div class="dash-admin-grid-4">
+            <div class="dash-pipeline-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.72rem; color: var(--dash-text-dim); text-transform: uppercase; font-weight: 800;">1. Commissioning</span>
+                <span class="status-pill pending">3 Deals</span>
+              </div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #ffffff; margin: 0.4rem 0;">$1,280,000</div>
+              <p style="font-size: 0.76rem; color: var(--dash-text-muted);">Bespoke tailoring, Q-branch specs, and PTS paint selection in progress.</p>
+            </div>
+
+            <div class="dash-pipeline-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.72rem; color: var(--dash-text-dim); text-transform: uppercase; font-weight: 800;">2. Escrow & Title</span>
+                <span class="status-pill confirmed">2 Deals</span>
+              </div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: var(--dash-green); margin: 0.4rem 0;">$532,900</div>
+              <p style="font-size: 0.76rem; color: var(--dash-text-muted);">Bank wire verification, biometric escrow, and DMV title transfers.</p>
+            </div>
+
+            <div class="dash-pipeline-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.72rem; color: var(--dash-text-dim); text-transform: uppercase; font-weight: 800;">3. Enclosed Carrier</span>
+                <span class="status-pill transit">2 Deals</span>
+              </div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: var(--dash-cyan); margin: 0.4rem 0;">$499,000</div>
+              <p style="font-size: 0.76rem; color: var(--dash-text-muted);">Enclosed white-glove transport in route with live shock/temp sensors.</p>
+            </div>
+
+            <div class="dash-pipeline-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.72rem; color: var(--dash-text-dim); text-transform: uppercase; font-weight: 800;">4. VIP Handover</span>
+                <span class="status-pill" style="background: rgba(245, 158, 11, 0.15); color: var(--dash-gold);">1 Deal</span>
+              </div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: var(--dash-gold); margin: 0.4rem 0;">$348,000</div>
+              <p style="font-size: 0.76rem; color: var(--dash-text-muted);">White-glove residential arrival, handover certificate, and digital keys.</p>
+            </div>
+          </div>
+
+          <!-- Active Escrow Deals Table -->
+          <div class="dash-table-card">
+            <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 800;">Live Acquisition Escrow Contracts (6 Active Deals)</h3>
+            <p style="color: var(--dash-text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+              All transactions are secured with 256-bit encrypted bank wire verification and backed by the Stackly 150-Point Master Guild Warranty.
+            </p>
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Client / Collector</th>
+                    <th>Vehicle Acquisition</th>
+                    <th>Contract Amount</th>
+                    <th>Pipeline Stage</th>
+                    <th>Lead Sales Executive</th>
+                    <th>Target Closing</th>
+                    <th style="text-align: center;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Lord Arthur Harrington</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Ferrari F8" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Ferrari F8 Tributo Spider</span>
+                          <span class="dash-table-vehicle-sub">Rosso Corsa &bull; Carbon Spec</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-price-strong dash-price-gold">$348,000</span></td>
+                    <td><span class="status-pill confirmed">Escrow & Title</span></td>
+                    <td>Sarah Jenkins (GM)</td>
+                    <td>Sep 20, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action-primary">View Deal</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Alexander Sterling</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider1-1.webp" alt="Porsche GT3" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2026 Porsche 911 GT3 RS</span>
+                          <span class="dash-table-vehicle-sub">Shark Blue &bull; Weissach</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-price-strong dash-price-gold">$289,500</span></td>
+                    <td><span class="status-pill transit">Enclosed Carrier</span></td>
+                    <td>Elena Rostova</td>
+                    <td>Sep 19, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action-primary">Track GPS</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Dr. Julian Vance</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="AMG GT" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Mercedes-AMG GT 63 Coupe</span>
+                          <span class="dash-table-vehicle-sub">Selenite Grey Magno</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-price-strong dash-price-gold">$184,900</span></td>
+                    <td><span class="status-pill pending">Wire Verification</span></td>
+                    <td>Marcus Vance</td>
+                    <td>Sep 22, 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action-primary">Verify Wire</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Lady Genevieve Dubois</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="Aston Martin DBS" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Aston Martin DBS 770 Ultimate</span>
+                          <span class="dash-table-vehicle-sub">Yellow &bull; Bespoke PTS</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-price-strong dash-price-gold">$387,600</span></td>
+                    <td><span class="status-pill pending">Q-Branch Bespoke</span></td>
+                    <td>David Miller</td>
+                    <td>Est. Oct 2026</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action-primary">Build Photos</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Marcus Thorne</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Lamborghini Revuelto" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Lamborghini Revuelto V12</span>
+                          <span class="dash-table-vehicle-sub">Arancio Apodis &bull; Hybrid</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-price-strong dash-price-gold">$608,000</span></td>
+                    <td><span class="status-pill confirmed">Allocation Slot</span></td>
+                    <td>Sarah Jenkins (GM)</td>
+                    <td>Slot #14 Validated</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action-primary">Slot Specs</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Victoria Chen</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/gmc-acadia-front-side-0-707031-scaled.webp" alt="GMC Acadia" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">GMC Acadia Denali Ultimate</span>
+                          <span class="dash-table-vehicle-sub">Onyx Black &bull; Super Cruise</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="dash-price-strong dash-price-gold">$62,800</span></td>
+                    <td><span class="status-pill confirmed">Handover Complete</span></td>
+                    <td>David Miller</td>
+                    <td>Completed Today</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Bill of Sale</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 4: TEST DRIVES ROSTER -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="adminDrivesTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>Pro Driver & VIP Track Day Schedule (6 Today)</span>
+            </div>
+            <a href="404.html" class="dash-action-btn-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000;">
+              <i class="fa-solid fa-plus"></i> Schedule VIP Track Day
+            </a>
+          </div>
+
+          <!-- 4 Operations Stats Cards -->
+          <div class="dash-metrics-grid">
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Scheduled Sessions</h3>
+                <div class="dash-metric-value">6 <span style="font-size: 1rem; color: var(--dash-gold); font-weight: 600;">Today</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-flag-checkered"></i> 2 Completed &bull; 4 Pending
+                </div>
+              </div>
+              <div class="dash-metric-icon-box gold">
+                <i class="fa-solid fa-stopwatch-20"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Pro Coaches on Track</h3>
+                <div class="dash-metric-value">4 <span style="font-size: 1rem; color: var(--dash-cyan); font-weight: 600;">Active</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-user-ninja"></i> Nürburgring & FIA Certified
+                </div>
+              </div>
+              <div class="dash-metric-icon-box cyan">
+                <i class="fa-solid fa-user-shield"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Fleet Telemetry Sync</h3>
+                <div class="dash-metric-value">100% <span style="font-size: 1rem; color: var(--dash-green); font-weight: 600;">AIM Loggers</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-satellite-dish"></i> Real-Time G-Force Synced
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Track Surface Conditions</h3>
+                <div class="dash-metric-value">74°F <span style="font-size: 1rem; color: var(--dash-gold); font-weight: 600;">Dry</span></div>
+                <div class="dash-metric-change neutral">
+                  <i class="fa-solid fa-sun"></i> Thermal Club Track A Clear
+                </div>
+              </div>
+              <div class="dash-metric-icon-box">
+                <i class="fa-solid fa-temperature-three-quarters"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track Day Roster Table -->
+          <div class="dash-table-card">
+            <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 800;">Today's Private Track Sessions & High-Speed Trials</h3>
+            <p style="color: var(--dash-text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+              Full digital telemetry synchronization with AIM race transponders, Stilo ST5 carbon helmets, and 1-on-1 pro driving coach telemetry.
+            </p>
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Session Time</th>
+                    <th>VIP Member</th>
+                    <th>Vehicle Model</th>
+                    <th>Pro Instructor</th>
+                    <th>Circuit Location</th>
+                    <th>Telemetry Status</th>
+                    <th style="text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong style="color: #ffffff;"><i class="fa-solid fa-stopwatch" style="color: var(--dash-gold); margin-right: 0.35rem;"></i>10:00 AM</strong></td>
+                    <td><strong style="color: #ffffff;">Lord Arthur Harrington</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Ferrari F8" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Ferrari F8 Tributo</span>
+                          <span class="dash-table-vehicle-sub">Rosso Corsa &bull; 710 HP</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Elena Rostova (Dynamics)</td>
+                    <td>Thermal Club (Track A)</td>
+                    <td><span class="status-pill confirmed">1:22.14 Best Lap</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-chart-line"></i> Telemetry</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;"><i class="fa-solid fa-stopwatch" style="color: var(--dash-gold); margin-right: 0.35rem;"></i>11:30 AM</strong></td>
+                    <td><strong style="color: #ffffff;">Marcus Thorne</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="McLaren 750S" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">McLaren 750S Spider</span>
+                          <span class="dash-table-vehicle-sub">Papaya Spark &bull; Carbon</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Marcus Vance (Nürburgring)</td>
+                    <td>Thermal Club (Handling Circuit)</td>
+                    <td><span class="status-pill confirmed">1:20.88 Best Lap</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-chart-line"></i> Telemetry</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: var(--dash-gold);"><i class="fa-solid fa-stopwatch" style="color: var(--dash-gold); margin-right: 0.35rem;"></i>2:00 PM</strong></td>
+                    <td><strong style="color: #ffffff;">Alexander Sterling</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="AMG GT" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Mercedes-AMG GT 63</span>
+                          <span class="dash-table-vehicle-sub">Selenite Grey &bull; Track Pack</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Marcus Vance</td>
+                    <td>Thermal Club (Track A)</td>
+                    <td><span class="status-pill pending">Confirmed Ready</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action-primary">Briefing Pack</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;"><i class="fa-solid fa-stopwatch" style="color: var(--dash-gold); margin-right: 0.35rem;"></i>3:30 PM</strong></td>
+                    <td><strong style="color: #ffffff;">Dr. Julian Vance</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider1-1.webp" alt="Porsche GT3" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Porsche 911 GT3 RS</span>
+                          <span class="dash-table-vehicle-sub">Shark Blue &bull; DRS Active</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Elena Rostova</td>
+                    <td>Stackly Proving Ground</td>
+                    <td><span class="status-pill transit">Pre-Flight Check</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action-primary">Pre-Flight</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;"><i class="fa-solid fa-stopwatch" style="color: var(--dash-gold); margin-right: 0.35rem;"></i>4:45 PM</strong></td>
+                    <td><strong style="color: #ffffff;">Lady Genevieve Dubois</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider2.webp" alt="Aston Martin DBS" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Aston Martin DBS 770</span>
+                          <span class="dash-table-vehicle-sub">Yellow &bull; V12 Twin Turbo</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>David Miller</td>
+                    <td>High-Speed Private Runway</td>
+                    <td><span class="status-pill pending">Scheduled</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Circuit Waiver</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: var(--dash-cyan);"><i class="fa-regular fa-calendar-check" style="margin-right: 0.35rem;"></i>Tomorrow 10 AM</strong></td>
+                    <td><strong style="color: #ffffff;">Victoria Chen</strong></td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Ferrari SF90" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">Ferrari SF90 Stradale</span>
+                          <span class="dash-table-vehicle-sub">Giallo Modena &bull; Assetto</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Elena Rostova</td>
+                    <td>Thermal Club (Pro Circuit)</td>
+                    <td><span class="status-pill" style="background: rgba(6, 182, 212, 0.12); color: var(--dash-cyan); border: 1px solid rgba(6, 182, 212, 0.25);">Calendar Confirmed</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action">Invite Pack</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 5: VIP CLIENT ROSTER -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="adminClientsTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-users-gear"></i>
+              <span>Verified VIP Client Roster & Concierge CRM (840 Members)</span>
+            </div>
+            <a href="404.html" class="dash-action-btn-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000;">
+              <i class="fa-solid fa-user-plus"></i> Register VIP Collector
+            </a>
+          </div>
+
+          <!-- 4 Client Network Metrics -->
+          <div class="dash-metrics-grid">
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>VIP Collector Network</h3>
+                <div class="dash-metric-value">840 <span style="font-size: 1rem; color: var(--dash-gold); font-weight: 600;">Verified</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-arrow-trend-up"></i> +48 New This Quarter
+                </div>
+              </div>
+              <div class="dash-metric-icon-box gold">
+                <i class="fa-solid fa-users"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Platinum & Founder Tier</h3>
+                <div class="dash-metric-value">162 <span style="font-size: 1rem; color: var(--dash-cyan); font-weight: 600;">Members</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-crown"></i> Dedicated Concierge Assigned
+                </div>
+              </div>
+              <div class="dash-metric-icon-box cyan">
+                <i class="fa-solid fa-award"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Managed Garage Assets</h3>
+                <div class="dash-metric-value">$248.5M</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-vault"></i> 1,420 Supercars Managed
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-warehouse"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>VIP Retention Index</h3>
+                <div class="dash-metric-value">98.4%</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-circle-check"></i> Zero Churn Rate
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIP CRM Client Table -->
+          <div class="dash-table-card">
+            <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 800;">Collector Portfolios & Dedicated Advisory Assignments</h3>
+            <p style="color: var(--dash-text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+              Direct CRM access to verified purchase histories, private garage fleets, trade-in allowances, and concierge preferences.
+            </p>
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>VIP Member</th>
+                    <th>Direct Contact</th>
+                    <th>Tier Status</th>
+                    <th>Owned Fleet</th>
+                    <th>Lifetime Value</th>
+                    <th>Assigned Executive</th>
+                    <th style="text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Alexander Sterling</strong></td>
+                    <td><span style="color: var(--dash-text-muted); font-size: 0.82rem;"><i class="fa-regular fa-envelope" style="margin-right: 0.35rem; color: var(--dash-text-dim);"></i>alexander.sterling@domain.com</span></td>
+                    <td><span class="dash-portal-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--dash-cyan); border-color: rgba(6, 182, 212, 0.3);">Platinum (18,500 Pts)</span></td>
+                    <td>3 Supercars</td>
+                    <td><span class="dash-price-strong dash-price-green">$742,400</span></td>
+                    <td>Elena Rostova</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-user"></i> Dossier</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Lord Arthur Harrington</strong></td>
+                    <td><span style="color: var(--dash-text-muted); font-size: 0.82rem;"><i class="fa-regular fa-envelope" style="margin-right: 0.35rem; color: var(--dash-text-dim);"></i>a.harrington@estate.co.uk</span></td>
+                    <td><span class="dash-portal-badge admin-badge">Black Diamond (34,200 Pts)</span></td>
+                    <td>7 Supercars</td>
+                    <td><span class="dash-price-strong dash-price-green">$2,840,000</span></td>
+                    <td>Sarah Jenkins (GM)</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-user"></i> Dossier</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Dr. Julian Vance</strong></td>
+                    <td><span style="color: var(--dash-text-muted); font-size: 0.82rem;"><i class="fa-regular fa-envelope" style="margin-right: 0.35rem; color: var(--dash-text-dim);"></i>dr.vance@neurotech.org</span></td>
+                    <td><span class="dash-portal-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--dash-gold); border-color: rgba(245, 158, 11, 0.3);">Gold Tier (14,200 Pts)</span></td>
+                    <td>2 Supercars</td>
+                    <td><span class="dash-price-strong dash-price-green">$394,000</span></td>
+                    <td>Marcus Vance</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-user"></i> Dossier</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Lady Genevieve Dubois</strong></td>
+                    <td><span style="color: var(--dash-text-muted); font-size: 0.82rem;"><i class="fa-regular fa-envelope" style="margin-right: 0.35rem; color: var(--dash-text-dim);"></i>g.dubois@monacovip.mc</span></td>
+                    <td><span class="dash-portal-badge admin-badge">Black Diamond (48,000 Pts)</span></td>
+                    <td>9 Supercars</td>
+                    <td><span class="dash-price-strong dash-price-green">$4,120,000</span></td>
+                    <td>Sarah Jenkins (GM)</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-user"></i> Dossier</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Marcus Thorne</strong></td>
+                    <td><span style="color: var(--dash-text-muted); font-size: 0.82rem;"><i class="fa-regular fa-envelope" style="margin-right: 0.35rem; color: var(--dash-text-dim);"></i>thorne@hyperioncapital.com</span></td>
+                    <td><span class="dash-portal-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--dash-cyan); border-color: rgba(6, 182, 212, 0.3);">Platinum (22,000 Pts)</span></td>
+                    <td>4 Supercars</td>
+                    <td><span class="dash-price-strong dash-price-green">$1,450,000</span></td>
+                    <td>David Miller</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-user"></i> Dossier</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color: #ffffff;">Victoria Chen</strong></td>
+                    <td><span style="color: var(--dash-text-muted); font-size: 0.82rem;"><i class="fa-regular fa-envelope" style="margin-right: 0.35rem; color: var(--dash-text-dim);"></i>victoria.chen@chenholdings.sg</span></td>
+                    <td><span class="dash-portal-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--dash-gold); border-color: rgba(245, 158, 11, 0.3);">Gold Tier (12,800 Pts)</span></td>
+                    <td>1 Vehicle</td>
+                    <td><span class="dash-price-strong dash-price-green">$125,000</span></td>
+                    <td>David Miller</td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-user"></i> Dossier</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 6: SERVICE BAYS -->
+        <!-- ========================================================= -->
+        <section class="dash-tab-pane" id="adminServiceTab">
+          <div class="dash-section-header">
+            <div class="dash-section-title">
+              <i class="fa-solid fa-warehouse"></i>
+              <span>Certified Master Guild Service Bay Operations (4/4 Operating)</span>
+            </div>
+            <a href="404.html" class="dash-action-btn-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000;">
+              <i class="fa-solid fa-plus"></i> Dispatch Service Bay
+            </a>
+          </div>
+
+          <!-- 4 Service Bay Telemetry Metrics -->
+          <div class="dash-metrics-grid">
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Bay Occupancy</h3>
+                <div class="dash-metric-value">4 / 4 <span style="font-size: 1rem; color: var(--dash-gold); font-weight: 600;">Full</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-bolt"></i> 100% Utilization
+                </div>
+              </div>
+              <div class="dash-metric-icon-box gold">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Master Guild Techs</h3>
+                <div class="dash-metric-value">8 <span style="font-size: 1rem; color: var(--dash-cyan); font-weight: 600;">On Duty</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-user-check"></i> Factory OEM Certified
+                </div>
+              </div>
+              <div class="dash-metric-icon-box cyan">
+                <i class="fa-solid fa-user-gear"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>150-Point Pass Rate</h3>
+                <div class="dash-metric-value">100%</div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-certificate"></i> Blockchain Logged
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+            </div>
+
+            <div class="dash-metric-card">
+              <div class="dash-metric-info">
+                <h3>Avg Turnaround</h3>
+                <div class="dash-metric-value">3.2 <span style="font-size: 1rem; color: var(--dash-green); font-weight: 600;">Hours</span></div>
+                <div class="dash-metric-change positive">
+                  <i class="fa-solid fa-gauge-high"></i> Rapid Valet Dispatch
+                </div>
+              </div>
+              <div class="dash-metric-icon-box green">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Live Service Bay Cards -->
+          <div class="dash-admin-grid-2">
+            <!-- Bay 1 -->
+            <div class="dash-bay-card">
+              <div>
+                <div class="dash-bay-header">
+                  <div>
+                    <span class="dash-portal-badge" style="background: rgba(221, 0, 5, 0.15); color: var(--dash-primary); border-color: rgba(221, 0, 5, 0.3);">Bay 1 &bull; Master Mechanical Guild</span>
+                    <h4 class="dash-bay-title">2024 Ferrari SF90 Stradale Assetto</h4>
+                    <div class="dash-bay-meta">Owner: Lord Arthur Harrington &bull; Assigned: Master Tech #042</div>
+                  </div>
+                  <span class="status-pill confirmed">85% Complete</span>
+                </div>
+                <p class="dash-bay-desc">
+                  150-Point Master Guild Certification, hybrid battery cell balancing, and Motul 300V synthetic oil system flush.
+                </p>
+                <div class="dash-bay-phase-wrap">
+                  <div class="dash-bay-phase-header">
+                    <span>Service Phase: Final Road Test Calibration</span>
+                    <span style="color: var(--dash-green); font-weight: 700;">Est. Ready: 3:30 PM</span>
+                  </div>
+                  <div class="dash-progress-bar-wrap">
+                    <div class="dash-progress-fill green" style="width: 85%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-bay-actions">
+                <a href="404.html" class="btn-dash-primary">
+                  <i class="fa-solid fa-clipboard-check"></i> Diagnostic Log
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-video"></i> Bay Cam
+                </a>
+              </div>
+            </div>
+
+            <!-- Bay 2 -->
+            <div class="dash-bay-card">
+              <div>
+                <div class="dash-bay-header">
+                  <div>
+                    <span class="dash-portal-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--dash-cyan); border-color: rgba(6, 182, 212, 0.3);">Bay 2 &bull; Precision Race Alignment</span>
+                    <h4 class="dash-bay-title">2026 Porsche 911 GT3 RS</h4>
+                    <div class="dash-bay-meta">Owner: Alexander Sterling &bull; Assigned: Senior Tech #019</div>
+                  </div>
+                  <span class="status-pill transit">60% Complete</span>
+                </div>
+                <p class="dash-bay-desc">
+                  4-Wheel Corner Balancing, laser camber/toe setup for Thermal Club track telemetry, and high-temp Motul RBF 660 brake bleed.
+                </p>
+                <div class="dash-bay-phase-wrap">
+                  <div class="dash-bay-phase-header">
+                    <span>Service Phase: Laser Camber Calibration</span>
+                    <span style="color: var(--dash-cyan); font-weight: 700;">Est. Ready: 4:45 PM</span>
+                  </div>
+                  <div class="dash-progress-bar-wrap">
+                    <div class="dash-progress-fill cyan" style="width: 60%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-bay-actions">
+                <a href="404.html" class="btn-dash-primary">
+                  <i class="fa-solid fa-sliders"></i> Alignment Sheet
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-chart-area"></i> Dyno Chart
+                </a>
+              </div>
+            </div>
+
+            <!-- Bay 3 -->
+            <div class="dash-bay-card">
+              <div>
+                <div class="dash-bay-header">
+                  <div>
+                    <span class="dash-portal-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--dash-gold); border-color: rgba(245, 158, 11, 0.3);">Bay 3 &bull; Aesthetic Armor & PPF</span>
+                    <h4 class="dash-bay-title">2026 Mercedes-AMG GT 63 Coupe</h4>
+                    <div class="dash-bay-meta">Owner: Dr. Julian Vance &bull; Assigned: PPF Lead #007</div>
+                  </div>
+                  <span class="status-pill confirmed">95% Complete</span>
+                </div>
+                <p class="dash-bay-desc">
+                  Level 3 Dual-Action Paint Correction, 9H dual-layer hydrophobic ceramic coating, and self-healing PPF edge sealing.
+                </p>
+                <div class="dash-bay-phase-wrap">
+                  <div class="dash-bay-phase-header">
+                    <span>Service Phase: Infrared Curing Chamber (45 Mins)</span>
+                    <span style="color: var(--dash-gold); font-weight: 700;">Est. Ready: 5:15 PM</span>
+                  </div>
+                  <div class="dash-progress-bar-wrap">
+                    <div class="dash-progress-fill gold" style="width: 95%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-bay-actions">
+                <a href="404.html" class="btn-dash-primary">
+                  <i class="fa-solid fa-shield-halved"></i> Coating Warranty
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-camera"></i> Photos
+                </a>
+              </div>
+            </div>
+
+            <!-- Bay 4 -->
+            <div class="dash-bay-card">
+              <div>
+                <div class="dash-bay-header">
+                  <div>
+                    <span class="dash-portal-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--dash-green); border-color: rgba(16, 185, 129, 0.3);">Bay 4 &bull; Pre-Delivery Inspection</span>
+                    <h4 class="dash-bay-title">2027 Aston Martin DBS 770 Ultimate</h4>
+                    <div class="dash-bay-meta">Owner: Lady Genevieve Dubois &bull; Assigned: Master Tech #031</div>
+                  </div>
+                  <span class="status-pill pending">40% Complete</span>
+                </div>
+                <p class="dash-bay-desc">
+                  Port arrival uncrating, 150-point electronic gateway testing, ECU firmware updates, and interior Alcantara protection seal.
+                </p>
+                <div class="dash-bay-phase-wrap">
+                  <div class="dash-bay-phase-header">
+                    <span>Service Phase: ECU Telemetry Gateway Sync</span>
+                    <span style="color: #ffffff; font-weight: 700;">Est. Ready: Tomorrow 10 AM</span>
+                  </div>
+                  <div class="dash-progress-bar-wrap">
+                    <div class="dash-progress-fill cyan" style="width: 40%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-bay-actions">
+                <a href="404.html" class="btn-dash-primary">
+                  <i class="fa-solid fa-list-check"></i> Inspection Sheet
+                </a>
+                <a href="404.html" class="btn-dash-secondary">
+                  <i class="fa-solid fa-truck-ramp-box"></i> Valet Dispatch
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service History Records Table -->
+          <div class="dash-table-card">
+            <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 800;">Completed Guild Service Records (Blockchain Verified)</h3>
+            <p style="color: var(--dash-text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+              Full electronic blockchain warranty certificates preserving provenance, performance benchmarks, and vehicle valuation.
+            </p>
+            <div class="dash-table-wrap">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Vehicle Model</th>
+                    <th>Service Operation</th>
+                    <th>Master Guild Lead</th>
+                    <th>Verification</th>
+                    <th style="text-align: center;">Certificate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Aug 14, 2026</td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider3.webp" alt="Ferrari SF90" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2024 Ferrari SF90 Stradale</span>
+                          <span class="dash-table-vehicle-sub">Rosso Corsa &bull; Chassis #0281</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>150-Point Ceramic Coating & Synthetic Fluid Flush</td>
+                    <td>Master Tech #042</td>
+                    <td><span class="status-pill confirmed">Verified Passed</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-file-pdf"></i> Certificate</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>May 10, 2026</td>
+                    <td>
+                      <div class="dash-table-vehicle-cell">
+                        <img src="assets/images/slider1-1.webp" alt="Porsche 911" class="dash-table-thumb">
+                        <div class="dash-table-vehicle-info">
+                          <span class="dash-table-vehicle-title">2023 Porsche 911 Turbo S</span>
+                          <span class="dash-table-vehicle-sub">GT Silver &bull; Carbon Ceramic</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Brake Pad Calibration & 4-Wheel Laser Alignment</td>
+                    <td>Senior Tech #019</td>
+                    <td><span class="status-pill confirmed">Verified Passed</span></td>
+                    <td>
+                      <div class="dash-table-actions">
+                        <a href="404.html" class="dash-btn-action"><i class="fa-solid fa-file-pdf"></i> Certificate</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- 3. Mobile Bottom Navigation Bar (6 Executive Admin Tabs) -->
+    <nav class="dash-mobile-bottom-bar">
+      <a href="#admin-overview" class="dash-bottom-nav-item active" data-tab-target="adminOverviewTab">
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Overview</span>
+      </a>
+      <a href="#admin-inventory" class="dash-bottom-nav-item" data-tab-target="adminInventoryTab">
+        <i class="fa-solid fa-car-side"></i>
+        <span>Inventory</span>
+      </a>
+      <a href="#admin-orders" class="dash-bottom-nav-item" data-tab-target="adminOrdersTab">
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+        <span>Pipeline</span>
+      </a>
+      <a href="#admin-drives" class="dash-bottom-nav-item" data-tab-target="adminDrivesTab">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Drives</span>
+      </a>
+      <a href="#admin-clients" class="dash-bottom-nav-item" data-tab-target="adminClientsTab">
+        <i class="fa-solid fa-users-gear"></i>
+        <span>Clients</span>
+      </a>
+      <a href="#admin-service" class="dash-bottom-nav-item" data-tab-target="adminServiceTab">
+        <i class="fa-solid fa-warehouse"></i>
+        <span>Bays</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- Modal: Add New Vehicle Listing -->
+  <div class="dash-modal-backdrop" id="addVehicleModal">
+    <div class="dash-modal-card">
+      <div class="dash-modal-header">
+        <div class="dash-modal-title">
+          <i class="fa-solid fa-plus"></i>
+          <span>Publish Exotic Vehicle Listing</span>
+        </div>
+        <button class="dash-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="addVehicleForm">
+        <div class="dash-modal-body">
+          <div class="dash-form-group">
+            <label class="dash-form-label">Vehicle Make & Model</label>
+            <input type="text" class="dash-form-input" placeholder="e.g. 2026 Aston Martin DBS 770" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="dash-form-group">
+              <label class="dash-form-label">Price ($ USD)</label>
+              <input type="number" class="dash-form-input" placeholder="385000" required>
+            </div>
+            <div class="dash-form-group">
+              <label class="dash-form-label">Horsepower (HP)</label>
+              <input type="text" class="dash-form-input" placeholder="759 HP" required>
+            </div>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">VIN Number (17 Chars)</label>
+            <input type="text" class="dash-form-input" placeholder="SCFFM63L9KG019234" maxlength="17" required>
+          </div>
+          <div class="dash-form-group">
+            <label class="dash-form-label">Inventory Status</label>
+            <select class="dash-form-input">
+              <option value="showroom">In Showroom Ready</option>
+              <option value="transit">In Enclosed Transit</option>
+              <option value="reserved">VIP Allocation Reserved</option>
+            </select>
+          </div>
+        </div>
+        <div class="dash-modal-footer">
+          <button type="button" class="btn-dash-secondary btn-modal-cancel">Cancel</button>
+          <button type="submit" class="btn-dash-primary" style="background: var(--dash-gold); color: #000;">Publish Listing</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard JavaScript -->
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
