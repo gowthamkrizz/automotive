@@ -321,8 +321,10 @@ body.blog-page {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 24px;
+  margin: 0 auto 38px auto;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .editorial-filter-pill {
@@ -377,6 +379,51 @@ body.blog-page {
   z-index: 1;
 }
 
+/* Filtering Transitions for Editorial & News Cards */
+.featured-main-card,
+.featured-side-card,
+.news-card-item {
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.featured-main-card.is-dimmed,
+.featured-side-card.is-dimmed,
+.news-card-item.is-dimmed {
+  opacity: 0.25 !important;
+  transform: scale(0.97) !important;
+  filter: grayscale(40%);
+  pointer-events: auto;
+}
+
+.featured-main-card.is-highlighted,
+.featured-side-card.is-highlighted,
+.news-card-item.is-highlighted {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  filter: none;
+  pointer-events: auto;
+}
+
+/* Card Target Pulse Feedback */
+@keyframes storyCardTargetPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(221, 0, 5, 0.45);
+    border-color: var(--blog-red) !important;
+  }
+  50% {
+    box-shadow: 0 0 24px 6px rgba(221, 0, 5, 0.35);
+    border-color: var(--blog-red) !important;
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-color: #e9ecef;
+  }
+}
+
+.story-card-pulse {
+  animation: storyCardTargetPulse 1.4s ease-out;
+}
+
 /* Shimmer Light Reflection Effect on Media */
 .img-shimmer-sweep {
   position: absolute;
@@ -407,7 +454,6 @@ body.blog-page {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 

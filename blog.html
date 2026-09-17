@@ -158,27 +158,27 @@
                 </span>
                 <h2 class="section-title-large">Featured Automotive <span>Stories.</span></h2>
                 <p class="section-subtitle-text">Curated long-form journalism, world premiere analyses, and exclusive track evaluations.</p>
-                
-                <!-- Editorial Filter Tabs -->
-                <div class="editorial-filter-bar" data-aos="fade-up" data-aos-delay="100">
-                    <button class="editorial-filter-pill active" data-filter="all">
-                        <i class="fa-solid fa-layer-group"></i> All Stories
-                    </button>
-                    <button class="editorial-filter-pill" data-filter="hypercar">
-                        <i class="fa-solid fa-bolt"></i> Hypercars &amp; Track
-                    </button>
-                    <button class="editorial-filter-pill" data-filter="suv">
-                        <i class="fa-solid fa-crown"></i> Luxury SUVs
-                    </button>
-                    <button class="editorial-filter-pill" data-filter="offroad">
-                        <i class="fa-solid fa-mountain"></i> Off-Road &amp; 4x4
-                    </button>
-                </div>
+            </div>
+            
+            <!-- Editorial Filter Tabs -->
+            <div class="editorial-filter-bar" data-aos="fade-up" data-aos-delay="100">
+                <button class="editorial-filter-pill active" data-filter="all">
+                    <i class="fa-solid fa-layer-group"></i> All Stories
+                </button>
+                <button class="editorial-filter-pill" data-filter="hypercar">
+                    <i class="fa-solid fa-bolt"></i> Hypercars &amp; Track
+                </button>
+                <button class="editorial-filter-pill" data-filter="suv">
+                    <i class="fa-solid fa-crown"></i> Luxury SUVs
+                </button>
+                <button class="editorial-filter-pill" data-filter="offroad">
+                    <i class="fa-solid fa-mountain"></i> Off-Road &amp; 4x4
+                </button>
             </div>
 
             <div class="featured-editorial-grid">
                 <!-- Large Featured Story Card (Left) -->
-                <article class="featured-main-card" data-category="hypercar" data-aos="fade-right" data-aos-duration="800">
+                <article class="featured-main-card" id="story-hypercar" data-category="hypercar" data-aos="fade-right" data-aos-duration="800">
                     <div class="featured-main-img-wrap">
                         <img src="assets/images/slider2.webp" alt="Hypercar Aerodynamics" class="featured-main-img">
                         <div class="img-shimmer-sweep"></div>
@@ -254,7 +254,7 @@
                 <!-- Stacked 2 Cards (Right) -->
                 <div class="featured-side-stack">
                     <!-- Stack Card 1 -->
-                    <article class="featured-side-card" data-category="suv" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+                    <article class="featured-side-card" id="story-suv" data-category="suv" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
                         <div class="featured-side-img-wrap">
                             <a href="404.html">
                                 <img src="assets/images/Rectangle-78.webp" alt="Aston Martin DBX707" class="featured-side-img">
@@ -293,7 +293,7 @@
                     </article>
 
                     <!-- Stack Card 2 -->
-                    <article class="featured-side-card" data-category="offroad" data-aos="fade-left" data-aos-duration="800" data-aos-delay="250">
+                    <article class="featured-side-card" id="story-offroad" data-category="offroad" data-aos="fade-left" data-aos-duration="800" data-aos-delay="250">
                         <div class="featured-side-img-wrap">
                             <a href="404.html">
                                 <img src="assets/images/0-1516192-scaled.webp" alt="Defender V8 Expedition" class="featured-side-img">
@@ -348,45 +348,45 @@
                 </span>
                 <h2 class="section-title-large">Latest Automotive <span>News.</span></h2>
                 <p class="section-subtitle-text">Stay informed with daily coverage of industry breakthroughs, new car debuts, and performance tech.</p>
+            </div>
 
-                <!-- Breaking News Ticker Bar -->
-                <div class="news-live-ticker-wrap" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ticker-label">
-                        <span class="ticker-live-dot"></span>
-                        <i class="fa-solid fa-bolt"></i> FLASH DISPATCH
-                    </div>
-                    <div class="ticker-marquee-track">
-                        <div class="ticker-marquee-content">
-                            <span>🔴 BREAKING: 2027 Porsche 911 GT3 RS Facelift Announced with Active Dynamic DRS Diffusers</span>
-                            <span class="ticker-sep">•</span>
-                            <span>⚡ Solid-State 650-Mile Battery Architecture Validated Across 2,000 High-Voltage Test Cycles</span>
-                            <span class="ticker-sep">•</span>
-                            <span>🏆 Mercedes-AMG GT Black Series Sets Benchmark 6:48 Production Lap Telemetry</span>
-                            <span class="ticker-sep">•</span>
-                            <span>💎 Global Collector Supercar Market Surpasses $48B Valuation</span>
-                            <span class="ticker-sep">•</span>
-                        </div>
+            <!-- Breaking News Ticker Bar -->
+            <div class="news-live-ticker-wrap" data-aos="fade-up" data-aos-delay="100">
+                <div class="ticker-label">
+                    <span class="ticker-live-dot"></span>
+                    <i class="fa-solid fa-bolt"></i> FLASH DISPATCH
+                </div>
+                <div class="ticker-marquee-track">
+                    <div class="ticker-marquee-content">
+                        <span>🔴 BREAKING: 2027 Porsche 911 GT3 RS Facelift Announced with Active Dynamic DRS Diffusers</span>
+                        <span class="ticker-sep">•</span>
+                        <span>⚡ Solid-State 650-Mile Battery Architecture Validated Across 2,000 High-Voltage Test Cycles</span>
+                        <span class="ticker-sep">•</span>
+                        <span>🏆 Mercedes-AMG GT Black Series Sets Benchmark 6:48 Production Lap Telemetry</span>
+                        <span class="ticker-sep">•</span>
+                        <span>💎 Global Collector Supercar Market Surpasses $48B Valuation</span>
+                        <span class="ticker-sep">•</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- News Filter Pills -->
-                <div class="news-filter-bar" data-aos="fade-up" data-aos-delay="150">
-                    <button class="news-filter-pill active" data-news-filter="all">
-                        <i class="fa-solid fa-border-all"></i> All News
-                    </button>
-                    <button class="news-filter-pill" data-news-filter="launches">
-                        <i class="fa-solid fa-rocket"></i> Launches &amp; Supercars
-                    </button>
-                    <button class="news-filter-pill" data-news-filter="evtech">
-                        <i class="fa-solid fa-charging-station"></i> EV &amp; Battery Tech
-                    </button>
-                    <button class="news-filter-pill" data-news-filter="performance">
-                        <i class="fa-solid fa-gauge-high"></i> Track &amp; Telemetry
-                    </button>
-                    <button class="news-filter-pill" data-news-filter="tech">
-                        <i class="fa-solid fa-microchip"></i> AI &amp; Engineering
-                    </button>
-                </div>
+            <!-- News Filter Pills -->
+            <div class="news-filter-bar" data-aos="fade-up" data-aos-delay="150">
+                <button class="news-filter-pill active" data-news-filter="all">
+                    <i class="fa-solid fa-border-all"></i> All News
+                </button>
+                <button class="news-filter-pill" data-news-filter="launches">
+                    <i class="fa-solid fa-rocket"></i> Launches &amp; Supercars
+                </button>
+                <button class="news-filter-pill" data-news-filter="evtech">
+                    <i class="fa-solid fa-charging-station"></i> EV &amp; Battery Tech
+                </button>
+                <button class="news-filter-pill" data-news-filter="performance">
+                    <i class="fa-solid fa-gauge-high"></i> Track &amp; Telemetry
+                </button>
+                <button class="news-filter-pill" data-news-filter="tech">
+                    <i class="fa-solid fa-microchip"></i> AI &amp; Engineering
+                </button>
             </div>
 
             <div class="news-cards-grid">

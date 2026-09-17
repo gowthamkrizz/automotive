@@ -331,6 +331,18 @@
                     
                     <!-- Left: Interactive Map Container -->
                     <div class="showroom-map-card" data-aos="fade-right" data-aos-duration="800">
+                        <!-- Dedicated Top Header Bar (Zero overlapping) -->
+                        <div class="map-card-top-header">
+                            <div class="map-status-pill">
+                                <span class="live-dot-pulse"></span>
+                                <span class="status-text">Stackly Salem HQ • Open Today</span>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=MMR+Complex,+Chinna+Thirupathi,+Near+by+Chinna+Moniyappan+Kovil,+Salem+636008" target="_blank" rel="noopener noreferrer" class="map-top-link" title="Open in Google Maps">
+                                <span>Google Maps</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+
                         <div class="showroom-map-container">
                             <iframe 
                                 src="https://maps.google.com/maps?q=MMR+Complex,+Chinna+Thirupathi,+Near+by+Chinna+Moniyappan+Kovil,+Salem+636008&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
@@ -340,14 +352,15 @@
                                 title="Stackly Salem Main Showroom Location">
                             </iframe>
 
-                            <!-- GSAP Animated Custom Red Location Marker HUD -->
+                            <!-- Clean Beacon Marker Pin -->
                             <div class="map-marker-overlay" id="showroomMapMarker">
-                                <div class="marker-pulse-ring"></div>
-                                <div class="marker-pin">
-                                    <svg viewBox="0 0 24 24" class="svg-icon"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-4.66l.12-.34h13.77l.11.34V17zM7.5 14c.83 0 1.5-.67 1.5-1.5S8.33 11 7.5 11 6 11.67 6 12.5 6.67 14 7.5 14zm9 0c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/></svg>
+                                <div class="marker-beacon-glow"></div>
+                                <div class="marker-beacon-pulse"></div>
+                                <div class="marker-luxury-pin">
+                                    <i class="fa-solid fa-location-dot"></i>
                                 </div>
-                                <div class="marker-label-card">
-                                    <span>Stackly Main Showroom</span>
+                                <div class="marker-pin-pill">
+                                    <span>Stackly Salem HQ</span>
                                 </div>
                             </div>
                         </div>
@@ -355,12 +368,17 @@
                         <!-- Map HUD Footer Bar -->
                         <div class="map-hud-bar">
                             <div class="map-hud-info">
-                                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-                                <span>Salem Experience Center</span>
+                                <div class="hud-icon-box">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                </div>
+                                <div class="hud-text-stack">
+                                    <strong class="hud-location-title">Salem Experience Center</strong>
+                                    <span class="hud-location-sub">MMR Complex, Chinna Thirupathi</span>
+                                </div>
                             </div>
                             <a href="https://www.google.com/maps/search/?api=1&query=MMR+Complex,+Chinna+Thirupathi,+Near+by+Chinna+Moniyappan+Kovil,+Salem+636008" target="_blank" rel="noopener noreferrer" class="map-hud-btn">
-                                <span>Open Maps</span>
-                                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                                <i class="fa-solid fa-diamond-turn-right"></i>
+                                <span>Get Directions</span>
                             </a>
                         </div>
                     </div>

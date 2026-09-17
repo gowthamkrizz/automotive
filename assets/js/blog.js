@@ -156,9 +156,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Section 1 Editorial Filter Pills
+  // 6. Section 1 Editorial Filter Pills with Smooth Scroll Navigation
   const filterPills = document.querySelectorAll('.editorial-filter-pill');
   const editorialArticles = document.querySelectorAll('.featured-editorial-grid article');
+
+  const storyTargetMap = {
+    'all': '#featuredStoriesSection',
+    'hypercar': '#story-hypercar',
+    'suv': '#story-suv',
+    'offroad': '#story-offroad'
+  };
 
   filterPills.forEach(pill => {
     pill.addEventListener('click', () => {
@@ -168,18 +175,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
       editorialArticles.forEach(article => {
         const cat = article.dataset.category;
+        article.classList.remove('story-card-pulse');
         if (targetFilter === 'all' || cat === targetFilter) {
-          article.style.opacity = '1';
-          article.style.transform = 'scale(1)';
-          article.style.pointerEvents = 'auto';
-          article.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+          article.classList.remove('is-dimmed');
+          article.classList.add('is-highlighted');
         } else {
-          article.style.opacity = '0.35';
-          article.style.transform = 'scale(0.98)';
-          article.style.pointerEvents = 'auto';
-          article.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+          article.classList.remove('is-highlighted');
+          article.classList.add('is-dimmed');
         }
       });
+
+      // Smooth scroll to the target section or story card
+      const targetSelector = storyTargetMap[targetFilter];
+      if (targetSelector) {
+        const targetEl = document.querySelector(targetSelector);
+        if (targetEl) {
+          const header = document.querySelector('.site-header');
+          const headerHeight = header ? header.offsetHeight : 80;
+          const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - (headerHeight + 24);
+
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+
+          // Add pulse highlight animation to specific story card
+          if (targetFilter !== 'all') {
+            targetEl.classList.remove('story-card-pulse');
+            void targetEl.offsetWidth; // Trigger DOM reflow to restart animation
+            targetEl.classList.add('story-card-pulse');
+          }
+        }
+      }
     });
   });
 
@@ -196,15 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
       newsCardItems.forEach(card => {
         const cat = card.dataset.category;
         if (targetFilter === 'all' || cat === targetFilter) {
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-          card.style.pointerEvents = 'auto';
-          card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+          card.classList.remove('is-dimmed');
+          card.classList.add('is-highlighted');
         } else {
-          card.style.opacity = '0.28';
-          card.style.transform = 'scale(0.97)';
-          card.style.pointerEvents = 'auto';
-          card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+          card.classList.remove('is-highlighted');
+          card.classList.add('is-dimmed');
         }
       });
     });

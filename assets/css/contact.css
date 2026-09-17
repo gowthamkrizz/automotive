@@ -505,16 +505,98 @@
   border: 1px solid var(--contact-light-border);
   overflow: hidden;
   box-shadow: var(--contact-shadow-md);
-  min-height: 500px;
+  min-height: 520px;
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.showroom-map-card:hover {
+  box-shadow: var(--contact-shadow-lg);
+}
+
+/* Dedicated Top Header Bar (No overlapping over map canvas) */
+.map-card-top-header {
+  background: #111317;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 5;
+}
+
+.map-status-pill {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 5px 14px;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #00E676;
+  box-shadow: 0 0 8px #00E676;
+  animation: pulseDot 1.8s infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(0, 230, 118, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+  }
+}
+
+.map-top-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.map-top-link i {
+  font-size: 10px;
+  color: var(--contact-red);
+  transition: transform var(--transition-fast);
+}
+
+.map-top-link:hover {
+  color: #FFFFFF;
+}
+
+.map-top-link:hover i {
+  transform: translate(2px, -2px);
+  color: #ff2d34;
 }
 
 .showroom-map-container {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 460px;
+  min-height: 420px;
   flex-grow: 1;
   background-color: #f0ede5;
   overflow: hidden;
@@ -523,150 +605,191 @@
 .showroom-map-container iframe {
   width: 100%;
   height: 100%;
-  min-height: 460px;
+  min-height: 420px;
   border: 0;
   display: block;
+  filter: saturate(0.9) contrast(1.04) brightness(0.98);
+  transition: filter 0.3s ease;
 }
 
-/* Custom Location Marker HUD */
+/* Custom Luxury Dealership Beacon Location Marker HUD */
 .map-marker-overlay {
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 10;
+  z-index: 6;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.marker-pulse-ring {
+.marker-beacon-glow {
   position: absolute;
+  top: 4px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(221, 0, 5, 0.25);
-  animation: markerPulse 2.2s infinite ease-out;
+  background: radial-gradient(circle, rgba(221, 0, 5, 0.4) 0%, rgba(221, 0, 5, 0.08) 50%, transparent 70%);
+  pointer-events: none;
 }
 
-@keyframes markerPulse {
+.marker-beacon-pulse {
+  position: absolute;
+  top: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(221, 0, 5, 0.6);
+  animation: beaconPulse 2.4s infinite cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+@keyframes beaconPulse {
   0% {
-    transform: scale(0.3);
-    opacity: 0.95;
+    transform: scale(0.4);
+    opacity: 1;
   }
   100% {
-    transform: scale(1.6);
+    transform: scale(2.2);
     opacity: 0;
   }
 }
 
-.marker-pin {
-  width: 46px;
-  height: 46px;
-  background: var(--contact-red);
+.marker-luxury-pin {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff1a20 0%, #dd0005 100%);
   color: #FFFFFF;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(221, 0, 5, 0.5);
+  font-size: 16px;
+  box-shadow: 0 6px 20px rgba(221, 0, 5, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 2;
-  border: 3px solid #FFFFFF;
+  border: 2.5px solid #FFFFFF;
 }
 
-.marker-pin svg {
-  transform: rotate(45deg);
-  width: 20px;
-  height: 20px;
-  fill: #FFFFFF;
-}
-
-.marker-label-card {
-  margin-top: 14px;
-  background: rgba(17, 17, 19, 0.92);
-  backdrop-filter: blur(8px);
+.marker-pin-pill {
+  margin-top: 8px;
+  background: rgba(14, 15, 18, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #FFFFFF;
-  padding: 8px 16px;
+  padding: 5px 12px;
   border-radius: 20px;
   font-family: var(--font-accent);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
+  letter-spacing: 0.4px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
 }
 
-.marker-label-card::before {
+.marker-pin-pill::before {
   content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #00E676;
-  box-shadow: 0 0 8px #00E676;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgba(14, 15, 18, 0.94);
 }
 
-/* Map Bottom HUD */
+/* Map Bottom HUD Bar */
 .map-hud-bar {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--contact-light-border);
-  border-radius: var(--contact-radius-sm);
-  padding: 12px 18px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--contact-light-border);
+  padding: 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  position: relative;
   z-index: 5;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .map-hud-info {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--contact-text-dark);
+  gap: 12px;
 }
 
-.map-hud-info svg {
+.hud-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(221, 0, 5, 0.08);
   color: var(--contact-red);
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.hud-text-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-location-title {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--contact-text-dark);
+  line-height: 1.3;
+}
+
+.hud-location-sub {
+  font-size: 11px;
+  color: var(--contact-text-muted);
+  line-height: 1.3;
 }
 
 .map-hud-btn {
+  background: #111317;
+  color: #FFFFFF;
   font-family: var(--font-accent);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  color: var(--contact-red);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 9px 16px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: color 0.2s ease;
+  gap: 7px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
-.map-hud-btn svg {
-  width: 12px;
-  height: 12px;
-  fill: currentColor;
+.map-hud-btn i {
+  font-size: 11px;
+  color: var(--contact-red);
+  transition: transform var(--transition-fast);
 }
 
 .map-hud-btn:hover {
-  color: var(--contact-red-hover);
+  background: var(--contact-red);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(221, 0, 5, 0.35);
+  transform: translateY(-1px);
+}
+
+.map-hud-btn:hover i {
+  color: #FFFFFF;
+  transform: translateX(2px);
 }
 
 /* Right: Showroom Details Panel */
