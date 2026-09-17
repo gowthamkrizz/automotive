@@ -325,6 +325,57 @@ input, select, textarea {
   box-shadow: 0 4px 14px var(--dash-primary-glow);
 }
 
+/* Sidebar Bottom Logout Action */
+.dash-sidebar-footer {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dash-border);
+}
+
+.btn-dash-logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  background: rgba(221, 0, 5, 0.08);
+  border: 1px solid rgba(221, 0, 5, 0.22);
+  border-radius: var(--dash-radius-md);
+  color: #ff4d4f;
+  font-family: var(--dash-font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  outline: none;
+}
+
+.btn-dash-logout i {
+  font-size: 0.95rem;
+  color: #ff4d4f;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.btn-dash-logout:hover {
+  background: var(--dash-primary);
+  border-color: var(--dash-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 18px var(--dash-primary-glow);
+  transform: translateY(-1px);
+}
+
+.btn-dash-logout:hover i {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.btn-dash-logout:active {
+  transform: translateY(0);
+}
+
 /* Sidebar Drawer Overlay for Mobile */
 .dash-sidebar-overlay {
   display: none;

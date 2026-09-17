@@ -320,7 +320,8 @@
 .contact-hub-flip-card.flipped .hub-mini-action-dot {
   background: var(--contact-red);
   color: #ffffff;
-  transform: translateX(3px);
+  transform: scale(1.12);
+  box-shadow: 0 2px 8px rgba(221, 0, 5, 0.35);
 }
 
 /* ==========================================================================

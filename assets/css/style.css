@@ -3567,11 +3567,27 @@ input, select, textarea {
 }
 
 .footer-logo {
-  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 22px;
 }
 
-.footer-logo img {
-  max-height: 44px;
+.footer-logo .logo-link {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-logo .logo-link:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.footer-logo img,
+.footer-logo .site-logo {
+  max-height: 40px;
+  width: auto;
+  display: block;
 }
 
 .footer-about-text {
