@@ -682,6 +682,7 @@ input, select, textarea {
   display: none;
   width: 100%;
   min-width: 0;
+  scroll-margin-top: calc(var(--header-height) + 1.5rem);
   animation: tabFadeIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
@@ -1804,6 +1805,7 @@ input, select, textarea {
   margin-bottom: 2.5rem;
   width: 100%;
   min-width: 0;
+  align-items: stretch;
 }
 
 @media (max-width: 992px) {
@@ -1822,24 +1824,182 @@ input, select, textarea {
   width: 100%;
   box-sizing: border-box;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .dash-garage-card:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+.dash-garage-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  min-height: 52px;
+}
+
+.dash-garage-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dash-garage-card-title {
+  font-family: var(--dash-font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0 0 0.35rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-garage-card-vin {
+  font-size: 0.8rem;
+  color: var(--dash-text-muted);
+  font-family: monospace;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.dash-garage-media {
+  height: 200px;
+  border-radius: var(--dash-radius-md);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--dash-border);
+  background: #0f1118;
+  position: relative;
+}
+
+.dash-garage-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dash-garage-card:hover .dash-garage-media img {
+  transform: scale(1.04);
+}
+
+.dash-garage-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.dash-garage-gauge-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.75rem 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 68px;
+  box-sizing: border-box;
+}
+
+.dash-garage-gauge-lbl {
+  font-size: 0.68rem;
+  color: var(--dash-text-dim);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.dash-garage-gauge-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.dash-garage-card-actions {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 0.6rem;
+  align-items: stretch;
+  margin-top: auto;
+}
+
+@media (max-width: 576px) {
+  .dash-garage-card-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dash-garage-card-actions .dash-card-action-btn,
+.dash-garage-card-actions .btn-dash-secondary {
+  width: 100%;
+  height: 42px;
+  padding: 0 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: var(--dash-radius-sm);
+  margin: 0;
+}
+
+.dash-garage-wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1200px) {
+  .dash-garage-wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dash-garage-wishlist-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .digital-key-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
   font-size: 0.72rem;
   font-weight: 800;
-  padding: 0.25rem 0.65rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 9999px;
   background: rgba(16, 185, 129, 0.15);
   color: #10b981;
   border: 1px solid rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .digital-key-badge.pulse::before {

@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem('stackly_current_tab', targetId);
     sessionStorage.setItem('stackly_prev_page', window.location.href);
 
+    // Scroll viewport to top so section headers and content are fully visible
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const mainStage = document.querySelector('.dash-main-stage');
+    if (mainStage) mainStage.scrollTop = 0;
+
     // Close mobile drawer if open
     closeSidebar();
   }

@@ -674,102 +674,108 @@
           <div class="dash-section-header">
             <div class="dash-section-title">
               <i class="fa-solid fa-warehouse"></i>
-              <span>My Private Collection & Connected Vehicles (2)</span>
+              <span>My Private Collection &amp; Connected Vehicles (2)</span>
             </div>
-            <a href="404.html" class="btn-dash-secondary">
+            <button type="button" class="btn-dash-secondary" onclick="showToast('Telemetry Synced', 'Live CAN-bus telemetry &amp; satellite link refreshed for all connected vehicles.', 'success')">
               <i class="fa-solid fa-rotate"></i> Sync Telemetry
-            </a>
+            </button>
           </div>
 
           <!-- Owned Supercars Grid -->
           <div class="dash-garage-owned-grid">
             <!-- Owned Car 1 -->
             <div class="dash-garage-card">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                <div>
-                  <h4 style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">2024 Ferrari SF90 Stradale Assetto Fiorano</h4>
-                  <div style="font-size: 0.82rem; color: var(--dash-text-muted);">VIN: ZFF94LMA8P0281904 &bull; Rosso Corsa</div>
+              <div>
+                <div class="dash-garage-card-header">
+                  <div class="dash-garage-card-info">
+                    <h4 class="dash-garage-card-title" title="2024 Ferrari SF90 Stradale Assetto Fiorano">2024 Ferrari SF90 Stradale Assetto Fiorano</h4>
+                    <div class="dash-garage-card-vin">VIN: ZFF94LMA8P0281904 &bull; Rosso Corsa</div>
+                  </div>
+                  <span class="digital-key-badge pulse">
+                    <i class="fa-solid fa-signal"></i> Digital Key Active
+                  </span>
                 </div>
-                <span class="digital-key-badge pulse">
-                  <i class="fa-solid fa-signal"></i> Digital Key Active
-                </span>
+
+                <div class="dash-garage-media">
+                  <img src="assets/images/slider3.webp" alt="2024 Ferrari SF90 Stradale Assetto Fiorano">
+                </div>
+
+                <!-- Quick Status Gauges -->
+                <div class="dash-garage-telemetry-grid">
+                  <div class="dash-garage-gauge-box">
+                    <span class="dash-garage-gauge-lbl">Odometer</span>
+                    <span class="dash-garage-gauge-val">1,840 mi</span>
+                  </div>
+                  <div class="dash-garage-gauge-box">
+                    <span class="dash-garage-gauge-lbl">Hybrid Battery</span>
+                    <span class="dash-garage-gauge-val" style="color: var(--dash-green);">99% Health</span>
+                  </div>
+                  <div class="dash-garage-gauge-box">
+                    <span class="dash-garage-gauge-lbl">Brake Life</span>
+                    <span class="dash-garage-gauge-val" style="color: var(--dash-cyan);">88% Life</span>
+                  </div>
+                </div>
               </div>
 
-              <div style="height: 180px; border-radius: var(--dash-radius-md); overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--dash-border);">
-                <img src="assets/images/slider3.webp" alt="Ferrari SF90" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-
-              <!-- Quick Status Gauges -->
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
-                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
-                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Odometer</div>
-                  <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff;">1,840 mi</div>
-                </div>
-                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
-                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Hybrid Battery</div>
-                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-green);">99% Health</div>
-                </div>
-                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
-                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Brake Life</div>
-                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-cyan);">88% Remaining</div>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <a href="404.html" class="dash-card-action-btn" style="flex: 1;">
+              <!-- Card Action Buttons -->
+              <div class="dash-garage-card-actions">
+                <button type="button" class="dash-card-action-btn trigger-digital-key-modal" data-vehicle="Ferrari SF90 Stradale Assetto Fiorano">
                   <i class="fa-solid fa-mobile-screen-button"></i> Digital Key Remote
-                </a>
-                <a href="404.html" class="btn-dash-secondary">
+                </button>
+                <button type="button" class="btn-dash-secondary trigger-service-modal">
                   <i class="fa-solid fa-wrench"></i> Service Bay
-                </a>
-                <a href="404.html" class="btn-dash-secondary">
+                </button>
+                <button type="button" class="btn-dash-secondary" onclick="showToast('Appraisal Valuation', 'Instant market portfolio value for Ferrari SF90: $585,000.', 'info')">
                   <i class="fa-solid fa-calculator"></i> Appraisal
-                </a>
+                </button>
               </div>
             </div>
 
             <!-- Owned Car 2 -->
             <div class="dash-garage-card">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                <div>
-                  <h4 style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">2023 Porsche 911 Turbo S Cabriolet</h4>
-                  <div style="font-size: 0.82rem; color: var(--dash-text-muted);">VIN: WP0CD2A92NS109823 &bull; GT Silver Metallic</div>
+              <div>
+                <div class="dash-garage-card-header">
+                  <div class="dash-garage-card-info">
+                    <h4 class="dash-garage-card-title" title="2023 Porsche 911 Turbo S Cabriolet">2023 Porsche 911 Turbo S Cabriolet</h4>
+                    <div class="dash-garage-card-vin">VIN: WP0CD2A92NS109823 &bull; GT Silver Metallic</div>
+                  </div>
+                  <span class="digital-key-badge pulse">
+                    <i class="fa-solid fa-signal"></i> Digital Key Active
+                  </span>
                 </div>
-                <span class="digital-key-badge pulse">
-                  <i class="fa-solid fa-signal"></i> Digital Key Active
-                </span>
+
+                <div class="dash-garage-media">
+                  <img src="assets/images/slider1-1.webp" alt="2023 Porsche 911 Turbo S Cabriolet">
+                </div>
+
+                <!-- Quick Status Gauges -->
+                <div class="dash-garage-telemetry-grid">
+                  <div class="dash-garage-gauge-box">
+                    <span class="dash-garage-gauge-lbl">Odometer</span>
+                    <span class="dash-garage-gauge-val">4,120 mi</span>
+                  </div>
+                  <div class="dash-garage-gauge-box">
+                    <span class="dash-garage-gauge-lbl">Synthetic Oil</span>
+                    <span class="dash-garage-gauge-val" style="color: var(--dash-green);">92% Health</span>
+                  </div>
+                  <div class="dash-garage-gauge-box">
+                    <span class="dash-garage-gauge-lbl">Asset Shield</span>
+                    <span class="dash-garage-gauge-val" style="color: var(--dash-gold);">Active</span>
+                  </div>
+                </div>
               </div>
 
-              <div style="height: 180px; border-radius: var(--dash-radius-md); overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--dash-border);">
-                <img src="assets/images/slider1-1.webp" alt="Porsche 911 Turbo S" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-
-              <!-- Quick Status Gauges -->
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem;">
-                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
-                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Odometer</div>
-                  <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff;">4,120 mi</div>
-                </div>
-                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
-                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Synthetic Oil</div>
-                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-green);">92% Health</div>
-                </div>
-                <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; text-align: center;">
-                  <div style="font-size: 0.7rem; color: var(--dash-text-dim); text-transform: uppercase;">Asset Shield</div>
-                  <div style="font-size: 0.95rem; font-weight: 800; color: var(--dash-gold);">Active</div>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <a href="404.html" class="dash-card-action-btn" style="flex: 1;">
+              <!-- Card Action Buttons -->
+              <div class="dash-garage-card-actions">
+                <button type="button" class="dash-card-action-btn trigger-digital-key-modal" data-vehicle="Porsche 911 Turbo S Cabriolet">
                   <i class="fa-solid fa-mobile-screen-button"></i> Digital Key Remote
-                </a>
-                <a href="404.html" class="btn-dash-secondary">
+                </button>
+                <button type="button" class="btn-dash-secondary trigger-service-modal">
                   <i class="fa-solid fa-wrench"></i> Service Bay
-                </a>
-                <a href="404.html" class="btn-dash-secondary">
+                </button>
+                <button type="button" class="btn-dash-secondary" onclick="showToast('Appraisal Valuation', 'Instant market portfolio value for Porsche 911 Turbo S: $238,000.', 'info')">
                   <i class="fa-solid fa-calculator"></i> Appraisal
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -778,14 +784,14 @@
           <div class="dash-section-header">
             <div class="dash-section-title">
               <i class="fa-solid fa-heart" style="color: var(--dash-primary);"></i>
-              <span>Saved Showroom Wishlist & Private Allocations (4 Saved)</span>
+              <span>Saved Showroom Wishlist &amp; Private Allocations (4 Saved)</span>
             </div>
-            <a href="404.html" style="font-size: 0.85rem; color: var(--dash-primary); font-weight: 700;">
+            <a href="inventory.html" style="font-size: 0.85rem; color: var(--dash-primary); font-weight: 700;">
               Explore More Allocations <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
-          <div class="dash-vehicles-grid">
+          <div class="dash-garage-wishlist-grid">
             <!-- Wishlist 1 -->
             <div class="dash-vehicle-card" id="wishlistCard1">
               <div class="dash-card-media">
@@ -795,9 +801,9 @@
               <div class="dash-card-body">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                   <h4 class="dash-card-title">Audi R8 V10 Performance</h4>
-                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                  <button type="button" class="btn-remove-wishlist" data-card-id="wishlistCard1" style="background:none;border:none;cursor:pointer;color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
                     <i class="fa-solid fa-trash-can"></i>
-                  </a>
+                  </button>
                 </div>
                 <div class="dash-card-vin">VIN: WUAZZZ42ZKN004812</div>
                 <div class="dash-card-specs">
@@ -808,7 +814,7 @@
                 </div>
                 <div class="dash-card-footer">
                   <div class="dash-card-price">$209,500</div>
-                  <a href="404.html" class="dash-card-action-btn">Book Drive</a>
+                  <button type="button" class="dash-card-action-btn trigger-test-drive-modal" style="border:none;cursor:pointer;">Book Drive</button>
                 </div>
               </div>
             </div>
@@ -822,9 +828,9 @@
               <div class="dash-card-body">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                   <h4 class="dash-card-title">McLaren 750S Spider</h4>
-                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                  <button type="button" class="btn-remove-wishlist" data-card-id="wishlistCard2" style="background:none;border:none;cursor:pointer;color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
                     <i class="fa-solid fa-trash-can"></i>
-                  </a>
+                  </button>
                 </div>
                 <div class="dash-card-vin">VIN: SBM11FBA8PW008129</div>
                 <div class="dash-card-specs">
@@ -835,7 +841,7 @@
                 </div>
                 <div class="dash-card-footer">
                   <div class="dash-card-price">$345,000</div>
-                  <a href="404.html" class="dash-card-action-btn">Book Drive</a>
+                  <button type="button" class="dash-card-action-btn trigger-test-drive-modal" style="border:none;cursor:pointer;">Book Drive</button>
                 </div>
               </div>
             </div>
@@ -849,9 +855,9 @@
               <div class="dash-card-body">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                   <h4 class="dash-card-title">GMC Acadia Denali Ultimate</h4>
-                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                  <button type="button" class="btn-remove-wishlist" data-card-id="wishlistCard3" style="background:none;border:none;cursor:pointer;color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
                     <i class="fa-solid fa-trash-can"></i>
-                  </a>
+                  </button>
                 </div>
                 <div class="dash-card-vin">VIN: 1GKS2CKJ8NR198302</div>
                 <div class="dash-card-specs">
@@ -862,7 +868,7 @@
                 </div>
                 <div class="dash-card-footer">
                   <div class="dash-card-price">$62,800</div>
-                  <a href="404.html" class="dash-card-action-btn">Reserve Now</a>
+                  <button type="button" class="dash-card-action-btn trigger-test-drive-modal" style="border:none;cursor:pointer;">Reserve Now</button>
                 </div>
               </div>
             </div>
@@ -876,9 +882,9 @@
               <div class="dash-card-body">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                   <h4 class="dash-card-title">Lamborghini Revuelto V12 Hybrid</h4>
-                  <a href="404.html" class="btn-remove-wishlist" style="color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
+                  <button type="button" class="btn-remove-wishlist" data-card-id="wishlistCard4" style="background:none;border:none;cursor:pointer;color: var(--dash-text-dim); font-size: 0.9rem;" title="Remove from Saved Garage">
                     <i class="fa-solid fa-trash-can"></i>
-                  </a>
+                  </button>
                 </div>
                 <div class="dash-card-vin">VIN: ZHWU81A39PLA00192</div>
                 <div class="dash-card-specs">
@@ -889,7 +895,7 @@
                 </div>
                 <div class="dash-card-footer">
                   <div class="dash-card-price">$608,000</div>
-                  <a href="404.html" class="dash-card-action-btn">Request Slot</a>
+                  <button type="button" class="dash-card-action-btn trigger-test-drive-modal" style="border:none;cursor:pointer;">Request Slot</button>
                 </div>
               </div>
             </div>
